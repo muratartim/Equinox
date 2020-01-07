@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="391.0" prefWidth="352.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.PlotAircraftStructurePanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox maxWidth="1.7976931348623157E308" prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+                        <TitledPane fx:id="typesPane_" text="Element Types">
+                           <content>
+                              <VBox spacing="8.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="74.0" text="Type" textAlignment="CENTER" textFill="STEELBLUE" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Opacity" textAlignment="CENTER" textFill="STEELBLUE" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="48.0" text="Outlines" textAlignment="CENTER" textFill="STEELBLUE" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="49.0" text="Color" textAlignment="CENTER" textFill="STEELBLUE" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="quad_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="38.0" text="QUAD" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Spinner fx:id="quadOpacity_" editable="true" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <ToggleSwitch fx:id="quadOutlines_" layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="8.0" right="8.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <ColorPicker fx:id="quadColor_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="49.0" style="-fx-color-label-visible: false;" HBox.hgrow="NEVER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="tria_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="38.0" text="TRIA" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Spinner fx:id="triaOpacity_" editable="true" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <ToggleSwitch fx:id="triaOutlines_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="8.0" right="8.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <ColorPicker fx:id="triaColor_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" style="-fx-color-label-visible: false;" HBox.hgrow="NEVER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="beam_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="38.0" text="BEAM" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Spinner fx:id="beamOpacity_" disable="true" editable="true" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <ToggleSwitch fx:id="beamOutlines_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="8.0" right="8.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <ColorPicker fx:id="beamColor_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" style="-fx-color-label-visible: false;" HBox.hgrow="NEVER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="194.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="rod_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="38.0" text="ROD" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Spinner fx:id="rodOpacity_" disable="true" editable="true" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <ToggleSwitch fx:id="rodOutlines_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="8.0" right="8.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <ColorPicker fx:id="rodColor_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" style="-fx-color-label-visible: false;" HBox.hgrow="NEVER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="198.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="shear_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="38.0" text="SHEAR" HBox.hgrow="NEVER">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Spinner fx:id="shearOpacity_" disable="true" editable="true" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <ToggleSwitch fx:id="shearOutlines_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="32.0" translateY="5.0" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="8.0" right="8.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </ToggleSwitch>
+                                          <ColorPicker fx:id="shearColor_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" style="-fx-color-label-visible: false;" HBox.hgrow="NEVER" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="94.0" text="Element Groups">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ListView fx:id="groups_" maxWidth="1.7976931348623157E308" prefHeight="200.0" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="82.0" text="Plot Settings">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <GridPane vgap="5.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="NEVER" maxWidth="145.0" minWidth="145.0" prefWidth="145.0" />
+                                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="BEAM extrusion width:" />
+                                          <Label layoutX="10.0" layoutY="17.0" text="ROD extrusion width:" GridPane.rowIndex="1" />
+                                          <Spinner fx:id="beamExtrusion_" editable="true" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" />
+                                          <Spinner fx:id="rodExtrusion_" editable="true" layoutX="150.0" layoutY="12.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0">
+                     <children>
+                        <HBox maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/helpWhite.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="242.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" HBox.hgrow="NEVER" />
+                        <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" />
+                     </children>
+                  </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

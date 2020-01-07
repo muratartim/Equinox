@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="182.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.SearchSpectraPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+      <TitledPane fx:id="basicSearchPane_" minWidth="-Infinity" prefWidth="20.0" text="Search">
+      <content>
+                              <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <StackPane id="StackPane" maxWidth="1.7976931348623157E308">
+      <children>
+      <TextField fx:id="keywords_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="27.0" prefWidth="-1.0" promptText="Comma separated keywords" StackPane.alignment="CENTER" />
+      <Button fx:id="clear_" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClearSearchClicked" prefHeight="21.0" prefWidth="21.0" styleClass="searchButton" text="Button" visible="false" StackPane.alignment="CENTER_RIGHT">
+      <graphic>
+      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+      <Image url="@../image/cancel.png" />
+      </image>
+      </ImageView>
+      </graphic>
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+      </Button>
+      </children>
+      </StackPane>
+      </children>
+                              </VBox>
+      </content>
+      </TitledPane>
+      <TitledPane fx:id="advancedSearchPane_" expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Advanced Search">
+      <content>
+      <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <Label text="Enter at least one of the fields below." />
+      <StackPane VBox.vgrow="NEVER">
+      <children>
+                                          <TextField fx:id="cdfName_" maxHeight="-Infinity" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="Spectrum name" StackPane.alignment="CENTER" />
+                                          <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+      <items>
+                                                <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+      <toggleGroup>
+      <ToggleGroup fx:id="nameCriteria_" />
+      </toggleGroup>
+                                                </RadioMenuItem>
+      <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$nameCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$nameCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$nameCriteria_" />
+      </items>
+      </MenuButton>
+      </children>
+      </StackPane>
+      <StackPane layoutX="20.0" layoutY="58.0">
+      <children>
+      <TextField fx:id="acProgram_" maxHeight="-Infinity" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="A/C program" StackPane.alignment="CENTER" />
+      <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <items>
+      <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+      <toggleGroup>
+      <ToggleGroup fx:id="acProgramCriteria_" />
+      </toggleGroup>
+      </RadioMenuItem>
+      <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$acProgramCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$acProgramCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$acProgramCriteria_" />
+      </items>
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+      </MenuButton>
+      </children>
+      </StackPane>
+      <StackPane layoutX="20.0" layoutY="96.0">
+      <children>
+      <TextField fx:id="acSection_" maxHeight="-Infinity" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="A/C section" StackPane.alignment="CENTER" />
+      <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <items>
+      <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+      <toggleGroup>
+      <ToggleGroup fx:id="acSectionCriteria_" />
+      </toggleGroup>
+      </RadioMenuItem>
+      <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$acSectionCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$acSectionCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$acSectionCriteria_" />
+      </items>
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+      </MenuButton>
+      </children>
+      </StackPane>
+      <StackPane layoutX="20.0" layoutY="134.0">
+      <children>
+      <TextField fx:id="fatMission_" maxHeight="-Infinity" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="Fatigue mission" StackPane.alignment="CENTER" />
+      <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <items>
+      <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+      <toggleGroup>
+      <ToggleGroup fx:id="missionCriteria_" />
+      </toggleGroup>
+      </RadioMenuItem>
+      <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$missionCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$missionCriteria_" />
+      <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$missionCriteria_" />
+      </items>
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+      </MenuButton>
+      </children>
+      </StackPane>
+      <StackPane layoutX="20.0" layoutY="172.0">
+      <children>
+                                          <TextField fx:id="fatMissionIssue_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="Fatigue mission issue" />
+      <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+                                             <items>
+                                                <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="missionIssueCriteria_" />
+                                                   </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$missionIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$missionIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$missionIssueCriteria_" />
+                                             </items>
+      </MenuButton>
+      </children>
+      </StackPane>
+      <StackPane layoutX="20.0" layoutY="210.0">
+      <children>
+                                          <TextField fx:id="flpIssue_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="FLP issue" />
+      <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+                                             <items>
+                                                <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="flpIssueCriteria_" />
+                                                   </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$flpIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$flpIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$flpIssueCriteria_" />
+                                             </items>
+      </MenuButton>
+      </children>
+      </StackPane>
+      <StackPane layoutX="20.0" layoutY="248.0">
+      <children>
+                                          <TextField fx:id="iflpIssue_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="IFLP issue" />
+      <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+                                             <items>
+                                                <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="iflpIssueCriteria_" />
+                                                   </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$iflpIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$iflpIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$iflpIssueCriteria_" />
+                                             </items>
+      </MenuButton>
+      </children>
+      </StackPane>
+      <StackPane layoutX="20.0" layoutY="286.0">
+      <children>
+                                          <TextField fx:id="cdfIssue_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="CDF issue" />
+      <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+      <StackPane.margin>
+      <Insets right="4.0" />
+      </StackPane.margin>
+                                             <items>
+                                                <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="cdfIssueCriteria_" />
+                                                   </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$cdfIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$cdfIssueCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$cdfIssueCriteria_" />
+                                             </items>
+      </MenuButton>
+      </children>
+      </StackPane>
+                                    <StackPane layoutX="20.0" layoutY="313.0">
+                                       <children>
+                                          <TextField fx:id="deliveryRef_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="Delivery reference" />
+                                          <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+                                             <StackPane.margin>
+                                                <Insets right="4.0" />
+                                             </StackPane.margin>
+                                             <items>
+                                                <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="deliveryRefCriteria_" />
+                                                   </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$deliveryRefCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$deliveryRefCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$deliveryRefCriteria_" />
+                                             </items>
+                                          </MenuButton>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane layoutX="20.0" layoutY="351.0">
+                                       <children>
+                                          <TextField fx:id="description_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onAction="#onSearchClicked" prefHeight="28.0" promptText="Description" />
+                                          <MenuButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" stylesheets="@../css/MenuButton3.css" StackPane.alignment="CENTER_RIGHT">
+                                             <StackPane.margin>
+                                                <Insets right="4.0" />
+                                             </StackPane.margin>
+                                             <items>
+                                                <RadioMenuItem mnemonicParsing="false" selected="true" text="Contains">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="descriptionCriteria_" />
+                                                   </toggleGroup>
+                                                </RadioMenuItem>
+                                                <RadioMenuItem mnemonicParsing="false" text="Equals" toggleGroup="$descriptionCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Starts with" toggleGroup="$descriptionCriteria_" />
+                                                <RadioMenuItem mnemonicParsing="false" text="Ends with" toggleGroup="$descriptionCriteria_" />
+                                             </items>
+                                          </MenuButton>
+                                       </children>
+                                    </StackPane>
+      </children>
+      </VBox>
+      </content>
+      </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="221.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <Button fx:id="search_" mnemonicParsing="false" onAction="#onSearchClicked" styleClass="menuButton" text="Go">
+                           <graphic>
+                              <ImageView fx:id="goImage_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/runNowWhite.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

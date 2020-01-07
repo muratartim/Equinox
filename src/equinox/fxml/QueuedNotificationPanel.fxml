@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.QueuedNotificationPanel">
+   <children>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                     <image>
+                        <Image url="@../image/notifQueued.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label graphicTextGap="6.0" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Task queued" wrapText="true" />
+                        <Label fx:id="text_" graphicTextGap="6.0" style="-fx-font-size: 15px;" text="Please select a valid CDF set to proceed." wrapText="true" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="385.0" layoutY="21.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonClicked" prefWidth="120.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="Task Manager">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

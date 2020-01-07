@@ -1,0 +1,1 @@
+recurrence rm -f backups/mysql_data.tar;docker container run --rm -v equinox_mysql_data:/dbdata -v $(pwd)/backups:/backup ubuntu tar cvf /backup/mysql_data.tar /dbdata;aws s3 cp /backups/mysql_data.tar s3://equinox-digital-twin/mysql_data.tar 1>/tmp/sql-backup.log 2>&1

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import control.validationField.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="263.0" prefWidth="352.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.CompareElementStressesPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox maxWidth="1.7976931348623157E308" prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+                        <TitledPane fx:id="stressPane_" text="Specify Stress to Compare">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ComboBox fx:id="elementType_" maxWidth="1.7976931348623157E308" onAction="#onElementTypeSelected" promptText="Select element type" />
+                                    <ComboBox fx:id="stressComponent_" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" promptText="Select stress component" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="94.0" text="Element Groups">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ListView fx:id="groups_" maxWidth="1.7976931348623157E308" prefHeight="200.0" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="82.0" text="Plot Settings">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <GridPane hgap="5.0" vgap="5.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="121.0" minWidth="90.0" prefWidth="93.0" />
+                                          <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="151.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Max. elements:" HBox.hgrow="NEVER" />
+                                          <Label text="Results order:" GridPane.rowIndex="1" HBox.hgrow="NEVER" />
+                                          <ChoiceBox fx:id="order_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <IntegerValidationField fx:id="limit_" maxWidth="1.7976931348623157E308" text="10" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="dataLabels_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Show data labels" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0">
+                     <children>
+                        <HBox maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/helpWhite.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="242.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" HBox.hgrow="NEVER" />
+                        <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" />
+                     </children>
+                  </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

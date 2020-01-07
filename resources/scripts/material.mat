@@ -1,0 +1,1092 @@
+MODE ERREUR -1
+! ==================================
+ABRETIT "%CHAINE" "DONNEES GENERALES"
+ABREFAT "%CHAINE" "/home/edfat/FATIGUE/MODELE/MATNEW/2024-T3.mat" ! DESIGNATION MATERIAU
+ABRE    "%NOMM" "/home/to23542/Proto-mat/material.mat" ! DESIGNATION
+ABREMOD "%YOUN" "69000" ! MODULE D'YOUNG
+ABREMOD "%POIS" "0.33" ! COEFFICIENT DE POISSON
+ 
+.MAT NOM "''%NOMM'" YT (%YOUN) NT (%POIS) 
+RETURN
+ 
+ABREMOD "%LIEL" "325." ! LIMITE ELASTIQUE (MPa)
+ABREMOD "%RM" "440." ! CONTRAINTE A RUPTURE (MPa)
+ABREMOD "%SD" "166." ! LIMITE D'ENDURANCE (MPa)
+ABREMOD "%PENTE" "-2.28" ! PENTE DE LA COURBE DE WOHLER
+ABREMOD "%K1C" "31.87" ! TENACITE (MPa m1/2)
+ABREMOD "%SFSU" "600." ! CONTRAINTE ADMISSIBLE EN CISAILLEMENT (MPa)
+ABREMOD "%SPBRU" "500." ! CONTRAINTE ADMISSIBLE EN MATAGE (MPa)
+ 
+ABRETIT "%CHAINE" "PARAMETRES AMORCAGE"
+ABREFIT "%CHAINE" " /90/2/10/ / /5/10/90"
+ABREFIC "%CHAINE" "POINT 1/8"
+ABREFIC "%CHAINE" "POINT 2/8"
+ABREFIC "%CHAINE" "POINT 3/8"
+ABREFIC "%CHAINE" "POINT 4/8"
+ABREFIC "%CHAINE" "POINT 5/8"
+ABREFIC "%CHAINE" "POINT 6/8"
+ABREFIC "%CHAINE" "POINT 7/8"
+ABREFIC "%CHAINE" "POINT 8/8"
+ABREFIC "%CHAINE" "POINT 9/8"
+ABREFIC "%CHAINE" "POINT 10/8"
+ABREFIL "%CHAINE" "N "  
+ABREFIL "%CHAINE" "S"  
+ABREFIX "%N01" " " ! %N01
+ABREFIX "%S01" " " ! %S01
+ABREFIX "%N02" " " ! %N02
+ABREFIX "%S02" " " ! %S02
+ABREFIX "%N03" " " ! %N03
+ABREFIX "%S03" " " ! %S03
+ABREFIX "%N04" " " ! %N04
+ABREFIX "%S04" " " ! %S04
+ABREFIX "%N05" " " ! %N05
+ABREFIX "%S05" " " ! %S05
+ABREFIX "%N06" " " ! %N06
+ABREFIX "%S06" " " ! %S06
+ABREFIX "%N07" " " ! %N07
+ABREFIX "%S07" " " ! %S07
+ABREFIX "%N08" " " ! %N08
+ABREFIX "%S08" " " ! %S08
+ABREFIX "%N09" " " ! %N09
+ABREFIX "%S09" " " ! %S09
+ABREFIX "%N010" " " ! %N010
+ABREFIX "%S010" " " ! %S010
+ 
+ABRETIT "%CHAINE" "PARAMETRES PROPAGATION"
+ABREFIT "%CHAINE" " /90/2/10/ / /5/10/90"
+ABREFIC "%CHAINE" "POINT 1/8"
+ABREFIC "%CHAINE" "POINT 2/8"
+ABREFIC "%CHAINE" "POINT 3/8"
+ABREFIC "%CHAINE" "POINT 4/8"
+ABREFIC "%CHAINE" "POINT 5/8"
+ABREFIC "%CHAINE" "POINT 6/8"
+ABREFIC "%CHAINE" "POINT 7/8"
+ABREFIC "%CHAINE" "POINT 8/8"
+ABREFIC "%CHAINE" "POINT 9/8"
+ABREFIC "%CHAINE" "POINT 10/8"
+ABREFIL "%CHAINE" "N "  
+ABREFIL "%CHAINE" "S"  
+ABREFIX "%N01" " " ! %N01
+ABREFIX "%S01" " " ! %S01
+ABREFIX "%N02" " " ! %N02
+ABREFIX "%S02" " " ! %S02
+ABREFIX "%N03" " " ! %N03
+ABREFIX "%S03" " " ! %S03
+ABREFIX "%N04" " " ! %N04
+ABREFIX "%S04" " " ! %S04
+ABREFIX "%N05" " " ! %N05
+ABREFIX "%S05" " " ! %S05
+ABREFIX "%N06" " " ! %N06
+ABREFIX "%S06" " " ! %S06
+ABREFIX "%N07" " " ! %N07
+ABREFIX "%S07" " " ! %S07
+ABREFIX "%N08" " " ! %N08
+ABREFIX "%S08" " " ! %S08
+ABREFIX "%N09" " " ! %N09
+ABREFIX "%S09" " " ! %S09
+ABREFIX "%N010" " " ! %N010
+ABREFIX "%S010" " " ! %S010
+ 
+ABRETIT "%CHAINE" "COURBE DE DISPERSION"
+ABREMOD "%WOHL1" "2169.9" ! COEFFICIENT A
+ABREMOD "%WOHL2" "1.2987" ! COEFFICIENT B
+ABREMOD "%WOHL3" "0.0279" ! COEFFICIENT C
+ 
+ABRETIT "%CHAINE" "COURBE DE POD"
+ABREMOD "%PODA1" "1.8" ! COEFFICIENT A1
+ABREMOD "%PODP1" "0.15" ! PROBABILITE P1
+ABREMOD "%PODA2" "3.2" ! COEFFICIENT A2
+ABREMOD "%PODP2" "0.4" ! PROBABILITE P2
+ABREMOD "%PODA3" "5.5" ! COEFFICIENT A3
+ABREMOD "%PODP3" "0.85" ! PROBABILITE P3
+ABREMOD "%PODA4" "6.5" ! COEFFICIENT A4
+ABREMOD "%PODP4" "0.95" ! PROBABILITE P4
+ 
+ABRETIT "%CHAINE" "LOI RESEAU Smoy (MPa),N (Vols),Salt (MPa)"
+ABREFIT "%CHAINE" " /270/9/1/ / /8/40/0"
+ABREFIC "%CHAINE" "N/8"
+ABREFIX "%NRE1" "1E3" ! N1
+ABREFIX "%NRE2" "2.5E3" ! N2
+ABREFIX "%NRE3" "5E3" ! N3
+ABREFIX "%NRE4" "1E4" ! N4
+ABREFIX "%NRE5" "2.5E4" ! N5
+ABREFIX "%NRE6" "5E4" ! N6
+ABREFIX "%NRE7" "1E5" ! N7
+ABREFIX "%NRE8" "2.5E5" ! N8
+ABREFIX "%NRE9" "5E5" ! N9
+ 
+ABREFIT "%CHAINE" " /270/9/5/ / /8/140/250"
+ABREFIC "%CHAINE" "Salt/8"
+ABREFIC "%CHAINE" " /8"
+ABREFIC "%CHAINE" " /8" 
+ABREFIC "%CHAINE" " /8" 
+ABREFIC "%CHAINE" " /8" 
+ABREFIX "%SALTRE11" "198.545" ! Salt - Smoy1  - N1
+ABREFIX "%SALTRE12" "156.945" ! Salt - Smoy2  - N1
+ABREFIX "%SALTRE13" "142.241" ! Salt - Smoy3  - N1
+ABREFIX "%SALTRE14" "94.005" ! Salt - Smoy4  - N1
+ABREFIX "%SALTRE15" " " ! Salt - Smoy5  - N1
+ABREFIX "%SALTRE21" "168.655" ! Salt - Smoy1  - N2
+ABREFIX "%SALTRE22" "127.073" ! Salt - Smoy2  - N2
+ABREFIX "%SALTRE23" "112.350" ! Salt - Smoy3  - N2
+ABREFIX "%SALTRE24" "76.686" ! Salt - Smoy4  - N2
+ABREFIX "%SALTRE25" " " ! Salt - Smoy5  - N2
+ABREFIX "%SALTRE31" "149.760" ! Salt - Smoy1  - N3
+ABREFIX "%SALTRE32" "108.179" ! Salt - Smoy2  - N3
+ABREFIX "%SALTRE33" "93.455" ! Salt - Smoy3  - N3
+ABREFIX "%SALTRE34" "65.739" ! Salt - Smoy4  - N3
+ABREFIX "%SALTRE35" " " ! Salt - Smoy5  - N3
+ABREFIX "%SALTRE41" "133.562" ! Salt - Smoy1  - N4
+ABREFIX "%SALTRE42" "91.981" ! Salt - Smoy2  - N4
+ABREFIX "%SALTRE43" "77.258" ! Salt - Smoy3  - N4
+ABREFIX "%SALTRE44" "56.354" ! Salt - Smoy4  - N4
+ABREFIX "%SALTRE45" " " ! Salt - Smoy5  - N4
+ABREFIX "%SALTRE51" "115.643" ! Salt - Smoy1  - N5
+ABREFIX "%SALTRE52" "74.062" ! Salt - Smoy2  - N5
+ABREFIX "%SALTRE53" "59.339" ! Salt - Smoy3  - N5
+ABREFIX "%SALTRE54" "45.972" ! Salt - Smoy4  - N5
+ABREFIX "%SALTRE55" " " ! Salt - Smoy5  - N5
+ABREFIX "%SALTRE61" "104.316" ! Salt - Smoy1  - N6
+ABREFIX "%SALTRE62" "62.735" ! Salt - Smoy2  - N6
+ABREFIX "%SALTRE63" "48.012" ! Salt - Smoy3  - N6
+ABREFIX "%SALTRE64" "39.409" ! Salt - Smoy4  - N6
+ABREFIX "%SALTRE65" " " ! Salt - Smoy5  - N6
+ABREFIX "%SALTRE71" "94.606" ! Salt - Smoy1  - N7
+ABREFIX "%SALTRE72" "53.025" ! Salt - Smoy2  - N7
+ABREFIX "%SALTRE73" "38.302" ! Salt - Smoy3  - N7
+ABREFIX "%SALTRE74" "33.783" ! Salt - Smoy4  - N7
+ABREFIX "%SALTRE75" " " ! Salt - Smoy5  - N7
+ABREFIX "%SALTRE81" "83.864" ! Salt - Smoy1  - N8
+ABREFIX "%SALTRE82" "42.283" ! Salt - Smoy2  - N8
+ABREFIX "%SALTRE83" "27.559" ! Salt - Smoy3  - N8
+ABREFIX "%SALTRE84" "27.559" ! Salt - Smoy4  - N8
+ABREFIX "%SALTRE85" " " ! Salt - Smoy5  - N8
+ABREFIX "%SALTRE91" "77.073" ! Salt - Smoy1  - N9
+ABREFIX "%SALTRE92" "35.492" ! Salt - Smoy2  - N9
+ABREFIX "%SALTRE93" "23.625" ! Salt - Smoy3  - N9
+ABREFIX "%SALTRE94" "23.625" ! Salt - Smoy4  - N9
+ABREFIX "%SALTRE95" " " ! Salt - Smoy5  - N9
+ 
+ABREFIT "%CHAINE" " /70/1/5/ /rien/8/100/70"
+ABREFIL "%CHAINE" "Smoy     "
+ABREFIX "%SMOYRE1" "-150" ! Smoy1
+ABREFIX "%SMOYRE2" "21.835" ! Smoy2
+ABREFIX "%SMOYRE3" "82.679" ! Smoy3
+ABREFIX "%SMOYRE4" "282.016" ! Smoy4
+ABREFIX "%SMOYRE5" " " ! Smoy5
+ 
+ABRETIT "%CHAINE" "LOI MANUEL"
+ABREMOD "%MANP" "-4.5" ! PENTE DE LA LOI
+ABREMOD "%MANQ" "0.6" ! COEFFICIENT f(R)
+ABREMOD "%MANM" "1." ! M INFLUENCE DU MATERIAU
+ 
+ABRETIT "%CHAINE" "DONNEES PROPAGATION"
+ABRETIT "%CHAINE" "RESEAU Rapport R,da/dN (mm/cycles),dK (MPa m1/2)"
+ABREFIT "%CHAINE" " /270/9/1/ / /8/40/0"
+ABREFIC "%CHAINE" "dadN/8"
+ABREFIX "%DADNRE1" "5E-6" ! da/dN1
+ABREFIX "%DADNRE2" "1E-5" ! da/dN2
+ABREFIX "%DADNRE3" "5E-5" ! da/dN3
+ABREFIX "%DADNRE4" "1E-4" ! da/dN4
+ABREFIX "%DADNRE5" "5E-4" ! da/dN5
+ABREFIX "%DADNRE6" "1E-3" ! da/dN6
+ABREFIX "%DADNRE7" "5E-3" ! da/dN7
+ABREFIX "%DADNRE8" "1E-2" ! da/dN8
+ABREFIX "%DADNRE9" " " ! da/dN9
+ 
+ABREFIT "%CHAINE" " /270/9/5/ / /8/140/250"
+ABREFIC "%CHAINE" "dK/8"
+ABREFIC "%CHAINE" " /8"
+ABREFIC "%CHAINE" " /8" 
+ABREFIC "%CHAINE" " /8" 
+ABREFIC "%CHAINE" " /8" 
+ABREFIX "%DKRE11" "7." ! dK - RAPPORT R1 - da/dN1
+ABREFIX "%DKRE12" "5.5" ! dK - RAPPORT R2 - da/dN1
+ABREFIX "%DKRE13" "5." ! dK - RAPPORT R3 - da/dN1
+ABREFIX "%DKRE14" "3." ! dK - RAPPORT R4 - da/dN1
+ABREFIX "%DKRE15" " " ! dK - RAPPORT R5 - da/dN1
+ABREFIX "%DKRE21" "7.5" ! dK - RAPPORT R1 - da/dN2
+ABREFIX "%DKRE22" "6." ! dK - RAPPORT R2 - da/dN2
+ABREFIX "%DKRE23" "5.5" ! dK - RAPPORT R3 - da/dN2
+ABREFIX "%DKRE24" "4." ! dK - RAPPORT R4 - da/dN2
+ABREFIX "%DKRE25" " " ! dK - RAPPORT R5 - da/dN2
+ABREFIX "%DKRE31" "9.2" ! dK - RAPPORT R1 - da/dN3
+ABREFIX "%DKRE32" "8.1" ! dK - RAPPORT R2 - da/dN3
+ABREFIX "%DKRE33" "7.5" ! dK - RAPPORT R3 - da/dN3
+ABREFIX "%DKRE34" "6." ! dK - RAPPORT R4 - da/dN3
+ABREFIX "%DKRE35" " " ! dK - RAPPORT R5 - da/dN3
+ABREFIX "%DKRE41" "10.8" ! dK - RAPPORT R1 - da/dN4
+ABREFIX "%DKRE42" "9.5" ! dK - RAPPORT R2 - da/dN4
+ABREFIX "%DKRE43" "8.8" ! dK - RAPPORT R3 - da/dN4
+ABREFIX "%DKRE44" "7.4" ! dK - RAPPORT R4 - da/dN4
+ABREFIX "%DKRE45" " " ! dK - RAPPORT R5 - da/dN4
+ABREFIX "%DKRE51" "17." ! dK - RAPPORT R1 - da/dN5
+ABREFIX "%DKRE52" "14.5" ! dK - RAPPORT R2 - da/dN5
+ABREFIX "%DKRE53" "13." ! dK - RAPPORT R3 - da/dN5
+ABREFIX "%DKRE54" "11." ! dK - RAPPORT R4 - da/dN5
+ABREFIX "%DKRE55" " " ! dK - RAPPORT R5 - da/dN5
+ABREFIX "%DKRE61" "21." ! dK - RAPPORT R1 - da/dN6
+ABREFIX "%DKRE62" "17." ! dK - RAPPORT R2 - da/dN6
+ABREFIX "%DKRE63" "15." ! dK - RAPPORT R3 - da/dN6
+ABREFIX "%DKRE64" "13." ! dK - RAPPORT R4 - da/dN6
+ABREFIX "%DKRE65" " " ! dK - RAPPORT R5 - da/dN6
+ABREFIX "%DKRE71" "30." ! dK - RAPPORT R1 - da/dN7
+ABREFIX "%DKRE72" "23." ! dK - RAPPORT R2 - da/dN7
+ABREFIX "%DKRE73" "19.5" ! dK - RAPPORT R3 - da/dN7
+ABREFIX "%DKRE74" "17." ! dK - RAPPORT R4 - da/dN7
+ABREFIX "%DKRE75" " " ! dK - RAPPORT R5 - da/dN7
+ABREFIX "%DKRE81" "33." ! dK - RAPPORT R1 - da/dN8
+ABREFIX "%DKRE82" "25." ! dK - RAPPORT R2 - da/dN8
+ABREFIX "%DKRE83" "22." ! dK - RAPPORT R3 - da/dN8
+ABREFIX "%DKRE84" "19." ! dK - RAPPORT R4 - da/dN8
+ABREFIX "%DKRE85" " " ! dK - RAPPORT R5 - da/dN8
+ABREFIX "%DKRE91" " " ! dK - RAPPORT R1 - da/dN9
+ABREFIX "%DKRE92" " " ! dK - RAPPORT R2 - da/dN9
+ABREFIX "%DKRE93" " " ! dK - RAPPORT R3 - da/dN9
+ABREFIX "%DKRE94" " " ! dK - RAPPORT R4 - da/dN9
+ABREFIX "%DKRE95" " " ! dK - RAPPORT R5 - da/dN9
+ 
+ABREFIT "%CHAINE" " /70/1/5/ /rien/8/100/70"
+ABREFIL "%CHAINE" "Rapport R"
+ABREFIX "%RRE1" ".1" ! RAPPORT R1
+ABREFIX "%RRE2" ".3" ! RAPPORT R2
+ABREFIX "%RRE3" ".5" ! RAPPORT R3
+ABREFIX "%RRE4" ".7" ! RAPPORT R4
+ABREFIX "%RRE5" " " ! RAPPORT R5
+ 
+ABRETIT "%CHAINE" "ELBER"
+ABREMOD "%ELCE" ".106e-6" ! Ceff (MPa m1/2)
+ABREMOD "%ELA" ".61" ! A
+ABREMOD "%ELB" ".39" ! B
+ABREMOD "%ELC" "0." ! C
+ABREMOD "%ELN" "3.5" ! n
+ 
+ABRETIT "%CHAINE" "NASGRO"
+ABREMOD "%NASC" "1.702E-7" ! C (MPa m1/2)
+ABREMOD "%NASN" "3.353" ! n
+ABREMOD "%NASP" "0.5" ! p
+ABREMOD "%NASQ" "1.0" ! q
+ABREMOD "%NASK0" "2.84" ! dK0 (MPa m1/2)
+ABREMOD "%NASKC" "31.87" ! Kc (MPa m1/2)
+ABREMOD "%NASAL" "1.5" ! alpha
+ABREMOD "%NASSR" "0.3" ! S.R.
+ 
+ABRETIT "%CHAINE" "COURBE R - Keff=C1*da**C2+C3*da+C4 - Keff(MPa m1/2)-da(mm)"
+ABREAID "%CHAINE" "5<=B1<=8 - 10<=B2<=12"
+ABREFIT "%CHAINE" " /140/4/4/B/C/8/160/100"
+ABRETOG "%CHAINE" "B1" ! EPAISSEUR EPROUVETTE/B1/B2/B3/B4
+#IF("''%CHAINE'" EQ "B1") THEN
+ABREFIX "%CR1" "20.33" ! C1
+ABREFIX "%CR2" ".71" ! C2
+ABREFIX "%CR3" "-4.34" ! C3
+ABREFIX "%CR4" "19.79" ! C4
+#ELSEIF("''%CHAINE'" EQ "B2") THEN
+ABREFIX "%CR1" "40.05" ! C1
+ABREFIX "%CR2" ".95" ! C2
+ABREFIX "%CR3" "-31." ! C3
+ABREFIX "%CR4" "20.44" ! C4
+#ELSEIF("''%CHAINE'"  EQ "B3") THEN
+ABREFIX "%CR1" " " ! C1
+ABREFIX "%CR2" " " ! C2
+ABREFIX "%CR3" " " ! C3
+ABREFIX "%CR4" " " ! C4
+#ELSEIF("''%CHAINE'" EQ "B4") THEN
+ABREFIX "%CR1" " " ! C1
+ABREFIX "%CR2" " " ! C2
+ABREFIX "%CR3" " " ! C3
+ABREFIX "%CR4" " " ! C4
+#ENDIF
+! =======================================
+ABREFIN &
+! =======================================
+ 
+! ==============================
+! TRACES DES COURBES Smoy,N,Salt
+! ==============================
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE1'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND ("''%SALTRE11'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE2'" NE " ") AND ("''%SALTRE12'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE3'" NE " ") AND ("''%SALTRE13'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE4'" NE " ") AND ("''%SALTRE14'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE5'" NE " ") AND ("''%SALTRE15'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND ("''%SALTRE11'" NE " ")) THEN 
+     1   %SALTRE11
+#ENDIF
+#IF(("''%SMOYRE2'" NE " ") AND ("''%SALTRE12'" NE " ")) THEN 
+     2   %SALTRE12
+#ENDIF
+#IF(("''%SMOYRE3'" NE " ") AND ("''%SALTRE13'" NE " ")) THEN 
+     3   %SALTRE13
+#ENDIF
+#IF(("''%SMOYRE4'" NE " ") AND ("''%SALTRE14'" NE " ")) THEN 
+     4   %SALTRE14
+#ENDIF
+#IF(("''%SMOYRE5'" NE " ") AND ("''%SALTRE15'" NE " ")) THEN 
+     5   %SALTRE15
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE2'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE21'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE22'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE23'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE24'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE25'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE21'" NE " ")) THEN 
+     1   %SALTRE21
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE22'" NE " ")) THEN 
+     2   %SALTRE22
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE23'" NE " ")) THEN 
+     3   %SALTRE23
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE24'" NE " ")) THEN 
+     4   %SALTRE24
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE25'" NE " ")) THEN 
+     5   %SALTRE25
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE3'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE31'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE32'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE33'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE34'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE35'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE31'" NE " ")) THEN 
+     1   %SALTRE31
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE32'" NE " ")) THEN 
+     2   %SALTRE32
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE33'" NE " ")) THEN 
+     3   %SALTRE33
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE34'" NE " ")) THEN 
+     4   %SALTRE34
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE35'" NE " ")) THEN 
+     5   %SALTRE35
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE4'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE41'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE42'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE43'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE44'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE45'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE41'" NE " ")) THEN 
+     1   %SALTRE41
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE42'" NE " ")) THEN 
+     2   %SALTRE42
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE43'" NE " ")) THEN 
+     3   %SALTRE43
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE44'" NE " ")) THEN 
+     4   %SALTRE44
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE45'" NE " ")) THEN 
+     5   %SALTRE45
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE5'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE51'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE52'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE53'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE54'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE55'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE51'" NE " ")) THEN 
+     1   %SALTRE51
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE52'" NE " ")) THEN 
+     2   %SALTRE52
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE53'" NE " ")) THEN 
+     3   %SALTRE53
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE54'" NE " ")) THEN 
+     4   %SALTRE54
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE55'" NE " ")) THEN 
+     5   %SALTRE55
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE6'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE61'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE62'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE63'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE64'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE65'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE61'" NE " ")) THEN 
+     1   %SALTRE61
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE62'" NE " ")) THEN 
+     2   %SALTRE62
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE63'" NE " ")) THEN 
+     3   %SALTRE63
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE64'" NE " ")) THEN 
+     4   %SALTRE64
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE65'" NE " ")) THEN 
+     5   %SALTRE65
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE7'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE71'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE72'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE73'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE74'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE75'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE71'" NE " ")) THEN 
+     1   %SALTRE71
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE72'" NE " ")) THEN 
+     2   %SALTRE72
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE73'" NE " ")) THEN 
+     3   %SALTRE73
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE74'" NE " ")) THEN 
+     4   %SALTRE74
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE75'" NE " ")) THEN 
+     5   %SALTRE75
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE8'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE81'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE82'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE83'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE84'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE85'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE81'" NE " ")) THEN 
+     1   %SALTRE81
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE82'" NE " ")) THEN 
+     2   %SALTRE82
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE83'" NE " ")) THEN 
+     3   %SALTRE83
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE84'" NE " ")) THEN 
+     4   %SALTRE84
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE85'" NE " ")) THEN 
+     5   %SALTRE85
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO N ''%NRE9'"
+     TEXTE X "Salt (MPa)" 
+     TEXTE Y "Smoy (MPa)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE91'" NE " ")) THEN 
+     1   %SMOYRE1
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE92'" NE " ")) THEN 
+     2   %SMOYRE2
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE93'" NE " ")) THEN 
+     3   %SMOYRE3
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE94'" NE " ")) THEN 
+     4   %SMOYRE4
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE95'" NE " ")) THEN 
+     5   %SMOYRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE91'" NE " ")) THEN 
+     1   %SALTRE91
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE92'" NE " ")) THEN 
+     2   %SALTRE92
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE93'" NE " ")) THEN 
+     3   %SALTRE93
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE94'" NE " ")) THEN 
+     4   %SALTRE94
+#ENDIF
+#IF(("''%SMOYRE1'" NE " ") AND  ("''%SALTRE95'" NE " ")) THEN 
+     5   %SALTRE95
+#ENDIF
+     GENERE
+    
+! =============================
+! TRACES DES COURBES R,da/dN,dK
+! =============================
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE1'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE11'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE12'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE13'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE14'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE15'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE11'" NE " ")) THEN 
+     1   %DKRE11
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE12'" NE " ")) THEN 
+     2   %DKRE12
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE13'" NE " ")) THEN 
+     3   %DKRE13
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE14'" NE " ")) THEN 
+     4   %DKRE14
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE15'" NE " ")) THEN 
+     5   %DKRE15
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE2'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE21'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE22'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE23'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE24'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE25'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE21'" NE " ")) THEN 
+     1   %DKRE21
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE22'" NE " ")) THEN 
+     2   %DKRE22
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE23'" NE " ")) THEN 
+     3   %DKRE23
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE24'" NE " ")) THEN 
+     4   %DKRE24
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE25'" NE " ")) THEN 
+     5   %DKRE25
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE3'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE31'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE32'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE33'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE34'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE35'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE31'" NE " ")) THEN 
+     1   %DKRE31
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE32'" NE " ")) THEN 
+     2   %DKRE32
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE33'" NE " ")) THEN 
+     3   %DKRE33
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE34'" NE " ")) THEN 
+     4   %DKRE34
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE35'" NE " ")) THEN 
+     5   %DKRE35
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE4'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE41'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE42'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE43'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE44'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE45'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE41'" NE " ")) THEN 
+     1   %DKRE41
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE42'" NE " ")) THEN 
+     2   %DKRE42
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE43'" NE " ")) THEN 
+     3   %DKRE43
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE44'" NE " ")) THEN 
+     4   %DKRE44
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE45'" NE " ")) THEN 
+     5   %DKRE45
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE5'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE51'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE52'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE53'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE54'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE55'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE51'" NE " ")) THEN 
+     1   %DKRE51
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE52'" NE " ")) THEN 
+     2   %DKRE52
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE53'" NE " ")) THEN 
+     3   %DKRE53
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE54'" NE " ")) THEN 
+     4   %DKRE54
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE55'" NE " ")) THEN 
+     5   %DKRE55
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE6'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE61'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE62'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE63'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE64'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE65'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE61'" NE " ")) THEN 
+     1   %DKRE61
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE62'" NE " ")) THEN 
+     2   %DKRE62
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE63'" NE " ")) THEN 
+     3   %DKRE63
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE64'" NE " ")) THEN 
+     4   %DKRE64
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE65'" NE " ")) THEN 
+     5   %DKRE65
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE7'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE71'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE72'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE73'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE74'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE75'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE71'" NE " ")) THEN 
+     1   %DKRE71
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE72'" NE " ")) THEN 
+     2   %DKRE72
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE73'" NE " ")) THEN 
+     3   %DKRE73
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE74'" NE " ")) THEN 
+     4   %DKRE74
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE75'" NE " ")) THEN 
+     5   %DKRE75
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE8'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE81'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE82'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE83'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE84'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE85'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE81'" NE " ")) THEN 
+     1   %DKRE81
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE82'" NE " ")) THEN 
+     2   %DKRE82
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE83'" NE " ")) THEN 
+     3   %DKRE83
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE84'" NE " ")) THEN 
+     4   %DKRE84
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE85'" NE " ")) THEN 
+     5   %DKRE85
+#ENDIF
+     GENERE
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - ISO da/dN ''%DADNRE9'"
+     TEXTE X "Rapport R" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR X U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE91'" NE " ")) THEN 
+     1   %RRE1
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE92'" NE " ")) THEN 
+     2   %RRE2
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE93'" NE " ")) THEN 
+     3   %RRE3
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE94'" NE " ")) THEN 
+     4   %RRE4
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE95'" NE " ")) THEN 
+     5   %RRE5
+#ENDIF
+ 
+     CREE VALEUR Y U
+     COUPLES
+#IF(("''%RRE1'" NE " ") AND ("''%DKRE91'" NE " ")) THEN 
+     1   %DKRE91
+#ENDIF
+#IF(("''%RRE2'" NE " ") AND ("''%DKRE92'" NE " ")) THEN 
+     2   %DKRE92
+#ENDIF
+#IF(("''%RRE3'" NE " ") AND ("''%DKRE93'" NE " ")) THEN 
+     3   %DKRE93
+#ENDIF
+#IF(("''%RRE4'" NE " ") AND ("''%DKRE94'" NE " ")) THEN 
+     4   %DKRE94
+#ENDIF
+#IF(("''%RRE5'" NE " ") AND ("''%DKRE95'" NE " ")) THEN 
+     5   %DKRE95
+#ENDIF
+     GENERE
+     
+! ===========
+! TRACE ELBER
+! ===========
+.FCTELBER
+.FCT CREE FONCTION NOM "''%NOMM' - Elber - R=''%RATIO'" 
+     TEXTE X "dK (Mpa m1/2)" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR Y U BORNES 1. 50. 
+     ANALYTIQUE "(''%ELCE')*(((''%ELA')+(''%ELB')*''(%RATIO)'+(''%ELC')* $
+                 ''(%RATIO)'**2)*$U)**(''%ELN')"
+     GENERE
+RETURN
+    
+! ============
+! TRACE NASGRO
+! ============
+.FCTNASGRO 
+ABRE "%PI"     "3.14159"
+ABRE "%RA"     "180./(%PI)"
+ABRE "%NASKTH" "(%NASK0)*(4.*ATAN(1.-(%RATIO))/180.)"
+ABRE "%NASDKC" "(1.-(%RATIO))*(%NASKC)"
+#IF(%NASSR EQ 0) THEN
+ABRE "%A0"     "0."
+#ELSE
+ABRE "%A0"     "(.825-.34*(%NASAL)+.05*(%NASAL)**2)* $
+                COS(.5*(%PI)*(%RA)*(%NASSR))**(1./(%NASAL))"
+#ENDIF
+ABRE "%A1"     "((.415-.071*(%NASAL))*(%NASSR))"
+ABRE "%A3"     "(2.*(%A0)+(%A1)-1.)"
+ABRE "%A2"     "(1.-(%A0)-(%A1)-(%A3))"
+#IF(%RATIO GE 0) THEN
+ABRE "%F"      "''(MAX((%RATIO),$
+               (%A0)+(%A1)*(%RATIO)+(%A2)*(%RATIO)**2+(%A3)*(%RATIO)**3))'"
+#ELSE
+ABRE "%F"      "((%A0)+(%A1)*(%RATIO))"
+#ENDIF
+ 
+.FCT CREE FONCTION NOM "''%NOMM' - Nasgro - R=''%RATIO'" 
+     TEXTE X "dK (Mpa m1/2)" 
+     TEXTE Y "da/dN (mm/cycle)"
+     CREE VALEUR Y U BORNES (1.01*%NASKTH) (.99*%NASDKC)
+     ANALYTIQUE "((''%NASC')*((1.-(''%F'))*$U)**(''%NASN')*(1.-(''%NASKTH')/$U)$
+                 **(''%NASP'))/((1.-''(%RATIO)')**(''%NASN')*(1.-$U/           $
+                 (''%NASDKC'))**(''%NASQ'))"
+     GENERE
+RETURN
+ 
+! ==============
+! TRACE COURBE R
+! ==============
+.FCT CREE FONCTION NOM "''%NOMM' - COURBE R'" 
+     TEXTE X "da (mm)"
+     TEXTE Y "Keff (MPa m1/2)"
+     CREE VALEUR Y U BORNES 1. 50.
+     ANALYTIQUE "(''%CR1')*$U**(''%CR2')+(''%CR3')*$U+(''%CR4')"
+     GENERE
+ 
+MODE ERREUR 0
+ 
+EXIT
+RETURN
+ 
+ 
+ 

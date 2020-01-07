@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="497.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.CompareDamageContributionsPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css">
+                     <panes>
+      <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Select Contributions" textFill="WHITE">
+      <content>
+      <VBox spacing="10.0">
+      <children>
+                                    <Label layoutX="20.0" layoutY="20.0" text="Select contribution type" textFill="STEELBLUE">
+                                       <VBox.margin>
+                                          <Insets bottom="-2.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <RadioButton fx:id="incCont_" mnemonicParsing="false" onAction="#onContributionTypeSelected" selected="true" text="Incremental event contributions">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="type" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="onegCont_" layoutX="20.0" layoutY="72.0" mnemonicParsing="false" onAction="#onContributionTypeSelected" text="1G contributions" toggleGroup="$type" />
+                                    <RadioButton fx:id="gagCont_" layoutX="20.0" layoutY="72.0" mnemonicParsing="false" onAction="#onContributionTypeSelected" text="GAG contributions" toggleGroup="$type" />
+                                    <RadioButton fx:id="dpCont_" layoutX="25.0" layoutY="46.0" mnemonicParsing="false" onAction="#onContributionTypeSelected" text="Delta-P contributions" toggleGroup="$type" />
+                                    <RadioButton fx:id="dtCont_" layoutX="25.0" layoutY="74.0" mnemonicParsing="false" onAction="#onContributionTypeSelected" text="Delta-T contributions" toggleGroup="$type" />
+                                    <VBox fx:id="incPane_" maxWidth="1.7976931348623157E308" spacing="10.0">
+                                       <children>
+                                          <Label text="Select incremental contributions" textFill="STEELBLUE">
+                                             <VBox.margin>
+                                                <Insets bottom="-3.0" top="2.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <ListView fx:id="contributionList_" maxWidth="1.7976931348623157E308" prefHeight="150.0" />
+                                       </children>
+                                    </VBox>
+      </children>
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane fx:id="namingPane_" expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Series Naming" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeSpectrumName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include spectrum name" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeSTFName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include pilot point (STF) name" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeEID_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include element ID" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeMaterialName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include material name" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeProgram_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include A/C program" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeSection_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include A/C section" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeMission_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include fatigue mission" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

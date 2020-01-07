@@ -1,0 +1,11 @@
+.tree-cell {
+	-fx-padding: 4px 4px 4px -9px;
+}
+
+.tree-cell .tree-disclosure-node .arrow {
+	-fx-translate-x: 7;
+}
+
+.tree-cell:expanded .tree-disclosure-node .arrow {
+	-fx-translate-x: 7;
+}

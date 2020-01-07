@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="358.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.BugReportPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+      <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Description">
+      <content>
+      <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <TextArea fx:id="report_" prefHeight="200.0" promptText="Please describe the problem as precisely as possible. What happened just before, during and after the problem occurred? You can use upto 1000 characters." wrapText="true" />
+      </children>
+      </VBox>
+      </content>
+      </TitledPane>
+      <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Options">
+      <content>
+      <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="55.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="sysInfo_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="2.0" HBox.hgrow="NEVER" />
+                                          <Label text="Add" HBox.hgrow="ALWAYS" />
+                                          <Hyperlink onAction="#onSystemInformationClicked" text="system information" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="-7.0" />
+                                             </HBox.margin></Hyperlink>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="eventLog_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Add event log" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+      </children>
+      </VBox>
+      </content>
+      </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

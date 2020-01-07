@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root_" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.AddSTFPanel">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Select a spectrum to add the pilot point" textFill="STEELBLUE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Separator maxWidth="1.7976931348623157E308">
+         <VBox.margin>
+            <Insets left="-5.0" right="-5.0" top="-5.0" />
+         </VBox.margin>
+      </Separator>
+      <ComboBox fx:id="spectra_" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Select a spectrum..." stylesheets="@../css/ComboBox2.css" />
+      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+         <children>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="ok_" focusTraversable="false" layoutX="224.0" layoutY="10.0" mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" maxWidth="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefWidth="100.0" spacing="10.0" styleClass="legendPanel" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.ColorLegendPanel">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val1_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="0.00E00" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff7f00" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val2_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="1000.00" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val3_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="Label" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="CHARTREUSE" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val4_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="Label" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIME" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val5_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="Label" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SPRINGGREEN" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val6_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="Label" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="AQUA" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val7_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="Label" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#007fff" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val8_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="Label" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label fx:id="val9_" maxWidth="1.7976931348623157E308" mouseTransparent="true" text="Label" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mouseTransparent="true" spacing="5.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="20.0" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" width="20.0" HBox.hgrow="NEVER" />
+            <Label maxWidth="1.7976931348623157E308" mouseTransparent="true" text="N/A" textFill="SLATEGRAY" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

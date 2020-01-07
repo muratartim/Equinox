@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Root element.-->
+<equinoxInput>
+
+	<!--Settings.-->
+	<settings>
+		<runMode>parallel</runMode>
+		<logger>
+			<logLevel>WARNING</logLevel>
+			<logDirectoryPath>/path/to/logDir</logDirectoryPath>
+		</logger>
+	</settings>
+	
+	<!--Download spectrum from central database.-->
+	<downloadSpectrum>
+		<id>1</id>
+		<searchEntry>
+			<attributeName>NAME</attributeName>
+			<keyword>A310Microgravity-211Sect13-MR2_61P</keyword>
+		</searchEntry>
+		<outputPath>/path/to/download.zip</outputPath>
+	</downloadSpectrum>
+	
+	<!--Add downloaded spectrum to workspace.-->
+	<addSpectrum>
+		<id>2</id>
+		<downloadId>1</downloadId>
+	</addSpectrum>
+	
+	<!--Add STF file to spectrum.-->
+	<addStf>
+		<id>3</id>
+		<spectrumId>2</spectrumId>
+		<stfPath>/path/to/Fuselage_F26_MY.stf</stfPath>
+	</addStf>
+	
+	<!--Perform equivalent stress analysis on STF file.-->
+	<equivalentStressAnalysis>
+		<id>4</id>
+		<stfId>3</stfId>
+		<generateStressSequenceInputPath>
+			/path/to/generateStressSequenceInput.xml
+		</generateStressSequenceInputPath>
+		<equivalentStressAnalysisInputPath>
+			/path/to/equivalentStressAnalysisInput.xml
+		</equivalentStressAnalysisInputPath>
+	</equivalentStressAnalysis>
+	
+	<!--Plot level crossing to output file.-->
+	<plotLevelCrossing>
+		<id>5</id>
+		<equivalentStressId>4</equivalentStressId>
+		<outputPath>/path/to/levelCrossingPlot.png</outputPath>
+	</plotLevelCrossing>
+	
+	<!--Share level crossing plot with another user.-->
+	<shareFile>
+		<id>6</id>
+		<fileId>5</fileId>
+		<recipient>DEPP, JONNY</recipient>
+	</shareFile>
+	
+</equinoxInput>
+

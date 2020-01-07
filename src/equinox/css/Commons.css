@@ -1,0 +1,299 @@
+
+.mainPanel {
+	-fx-background-image:url("../image/screenBackground.jpg");
+	-fx-background-repeat:no-repeat;
+	-fx-background-size: cover;
+}
+
+.helpPanel {
+	-fx-background-image:url("../image/help_banner.jpg");
+}
+
+.updatePanel {
+	-fx-background-image:url("../image/update-banner.png");
+}
+
+.scrollPane {
+	-fx-background-color:whitesmoke;
+}
+
+.noBorderScrollPane {
+	-fx-border-color:whitesmoke;
+}
+
+.wishPanel {
+	-fx-background-color:white;
+	-fx-border-color:gainsboro;
+}
+
+.menuButton {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+}
+
+.titleButton {
+	-fx-base:steelblue;
+	-fx-background-radius:12.0;
+	-fx-border-radius:12.0;
+}
+
+.menuButtonLeft {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:10.0 3.0 3.0 10.0;
+	-fx-border-radius:10.0 3.0 3.0 10.0;
+}
+
+.menuButtonRight {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:3.0 10.0 10.0 3.0;
+	-fx-border-radius:3.0 10.0 10.0 3.0;
+}
+
+.viewButton {
+	-fx-base:white;
+}
+
+.roundButton {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:10.0;
+	-fx-border-radius:10.0;
+}
+
+.roundButton2 {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:10.0 0.0 8.0 0.0;
+	-fx-border-radius:10.0 0.0 8.0 0.0;
+}
+
+.submenuButton {
+	-fx-base:slategray;
+	-fx-text-fill:white;
+}
+
+.transparentButton{
+	-fx-base:transparent;
+}
+
+.closeButton {
+	-fx-base:#333333;
+	-fx-background-radius:10.0;
+}
+
+.titleBar {
+	-fx-background-radius:10.0 10.0 0.0 0.0;
+	-fx-base:steelblue;
+}
+
+.titleBarLeft {
+	-fx-background-radius:0.0 10.0 0.0 0.0;
+	-fx-base:steelblue;
+}
+
+.titleBarRight {
+	-fx-background-radius:10.0 0.0 0.0 0.0;
+	-fx-base:steelblue;
+}
+
+.statusBar {
+	-fx-background-radius:0.0 0.0 10.0 10.0;
+	-fx-base:steelblue;
+}
+
+.roundPanel {
+	-fx-background-color:whitesmoke;
+	-fx-background-radius:15.0 15.0 10.0 10.0;
+}
+
+.roundPanel2 {
+	-fx-background-color:white;
+	-fx-background-radius:10.0;
+	-fx-border-color:steelblue;
+	-fx-border-radius:10.0;
+}
+
+.roundPanel3 {
+	-fx-background-color:steelblue;
+	-fx-background-radius:0 0 8.0 8.0;
+}
+
+.roundPanel4 {
+	-fx-background-color:white;
+	-fx-background-radius:20.0 0 0 0;
+	-fx-border-color:lightgray transparent transparent lightgray;
+	-fx-border-radius:20.0 0 0 0;
+}
+
+.roundPanel5 {
+	-fx-background-color:steelblue;
+	-fx-background-radius:0 0 10.0 10.0;
+}
+
+.roundPanel6 {
+	-fx-background-color:transparent;
+	-fx-background-radius:10.0 10.0 0.0 0.0;
+	-fx-border-color:transparent transparent lightgray transparent;
+}
+
+.legendPanel {
+	-fx-background-color:whitesmoke;
+	-fx-border-color:steelblue;
+}
+
+.controlPanel {
+	-fx-background-color:white;
+	-fx-border-color:transparent steelblue transparent steelblue;
+}
+
+.roundPanelRight {
+	-fx-background-color:whitesmoke;
+	-fx-background-radius:15.0 15.0 0.0 10.0;
+}
+
+.taskPanel {
+	-fx-background-color:gainsboro;
+	-fx-background-radius:8.0;
+	-fx-border-color:lightgrey;
+	-fx-border-radius:8.0;
+}
+
+.titleBarLabel {
+	-fx-text-fill:white;
+}
+
+.searchButton {
+	-fx-background-color:transparent;
+}
+
+.downloadButton {
+	-fx-base:steelblue;
+}
+
+.statusPanel {
+	-fx-background-color:steelblue;
+	-fx-background-radius:0.0 0.0 10.0 10.0;
+}
+
+.statusPanelLeft {
+	-fx-background-color:steelblue;
+	-fx-background-radius:0.0 0.0 10.0 0.0;
+}
+
+.zoomPanel {
+	-fx-border-color:lightgray;
+	-fx-border-width:1.0;
+	-fx-border-radius:8.0;
+}
+
+.cutomMenuItem {
+	-fx-base:whitesmoke;
+}
+
+.noResultsText {
+	-fx-font-size:24px;
+	-fx-font-family:"Arial Black";
+	-fx-fill:#818181;
+	-fx-effect:innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+.chart-series-line {    
+	-fx-stroke-width: 1px;
+	-fx-effect: null;
+}
+
+.chatBaloonSent {
+	-fx-background-color:steelblue;
+	-fx-background-radius:10.0;
+}
+
+.chatBaloonReceived {
+	-fx-background-color:gainsboro;
+	-fx-background-radius:10.0;
+}
+
+.chatBaloonButton {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:8.0;
+}
+
+.borderTitle {
+	-fx-text-fill:steelblue;
+	-fx-background-color:whitesmoke;
+}
+
+.searchField {
+	-fx-base:steelblue;
+}
+
+.segmentedButtonRight {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:0.0 8.0 8.0 0.0;
+	-fx-border-radius:0.0 8.0 8.0 0.0;
+}
+
+.segmentedButtonMiddle {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:0.0 0.0 0.0 0.0;
+	-fx-border-radius:0.0 0.0 0.0 0.0;
+}
+
+.segmentedButtonLeft {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:8.0 0.0 0.0 8.0;
+	-fx-border-radius:8.0 0.0 0.0 8.0;
+}
+
+.segmentedButtonRight2 {
+	-fx-background-radius:0.0 8.0 8.0 0.0;
+	-fx-border-radius:0.0 8.0 8.0 0.0;
+}
+
+.segmentedButtonMiddle2 {
+	-fx-background-radius:0.0 0.0 0.0 0.0;
+	-fx-border-radius:0.0 0.0 0.0 0.0;
+}
+
+.segmentedButtonLeft2 {
+	-fx-background-radius:8.0 0.0 0.0 8.0;
+	-fx-border-radius:8.0 0.0 0.0 8.0;
+}
+
+.white-radio-button .dot {
+	-fx-mark-highlight-color:white;
+	-fx-mark-color:white;
+}
+
+.jfoenix-button {
+	-fx-background-color:steelblue;
+	-fx-text-fill:white;
+}
+
+.jfoenix-splitButton-left {
+	-fx-background-color:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:4 0 0 4;
+	-fx-border-color:transparent white transparent transparent;
+	-fx-border-width:0 1 0 0;
+}
+
+.jfoenix-splitButton-right {
+	-fx-background-color:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:0 4 4 0;
+}
+
+.jfoenix-roundButton2 {
+	-fx-background-color:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:10.0 0.0 8.0 0.0;
+	-fx-border-radius:10.0 0.0 8.0 0.0;
+	-fx-border-color:white;
+	-fx-border-width:1.0 0.0 0.0 1.0;
+}

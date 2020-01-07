@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.MainScreen">
+   <children>
+      <StackPane fx:id="stack_" prefHeight="700.0" prefWidth="1000.0" styleClass="mainPanel" stylesheets="@../css/Commons.css" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox fx:id="backLayer_" alignment="CENTER" mouseTransparent="false" prefHeight="-1.0" prefWidth="-1.0" styleClass="progressLayer" StackPane.alignment="CENTER">
+               <StackPane.margin>
+                  <Insets fx:id="x1" />
+               </StackPane.margin>
+            </VBox>
+            <SplitPane id="layer1_" fx:id="frontLayer_" disable="false" focusTraversable="true" styleClass="hiddenSplitter" StackPane.alignment="CENTER">
+               <stylesheets>
+                  <URL value="@../css/HiddenSplitPane.css" />
+               </stylesheets>
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="34.0" />
+               </StackPane.margin>
+            </SplitPane>
+            <VBox fx:id="menuBarLayer_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="34.0" StackPane.alignment="TOP_CENTER" />
+         </children>
+         <padding>
+            <Insets fx:id="x1" />
+         </padding>
+      </StackPane>
+   </children>
+</VBox>

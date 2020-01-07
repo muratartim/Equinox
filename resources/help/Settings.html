@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Settings</title>
+<link rel="stylesheet" href="css/Help.css">
+</head>
+<body>
+<h1>Settings</h1>
+<par>
+All application settings can be changed via <item>File &#8594; Settings...</item>.
+<h2><a name="Analysis Engine">Analysis Engine</a></h2>
+Analysis engine performs fatigue & propagation equivalent stress analyses. There are 3 engines available;
+<UL>
+<LI><item>ISAMI Analysis Server</item> With this option, the analysis request is sent over the network to Equinox Server which runs the analysis via ISAMI 
+Analyst. Airbus network connection is required for this option.<p>
+<LI><item>SAFE Analysis Server</item> With this option, the analysis request is sent over the network to Equinox Server which runs the analysis via SAFE. 
+Airbus network connection is required for this option.<p>
+<LI><item>Inbuilt Engine</item> The analysis will be performed via the embedded Equinox inbuilt analysis engine.
+</UL>
+<h2><a name="AFT Database Connection">AFT Database Connection</a></h2>
+AFT (Airframe Fatigue Twin) database enables you to access aircraft fatigue data uploaded by the ESCSA teams. It is not required to change any setting 
+unless there are problems connecting to database server. Please contact server administrator for altering these settings.
+<h2><a name="Exchange Server Connection">Exchange Server Connection</a></h2>
+Exchange server enables you to share files, recive shared files, send and recieve text messages, 
+and notifications. Again, it is not required to change any setting unless there are problems 
+connecting to exchange server.
+<h2><a name="Web Server Connection">Web Server Connection</a></h2>
+Web server serves the installation packages for new Equinox versions. Normally, automatic update system 
+will notify and take care of the updates available. Therefore, the connection settings need not be 
+changed.
+<h2><a name="Software Updater">Software Updater</a></h2>
+This section is related to automatic software updates. Check update notification option if you want to be notified of new updates available at application start up.
+<h2><a name="Notifications">Notifications</a></h2>
+You can fine tune what exactly you want to be notified by Equinox. If chosen, Equinox will also use the system tray 
+popup messages to notify you (this feature is not supported on Mac OSX).
+<h2><a name="Memory & Performance">Memory & Performance</a></h2>
+From within this section, you can fine-tune the performance and memory needs of Equinox to your specific analysis needs. Please be cautious when changing these settings
+as they may have direct influence over the operating system. All changes require a re-start of Equinox.
+</par>
+</body>
+</html>

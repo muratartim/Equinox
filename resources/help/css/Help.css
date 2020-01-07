@@ -1,0 +1,111 @@
+@CHARSET "UTF-8";
+
+body {
+	padding-left:10px;
+	font-family: Helvetica, Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	color: grey;
+	background-color: whitesmoke;
+}
+
+h1 {
+	font-size:22px;
+	color: steelblue;
+	border-bottom: thin dotted;
+}
+
+h2 {
+	font-size:18px;
+	color: steelblue;
+	border-bottom: thin dotted;
+}
+
+par {
+	line-height:130%
+}
+
+item {
+	font-style:oblique;
+	font-weight:bold;
+}
+
+notes {
+	font-weight:bold;
+	border-bottom: thin dotted;
+}
+
+#buttonlink {
+    /* Remove all decorations to look like normal text */
+    background: none;
+    border: none;
+    display: inline;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    outline-offset: 0;
+    /* Additional styles to look like a link */
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.centre {
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+
+.centre2 {
+	position: absolute;
+    margin: auto;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0;  
+}
+
+.hoverButton {
+  display: block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 4px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hoverButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.hoverButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hoverButton:hover span {
+  padding-right: 25px;
+}
+
+.hoverButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.hoverButton:active {
+  transform: translateY(4px);
+}

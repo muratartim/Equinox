@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="558.0" prefWidth="352.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.MissionProfilePanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox maxWidth="1.7976931348623157E308" prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+                        <TitledPane layoutX="10.0" layoutY="10.0" text="Show Peak Information">
+                           <content>
+                              <VBox spacing="15.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                                 </padding>
+                                 <children>
+                                    <StackPane styleClass="zoomPanel">
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <StackPane.margin>
+                                                <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <RadioButton fx:id="totalStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" selected="true" text="Total stress">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="info" />
+                                                   </toggleGroup>
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="classCode_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Class code" toggleGroup="$info" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="segment_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Segment" toggleGroup="$info" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="flightName_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Flight name" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                             </children>
+                                          </GridPane>
+                                          <Label styleClass="borderTitle" text="General" StackPane.alignment="TOP_LEFT">
+                                             <padding>
+                                                <Insets left="2.0" right="2.0" />
+                                             </padding>
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="-10.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane styleClass="zoomPanel">
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <RadioButton fx:id="onegEvent_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g event" toggleGroup="$info">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="onegIssy_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g load case" toggleGroup="$info" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="onegStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g stress" toggleGroup="$info" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="onegComment_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g comment" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                             </children>
+                                             <StackPane.margin>
+                                                <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                             </StackPane.margin>
+                                          </GridPane>
+                                          <Label styleClass="borderTitle" text="1G" StackPane.alignment="TOP_LEFT">
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="-10.0" />
+                                             </StackPane.margin>
+                                             <padding>
+                                                <Insets left="2.0" right="2.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane styleClass="zoomPanel">
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <StackPane.margin>
+                                                <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <RadioButton fx:id="incEvent_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. event" toggleGroup="$info">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="incIssy_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. load case" toggleGroup="$info" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="incStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. stress" toggleGroup="$info" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="incFac_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. factor" toggleGroup="$info" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="incComment_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. comment" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="incLinear_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. linearity" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                             </children>
+                                          </GridPane>
+                                          <Label styleClass="borderTitle" text="Increment" StackPane.alignment="TOP_LEFT">
+                                             <padding>
+                                                <Insets left="2.0" right="2.0" />
+                                             </padding>
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="-10.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane styleClass="zoomPanel">
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <StackPane.margin>
+                                                <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <RadioButton fx:id="dpPressure_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Pressure" toggleGroup="$info">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="dpStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="DP stress" toggleGroup="$info" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="dtTemperature_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Temperature" toggleGroup="$info" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="dtStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="DT stress" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="12.0" />
+                                                   </font>
+                                                </RadioButton>
+                                             </children>
+                                          </GridPane>
+                                          <Label styleClass="borderTitle" text="Pressure &amp; Temperature" StackPane.alignment="TOP_LEFT">
+                                             <padding>
+                                                <Insets left="2.0" right="2.0" />
+                                             </padding>
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="-10.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Show / Hide">
+                           <content>
+                              <VBox spacing="15.0">
+                                 <children>
+                                    <StackPane styleClass="zoomPanel">
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <StackPane.margin>
+                                                <Insets bottom="6.0" left="15.0" right="10.0" top="12.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="posInc_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Positive increments" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="70.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="negInc_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Negative increments" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </GridPane>
+                                          <Label styleClass="borderTitle" text="Incremental Stresses" StackPane.alignment="TOP_LEFT">
+                                             <padding>
+                                                <Insets left="2.0" right="2.0" />
+                                             </padding>
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="-10.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane styleClass="zoomPanel">
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <StackPane.margin>
+                                                <Insets bottom="6.0" left="15.0" right="10.0" top="12.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="steadyStress_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Total steady stress" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="dp_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Delta-P stress" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="70.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="oneg_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="1G stress" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="70.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="dt_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Delta-T stress" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </GridPane>
+                                          <Label styleClass="borderTitle" text="Steady Stresses" StackPane.alignment="TOP_LEFT">
+                                             <padding>
+                                                <Insets left="2.0" right="2.0" />
+                                             </padding>
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="-10.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane styleClass="zoomPanel">
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <StackPane.margin>
+                                                <Insets bottom="6.0" left="15.0" right="10.0" top="12.0" />
+                                             </StackPane.margin>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step1_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-1" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="70.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step2_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-2" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="42.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step3_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-3" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="74.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step4_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-4" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="106.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step5_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-5" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="148.0" layoutY="10.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step6_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-6" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="148.0" layoutY="42.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step7_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-7" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="148.0" layoutY="74.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="step8_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </HBox.margin></ToggleSwitch>
+                                                      <Label maxWidth="1.7976931348623157E308" text="Step-8" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </GridPane>
+                                          <Label styleClass="borderTitle" text="Incremental Steps" StackPane.alignment="TOP_LEFT">
+                                             <padding>
+                                                <Insets left="2.0" right="2.0" />
+                                             </padding>
+                                             <StackPane.margin>
+                                                <Insets left="10.0" top="-10.0" />
+                                             </StackPane.margin>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Options">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="104.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="showCrosshair_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Show crosshair" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="134.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="showInfo_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Show info box" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+                        <Button layoutX="280.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

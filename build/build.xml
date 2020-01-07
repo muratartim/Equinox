@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project name="Equinox" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<target name="init-fx-tasks">
+		<path id="fxant">
+			<filelist>
+				<file name="${java.home}\..\lib\ant-javafx.jar"/>
+				<file name="${java.home}\lib\jfxrt.jar"/>
+				<file name="${basedir}"/>
+			</filelist>
+		</path>
+	
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+			uri="javafx:com.sun.javafx.tools.ant"
+			classpathref="fxant"/>
+	</target>
+	<target name="setup-staging-area">
+		<delete dir="externalLibs" />
+		<delete dir="project" />
+		<delete dir="projectRefs" />
+	
+		<mkdir dir="externalLibs" />
+	
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1">
+				<filename name="json-simple-1.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/jasypt/jasypt/1.9.2">
+				<filename name="jasypt-1.9.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/net/sf/jung/jung-algorithms/2.1.1">
+				<filename name="jung-algorithms-2.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/eu/hansolo/tilesfx/1.6.4">
+				<filename name="tilesfx-1.6.4.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/jdom/jdom2/2.0.6">
+				<filename name="jdom2-2.0.6.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/equinox/serverUtilities/1.0.0">
+				<filename name="serverUtilities-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/apache/commons/commons-text/1.3">
+				<filename name="commons-text-1.3.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/apache/derby/derby/10.14.2.0">
+				<filename name="derby-10.14.2.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/javax/activation/activation/1.1">
+				<filename name="activation-1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/equinox/appContainer/1.0.0">
+				<filename name="appContainer-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/sun/mail/javax.mail/1.6.1">
+				<filename name="javax.mail-1.6.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/jfoenix/jfoenix/8.0.9">
+				<filename name="jfoenix-8.0.9.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/6.4.0.jre8">
+				<filename name="mssql-jdbc-6.4.0.jre8.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/itextpdf/itextpdf/5.5.13">
+				<filename name="itextpdf-5.5.13.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/net/sf/jung/jung-api/2.1.1">
+				<filename name="jung-api-2.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/objenesis/objenesis/2.1">
+				<filename name="objenesis-2.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/jfree/jfreechart/1.0.19">
+				<filename name="jfreechart-1.0.19.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/apache/commons/commons-lang3/3.7">
+				<filename name="commons-lang3-3.7.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/jfree/jcommon/1.0.23">
+				<filename name="jcommon-1.0.23.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/zaxxer/HikariCP/3.2.0">
+				<filename name="HikariCP-3.2.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/net/sourceforge/jexcelapi/jxl/2.6.12">
+				<filename name="jxl-2.6.12.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/esotericsoftware/minlog/minlog/1.2">
+				<filename name="minlog-1.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/github/jhsheets/javafx-filterable-table-columns/1.0.1">
+				<filename name="javafx-filterable-table-columns-1.0.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/equinox/analysisServer/1.0.0">
+				<filename name="analysisServer-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/apache/derby/derbyclient/10.14.2.0">
+				<filename name="derbyclient-10.14.2.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/log4j/log4j/1.2.14">
+				<filename name="log4j-1.2.14.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/jcraft/jsch/0.1.54">
+				<filename name="jsch-0.1.54.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/net/sf/jung/jung-io/2.1.1">
+				<filename name="jung-io-2.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/esotericsoftware/kryo/kryo/2.24.0">
+				<filename name="kryo-2.24.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/equinox/dataServer/1.0.0">
+				<filename name="dataServer-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/hamcrest/hamcrest-core/1.1">
+				<filename name="hamcrest-core-1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/junit/junit/4.10">
+				<filename name="junit-4.10.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/esotericsoftware/jsonbeans/0.7">
+				<filename name="jsonbeans-0.7.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/inf/inf/1.0.0">
+				<filename name="inf-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/equinox/exchangeServer/1.0.0">
+				<filename name="exchangeServer-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/base64/base64-all/1.0.0">
+				<filename name="base64-all-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/json/json/20180813">
+				<filename name="json-20180813.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/slf4j/slf4j-api/1.7.2">
+				<filename name="slf4j-api-1.7.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/controls/controls/1.0.0">
+				<filename name="controls-1.0.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/google/guava/guava/19.0">
+				<filename name="guava-19.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/com/esotericsoftware/kryonet/2.22.0-RC1">
+				<filename name="kryonet-2.22.0-RC1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/net/sf/jung/jung-graph-impl/2.1.1">
+				<filename name="jung-graph-impl-2.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/net/sf/jung/jung-visualization/2.1.1">
+				<filename name="jung-visualization-2.1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/Users/aurora/.m2/repository/org/controlsfx/controlsfx/8.40.15">
+				<filename name="controlsfx-8.40.15.jar"/>
+			</fileset>
+		</copy>
+	
+		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="/Users/aurora/Workspaces/equinox-workspace/Equinox">
+				<include name="src/**" />
+			</fileset>
+		</copy>
+		<copy todir="project">
+			<fileset dir="/Users/aurora/Workspaces/equinox-workspace/Equinox">
+				<include name="src/test/java/**" />
+			</fileset>
+		</copy>
+	
+		<mkdir dir="projectRefs" />
+	</target>
+	<target name='do-compile'>
+		<delete dir="build" />
+		<mkdir dir="build/src" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build/classes" />
+	
+		<!-- Copy project-libs references -->
+		<copy todir="build/libs">
+			<fileset dir="externalLibs">
+				<include name="jfoenix-8.0.9.jar"/>
+				<include name="controls-1.0.0.jar"/>
+				<include name="derby-10.14.2.0.jar"/>
+				<include name="commons-text-1.3.jar"/>
+				<include name="analysisServer-1.0.0.jar"/>
+				<include name="jasypt-1.9.2.jar"/>
+				<include name="jung-algorithms-2.1.1.jar"/>
+				<include name="kryo-2.24.0.jar"/>
+				<include name="activation-1.1.jar"/>
+				<include name="tilesfx-1.6.4.jar"/>
+				<include name="json-20180813.jar"/>
+				<include name="commons-lang3-3.7.jar"/>
+				<include name="HikariCP-3.2.0.jar"/>
+				<include name="jxl-2.6.12.jar"/>
+				<include name="jung-io-2.1.1.jar"/>
+				<include name="log4j-1.2.14.jar"/>
+				<include name="controlsfx-8.40.15.jar"/>
+				<include name="jsch-0.1.54.jar"/>
+				<include name="jung-api-2.1.1.jar"/>
+				<include name="junit-4.10.jar"/>
+				<include name="kryonet-2.22.0-RC1.jar"/>
+				<include name="javax.mail-1.6.1.jar"/>
+				<include name="exchangeServer-1.0.0.jar"/>
+				<include name="javafx-filterable-table-columns-1.0.1.jar"/>
+				<include name="minlog-1.2.jar"/>
+				<include name="serverUtilities-1.0.0.jar"/>
+				<include name="objenesis-2.1.jar"/>
+				<include name="derbyclient-10.14.2.0.jar"/>
+				<include name="slf4j-api-1.7.2.jar"/>
+				<include name="jdom2-2.0.6.jar"/>
+				<include name="hamcrest-core-1.1.jar"/>
+				<include name="base64-all-1.0.0.jar"/>
+				<include name="jung-graph-impl-2.1.1.jar"/>
+				<include name="jung-visualization-2.1.1.jar"/>
+				<include name="guava-19.0.jar"/>
+				<include name="itextpdf-5.5.13.jar"/>
+				<include name="jsonbeans-0.7.jar"/>
+				<include name="dataServer-1.0.0.jar"/>
+				<include name="appContainer-1.0.0.jar"/>
+				<include name="jcommon-1.0.23.jar"/>
+				<include name="mssql-jdbc-6.4.0.jre8.jar"/>
+				<include name="json-simple-1.1.1.jar"/>
+				<include name="inf-1.0.0.jar"/>
+				<include name="jfreechart-1.0.19.jar"/>
+			</fileset>
+		</copy>
+	
+		<!-- Copy project references -->
+	
+		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/src">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	
+		<javac includeantruntime="false" source="1.8" target="1.8" srcdir="build/src" destdir="build/classes" encoding="UTF-8">
+			<classpath>
+				<fileset dir="build/libs">
+					<include name="*"/>
+				</fileset>
+			</classpath>
+		</javac>
+	
+		<!-- Copy over none Java-Files -->
+		<copy todir="build/classes">
+		<fileset dir="project/src">
+			<exclude name="**/*.java"/>
+		</fileset>
+		</copy>
+	
+	
+	</target>
+	<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
+		<delete file="dist"/>
+		<delete file="deploy" />
+	
+		<mkdir dir="dist" />
+		<mkdir dir="dist/libs" />
+	
+		<copy todir="dist/libs">
+			<fileset dir="externalLibs">
+				<include name="*" />
+			</fileset>
+		</copy>
+	
+	
+		<fx:resources id="appRes">
+			<fx:fileset dir="dist" includes="Equinox.jar"/>
+			<fx:fileset dir="dist" includes="libs/*"/>
+		</fx:resources>
+	
+		<fx:application id="Equinox"
+			name="Equinox Digital Twin"
+			mainClass="equinox.Equinox"
+			toolkit="fx">
+			<fx:argument>--maxParallelTasks=3</fx:argument>
+			<fx:argument>--maxParallelSubtasks=2</fx:argument>
+			<fx:argument>--databasePageSize=8192</fx:argument>
+			<fx:argument>--databasePageCacheSize=4000</fx:argument>
+			<fx:argument>--maxVisibleSTFsPerSpectrum=20</fx:argument>
+			<fx:argument>--colorTheme=steelblue</fx:argument>
+		</fx:application>
+	
+		<mkdir dir="build/classes/META-INF" />
+	
+	
+	
+		<fx:jar destfile="dist/Equinox.jar">
+			<fx:application refid="Equinox"/>
+			<fileset dir="build/classes">
+			</fileset>
+			<fx:resources refid="appRes"/>
+	
+			<manifest>
+				<attribute name="Implementation-Vendor" value="No Magic Inc."/>
+				<attribute name="Implementation-Title" value="Equinox Digital Twin"/>
+				<attribute name="Implementation-Version" value="3.8"/>
+				<attribute name="Notify-Update" value="true"/>
+				<attribute name="Allow-Ignore-Update" value="true"/>
+				<attribute name="Jar-Version" value="3.8.0"/>
+				<attribute name="Lib-Version" value="3.8.0"/>
+				<attribute name="Resource-Version" value="3.8.0"/>
+				<attribute name="JavaFX-Feature-Proxy" value="None"/>
+			</manifest>
+		</fx:jar>
+	
+	
+		<mkdir dir="deploy" />
+		<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+		<fx:deploy
+			embedJNLP="false"
+			extension="false"
+			includeDT="false"
+			offlineAllowed="true"
+			outdir="${basedir}/deploy"
+			outfile="Equinox" nativeBundles="image"
+			updatemode="background" >
+	
+			<fx:platform basedir="${java.home}"/>
+			<fx:info title="Equinox" vendor="No Magic Inc."/>
+	
+			<fx:application refId="Equinox"/>
+			<fx:resources refid="appRes"/>
+			<fx:platform>
+				<fx:jvmarg value="-Xms256m"/>
+				<fx:jvmarg value="-Xmx1024m"/>
+				<fx:jvmarg value="-XX:+UseStringDeduplication"/>
+				<fx:jvmarg value="-Xverify:none"/>
+				<fx:jvmarg value="-server"/>
+				<fx:jvmarg value="-XX:+UseParallelGC"/>
+			</fx:platform>
+		</fx:deploy>
+	
+	
+	</target>
+</project>

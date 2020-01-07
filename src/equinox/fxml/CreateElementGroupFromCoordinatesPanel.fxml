@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import control.validationField.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="259.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.CreateElementGroupFromCoordinatesPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+<TitledPane collapsible="false" minWidth="-Infinity" prefWidth="20.0" stylesheets="@../css/TitledPanel.css" text="New Element Group" textFill="WHITE">
+                     <content>
+                        <VBox spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="name_" maxWidth="1.7976931348623157E308" promptText="Enter group name" />
+                              <GridPane hgap="5.0" vgap="5.0">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" />
+                                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <DoubleValidationField promptText="Min" GridPane.columnIndex="1" fx:id="xMin_" />
+                                    <DoubleValidationField promptText="Max" GridPane.columnIndex="2" fx:id="xMax_" />
+                                    <DoubleValidationField fx:id="yMin_" disable="true" promptText="Min" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <DoubleValidationField fx:id="yMax_" disable="true" promptText="Max" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <DoubleValidationField fx:id="zMin_" disable="true" promptText="Min" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <DoubleValidationField fx:id="zMax_" disable="true" promptText="Max" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" translateY="5.0" HBox.hgrow="NEVER" fx:id="x_" />
+                                          <Label maxWidth="1.7976931348623157E308" text="X range:" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <ToggleSwitch fx:id="y_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" translateY="5.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Y range:" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <ToggleSwitch fx:id="z_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" translateY="5.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Z range:" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </content>
+</TitledPane>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

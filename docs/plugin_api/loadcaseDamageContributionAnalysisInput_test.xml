@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Root input element. This element is obligatory.-->
+<loadcaseDamageContributionAnalysisInput>
+	
+	<material>
+		<analysisType>fatigue</analysisType>
+		<name>2024_T351_Plate</name><specification>AIMS03-02-004</specification><orientation>LT</orientation><configuration>AFI/thickness:6-12</configuration></material>
+	<omission>
+		<removeNegativeStresses>false</removeNegativeStresses>
+		<stressRange>0.0</stressRange></omission>
+	
+	<!--Specify which loadcase contributions to be computed.-->
+	<loadcaseContributions>
+		<!--Multiple-unique steady contributions can be given. This can be one of '1G', 'Delta-P', 'Delta-T' or 'Ground-Air-Ground'.-->
+		<steadyContribution>1G</steadyContribution>
+		<steadyContribution>Ground-Air-Ground</steadyContribution>
+		<!--Multiple increment contribution groups with unique names can be given.-->
+		<incrementContributionGroup>
+			<!--The name of incremental damage contribution group. Note the name must be unique among all contribution groups.-->
+			<groupName>Bumps</groupName>
+			<!--Multiple distinct loadcaseNumber elements can be given.-->
+			<loadcaseNumber>2070</loadcaseNumber>
+			<loadcaseNumber>2071</loadcaseNumber>
+			<loadcaseNumber>2072</loadcaseNumber>
+			<loadcaseNumber>2073</loadcaseNumber>
+		</incrementContributionGroup>
+		<incrementContributionGroup>
+			<!--The name of incremental damage contribution group. Note the name must be unique among all contribution groups.-->
+			<groupName>Rotation</groupName>
+			<!--Multiple distinct loadcaseNumber elements can be given.-->
+			<loadcaseNumber>2160</loadcaseNumber>
+			<loadcaseNumber>2161</loadcaseNumber>
+		</incrementContributionGroup>
+		<incrementContributionGroup>
+			<!--The name of incremental damage contribution group. Note the name must be unique among all contribution groups.-->
+			<groupName>Landing Impact</groupName>
+			<!--Multiple distinct loadcaseNumber elements can be given.-->
+			<loadcaseNumber>2044</loadcaseNumber>
+			<loadcaseNumber>2045</loadcaseNumber>
+			<loadcaseNumber>2046</loadcaseNumber>
+			<loadcaseNumber>2047</loadcaseNumber>
+			<loadcaseNumber>2048</loadcaseNumber>
+			<loadcaseNumber>2049</loadcaseNumber>
+		</incrementContributionGroup>
+	</loadcaseContributions>
+
+</loadcaseDamageContributionAnalysisInput>

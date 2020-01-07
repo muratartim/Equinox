@@ -1,0 +1,36 @@
+
+.tree-table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, -fx-control-inner-background;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+    -fx-text-fill: -fx-text-inner-color;
+}
+.tree-table-row-cell:selected {
+    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-focus-color;
+    -fx-background-insets: 0, 1, 2;
+}
+
+.tree-table-row-cell:odd {
+    -fx-background-color: -fx-table-cell-border-color, derive(-fx-control-inner-background,-5%);
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.tree-table-row-cell:selected:odd {
+    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-focus-color;
+    -fx-background-insets: 0, 1, 2;
+}
+
+.tree-table-row-cell .tree-disclosure-node .arrow {
+	-fx-shape: null;
+	-fx-background-color: null;
+	-fx-padding: -2px 0px 12px 10px;
+	-fx-background-image: url("../image/unfold.png");
+}
+
+.tree-table-row-cell:expanded .tree-disclosure-node .arrow {
+	-fx-shape: null;
+	-fx-background-color: null;
+	-fx-padding: -2px 0px 12px 10px;
+	-fx-rotate: null;
+	-fx-background-image: url("../image/fold.png");
+}

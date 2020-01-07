@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Root input element. This element is obligatory.-->
+<loadcaseDamageContributionAnalysisInput>
+	
+	<!--Material information. This element and all its children are obligatory.-->
+	<material>
+		<!--Material name. Eg. 2024_T351_Plate-->
+		<name></name>
+		<!--Material specification. Eg. AIMS03-02-004-->
+		<specification></specification>
+		<!--Material orientation. Eg. LT-->
+		<orientation></orientation>
+		<!--Material configuration. Eg. AFI/thickness:6-12-->
+		<configuration></configuration>
+	</material>
+	
+	<!--Omission parameters. This element and all its children are optional.-->
+	<omission>
+		<!--If selected, all negative stresses will be removed from stress sequence. Can be 'true' or 'false' (default). This element is optional, if not given, the default value will be considered.-->
+		<removeNegativeStresses></removeNegativeStresses>
+		<!--Omission stress range. Zero or positive real value is expected. This element is optional, if not given, no omission will be applied.-->
+		<stressRange></stressRange>
+	</omission>
+	
+	<!--Specify which loadcase contributions to be computed.-->
+	<loadcaseContributions>
+		<!--Multiple-unique steady contributions can be given. This can be one of '1G', 'Delta-P', 'Delta-T' or 'Ground-Air-Ground'.-->
+		<steadyContribution></steadyContribution>
+		<!--Multiple increment contribution groups with unique names can be given.-->
+		<incrementContributionGroup>
+			<!--The name of incremental damage contribution group. Note the name must be unique among all contribution groups.-->
+			<groupName></groupName>
+			<!--Multiple distinct loadcaseNumber elements can be given.-->
+			<loadcaseNumber></loadcaseNumber>
+		</incrementContributionGroup>
+	</loadcaseContributions>
+
+</loadcaseDamageContributionAnalysisInput>

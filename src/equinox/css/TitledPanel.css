@@ -1,0 +1,33 @@
+
+
+.titled-pane {
+	-fx-text-fill:white;
+}
+
+.titled-pane > .title {
+	-fx-background-color: linear-gradient(to right, slategrey, transparent);
+}
+
+.titled-pane:expanded > .title {
+	-fx-background-color: linear-gradient(to right, steelblue, transparent);
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+	-fx-shape: null;
+	-fx-background-color: null;
+	-fx-padding: -2px -3px 12px 12px;
+	-fx-background-image: url("../image/expand.png");
+}
+
+.titled-pane:expanded > .title > .arrow-button .arrow {
+	-fx-shape: null;
+	-fx-background-color: null;
+	-fx-padding: -2px -3px 12px 12px;
+	-fx-rotate: null;
+	-fx-background-image: url("../image/collect.png");
+}
+
+.titled-pane > .content {
+	-fx-background-color: transparent;
+	-fx-border-color: linear-gradient(to right, steelblue, transparent);
+}

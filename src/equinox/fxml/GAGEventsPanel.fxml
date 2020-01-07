@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="350.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.GAGEventsPanel">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: steelblue;">
+         <children>
+            <Label alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="55.0" text="Rating*" textFill="WHITE" />
+            <Label layoutX="15.0" layoutY="15.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" text="Event Name" textFill="WHITE" />
+            <Label layoutX="75.0" layoutY="15.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="65.0" text="Load Case" textFill="WHITE" />
+            <Label layoutX="240.0" layoutY="15.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="65.0" text="Segment" textFill="WHITE" />
+            <Label layoutX="235.0" layoutY="15.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" text="Comment" textFill="WHITE" />
+            <Label layoutX="80.0" layoutY="15.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="95.0" text="Contributes to" textFill="WHITE" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox fx:id="container_">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER_LEFT">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+         <children>
+            <Label maxWidth="1.7976931348623157E308" text="* Rating of the increment is based on the occurrence of the event within the GAG cycles." textFill="SLATEGRAY" wrapText="true" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#onSaveClicked" styleClass="menuButton" text="Save to file..." />
+         </children>
+      </HBox>
+   </children>
+</VBox>

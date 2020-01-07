@@ -1,0 +1,11 @@
+
+
+/* This is a MenuButton with centered-white arrow. */
+
+.menu-button > .arrow-button {
+	-fx-padding: 0em 0.39em 0em 0em;
+}
+
+.menu-button > .arrow-button .arrow {
+	-fx-background-color: white;
+}

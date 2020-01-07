@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RFORT Extended</title>
+<link rel="stylesheet" href="css/Help.css">
+</head>
+<body>
+<h1>RFORT Extended</h1>
+<par>
+RFORT Extended plugin performs the automatic reduction of ANA peaks based on applying omission on given pilot points (i.e. stress input files). Depending on the 
+omission level defined for each pilot point, a peak from the ANA file is removed only if it is removed from all considered pilot point stress files.
+<p>
+Starting from version 3.6, the process also includes automating computation of equivalent stresses and generating the following outputs;
+<UL>
+<LI><item>RFORT result plots:</item> The average number of peaks for each omission level are plotted against the equivalent stress deviations for each pilot point. 
+This gives an immediate overall summary of the omission process.
+<LI><item>Detailed RFORT reports:</item> RFORT reports can be generated in PDF format. This report contains detailed information of the omission process for each 
+pilot point together with all comparison plots.
+</UL>
+<p>
+Following sections describe the inputs necessary to run the plugin via Equinox.
+<h2><a name="Spectrum files">Spectrum files</a></h2>
+Drag & drop (or browse for) the input spectrum files and select conversion table sheet.
+<h2><a name="Equivalent stress analysis type">Equivalent stress analysis type</a></h2>
+Select the equivalent stress analysis types (Fatigue, Preffas or Linear propagation) to be run. Equivalent stresses for all input pilot points will be computed for the 
+selected analysis types.
+<h2><a name="Pilot points">Pilot points</a></h2>
+Drag & drop stress input files (STFs) into the designated area. This would add all pilot points to the list. For each pilot point, you can then specify;
+<UL>
+<LI>Include or exclude the pilot point from the RFORT omission process. When excluded, the pilot point will only be used for computing equivalent stresses.
+<LI>Stress factor to be used to scale the loadcases of the pilot point.
+<LI>Fatigue, Preffas and Linear propagation materials to be used for equivalent stress analyses. Note that, if needed, you can create additional materials from 
+<item>File --> Add New... --> Add New Materials... --> Fatigue/Preffas/Linear Prop. Materials</item>.
+</UL>
+<h2><a name="Omissions">Omissions</a></h2>
+RFORT runs will be performed in parallel for given omissions. Omissions can be defined in two ways:
+<UL>
+<LI><item>Percentage omissions:</item> Percent omissions are applied on maximum stress amplitudes of each pilot point that are included in the RFORT process.
+<LI><item>Direct omission values:</item> Direct omission values can be supplied for each pilot point.
+</UL>
+<h2><a name="Options">Options</a></h2>
+Here, various additional parameters can be supplied. Possible options are as follows;
+<UL>
+<LI><item>Add delta-P to stress sequences:</item> When selected, delta-p stresses will added into generated stress sequences during the process.
+<LI><item>Reference DP:</item> Reference cabin pressure value (only necessary if add delta-p option is selected).
+<LI><item>DP factor:</item> Factor to scale delta-p stresses (only necessary if add delta-p option is selected).
+<LI><item>Overall factor:</item> Factor to scale all stresses in the generated stress sequences.
+<LI><item>Component:</item> Stress component to use from the pilot point stresses file (STF). This can be normal x, y, shear xy or rotated stresses with the 
+given rotation angle in degrees.
+<LI><item>Run till flight:</item> Generate stress sequence from flight-1 till the given flight number. Leave empty for generating all flights.
+<LI><item>Target flights:</item> When entered, omission will be applied to given flights. Comma separated flight numbers are expected in this field (i.e. 
+2, 3, 4). Leave this field empty for targeting all flights (default).
+<LI><item>Enable SLOG mode:</item> Additional LOG information with additional details of ANA data as would be interpreted by ISAMI. Note that this LOG File is usually 
+3 times larger than the ANA file and you may have issues to view the contents. If you need this information for some flights, simply run <item>MyCheck Plugin</item> later for a few flights.
+</UL>
+</par>
+</body>
+</html>

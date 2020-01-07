@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equinoxInput>
+	<settings>
+		<runMode>parallel</runMode>
+		<overwriteFiles>true</overwriteFiles>
+		<logger>
+			<logLevel>ALL</logLevel>
+			<logDirectoryPath>/Users/aurora/Temporary/logDir</logDirectoryPath>
+		</logger>
+	</settings>
+	<downloadSpectrum>
+		<id>1</id>
+		<searchEntry>
+			<attributeName>NAME</attributeName>
+			<keyword>A310Microgravity-211Sect13-MR2_61P</keyword>
+			<criteria>Contains</criteria>
+		</searchEntry>
+		<outputPath>/Users/aurora/Temporary/download.zip</outputPath>
+	</downloadSpectrum>
+	<addSpectrum>
+		<id>2</id>
+		<downloadId>1</downloadId>
+	</addSpectrum>
+	<!--Adds STF file to referenced spectrum.-->
+	<addStf>
+		<id>3</id>
+		<!--The spectrumId refers to 'addSpectrum' instruction.-->
+		<spectrumId>2</spectrumId>
+		<!--Path to STF file to add to workspace.-->
+		<stfPath>/Users/aurora/Temporary/Fuselage_F26_MY.stf</stfPath>
+	</addStf>
+	<generateStressSequence>
+		<id>22</id>
+		<stfId>3</stfId>
+		<inputPath>/Users/aurora/Workspaces/equinox-workspace/Equinox/docs/plugin_api/generateStressSequenceInput_test.xml</inputPath>
+	</generateStressSequence>
+	<equivalentStressAnalysis>
+		<id>28</id>
+		<stressSequenceId>22</stressSequenceId>
+		<equivalentStressAnalysisInputPath>/Users/aurora/Workspaces/equinox-workspace/Equinox/docs/plugin_api/equivalentStressAnalysisInput_test.xml</equivalentStressAnalysisInputPath>
+	</equivalentStressAnalysis>
+	<!--Plots mission profile from referenced stress sequence to given output file.-->
+	<plotMissionProfile>
+		<id>29</id>
+		<!--The stressSequenceId refers to 'generateStressSequence' instruction.-->
+		<stressSequenceId>22</stressSequenceId>
+		<!--Path to save mission profile plot. File name must end with .png.-->
+		<outputPath>/Users/aurora/Temporary/missionProfile.png</outputPath>
+	</plotMissionProfile>
+	
+	<!--Exports pilot point to zip archive. The archive contains pilot point upload information.-->
+	<exportStf>
+		<id>30</id>
+		<!--The stfId refers to 'addStf' instruction.-->
+		<stfId>3</stfId>
+		<!--The previousInstructionId refers to the instruction which will be executed prior to this instruction. This element is optional, if not given, this instruction will be executed after its input supplying instruction completes.-->
+		<previousInstructionId>29</previousInstructionId>
+		<!--Pilot point attribute. Multiple pilotPointInfo elements can be given for various pilot point attributes. This element is optional.-->
+		<pilotPointInfo>
+			<!--Pilot point attribute name. This can be one of 'fatigueMission', 'description', 'dataSource', 'generationSource', 'deliveryReference', 'issue', 'eid', 'elementType', 'framePosition', 'stringerPosition', 'fatigueMaterial', 'preffasMaterial' or 'linearMaterial'.-->
+			<attributeName>fatigueMission</attributeName>
+			<attributeValue>61 Parabolas</attributeValue>
+		</pilotPointInfo>
+		<pilotPointInfo>
+			<attributeName>description</attributeName>
+			<attributeValue>Contains loads. Loads-to-stress factor: 0.001</attributeValue>
+		</pilotPointInfo>
+		<pilotPointInfo>
+			<attributeName>dataSource</attributeName>
+			<attributeValue>B010RP1340757, B0010RP1421908, B010RP1338593</attributeValue>
+		</pilotPointInfo>
+		<pilotPointInfo>
+			<attributeName>generationSource</attributeName>
+			<attributeValue>Manual</attributeValue>
+		</pilotPointInfo>
+		<pilotPointInfo>
+			<attributeName>deliveryReference</attributeName>
+			<attributeValue>B022RP1402750</attributeValue>
+		</pilotPointInfo>
+		<pilotPointInfo>
+			<attributeName>issue</attributeName>
+			<attributeValue>v1.0</attributeValue>
+		</pilotPointInfo>
+		<pilotPointInfo>
+			<attributeName>framePosition</attributeName>
+			<attributeValue>FR26</attributeValue>
+		</pilotPointInfo>
+		<!--Path to where the pilot point will be exported. File name must end with .zip.-->
+		<outputPath>/Users/aurora/Temporary/export.zip</outputPath>
+	</exportStf>
+</equinoxInput>

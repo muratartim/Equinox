@@ -1,0 +1,136 @@
+#slider_container_4 { float: left; padding: 10px 0 0 0; width: 682px; }
+
+.SliderName_4_left {
+	float: left;
+	padding: 240px 26px 0 0;
+	width: 64px;
+	height: 64px;
+	overflow: hidden;
+}
+.SliderName_4_right {
+	float: left;
+	padding: 240px 0 0 26px;
+	width: 64px;
+	height: 64px;
+}
+
+.SliderName_4_navigation_outer {
+	float: left;
+	margin: 10px 0 0 0;
+	padding: 0;
+	width: 682px;
+	height: 20px;
+	position: relative;
+}
+
+.SliderName_4_navigation {
+	position: absolute;
+	height: 20px;
+	margin: 0;
+	left: 50%;
+	display: none;
+}
+
+.SliderName_4_navigation a, .SliderName_4_navigation a:active, .SliderName_4_navigation a:visited, .SliderName_4_navigation a:hover {
+	padding: 0 5px;
+	font-family: Tahoma,Verdana,Arial,serif;
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: bold;
+	text-decoration: none !important;
+	color: steelblue;
+	-moz-border-radius: 5px 5px;
+	-webkit-border-radius: 5px 5px;
+	border-radius: 5px 5px;
+}
+
+.SliderName_4_navigation a:hover { color: #ffffff; background-color: steelblue; }
+
+.SliderName_4_navigation a.active_page, .SliderName_4_navigation a.active_page:active, .SliderName_4_navigation a.active_page:visited, .SliderName_4_navigation a.active_page:hover {
+	text-decoration: none !important;
+	color: #ffffff;
+	background-color: steelblue;
+}
+
+#sliderPrevBtn, #sliderNextBtn {
+	display: block;
+	float: left;
+	width: 64px;
+	height: 64px;
+	text-align: left;
+	text-indent: -9999px;
+}
+
+#sliderPrevBtn { background: url(../img/left.png) no-repeat left top; }
+#sliderNextBtn { background: url(../img/right.png) no-repeat left top; }
+
+.SliderName_4 {
+	float: left;
+	width: 492px;
+	height: 560px;
+	border: 5px steelblue solid;
+	overflow: hidden;
+	-moz-border-radius: 5px 5px;
+	-webkit-border-radius: 5px 5px;
+	border-radius: 5px 5px;
+}
+
+.SliderNamePrev_4 {
+	background: url(../img/left.png) no-repeat left center;
+	width: 50px;
+	height: 450px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-decoration: none;
+}
+
+.SliderNameNext_4 {
+	background: url(../img/right.png) no-repeat right center;
+	width: 50px;
+	height: 450px;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-decoration: none;
+}
+
+.SliderName_4Description {
+	padding: 10px;
+	font-family: Tahoma,Arial,Helvetica;
+	font-size: 14px;
+	line-height: 30px;
+	letter-spacing: 1px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 0 1px 3px #000000;
+}
+
+#SliderNameNavigation_4 { margin: 0; padding: 10px 0 0 0; height: 16px; text-align: center; overflow-y: hidden; }
+
+#SliderNameNavigation_4 a:link, #SliderNameNavigation_4 a:active, #SliderNameNavigation_4 a:visited, #SliderNameNavigation_4 a:hover{
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	line-height: 0;
+	text-decoration: none;
+}
+
+#SliderNameNavigation_4 a.active:link, #SliderNameNavigation_4 a.active:active, #SliderNameNavigation_4 a.active:visited, #SliderNameNavigation_4 a.active:hover{
+	background: url(../img/bullet_active.png) no-repeat center center;
+}
+
+#SliderNameNavigation_4 a img
+{
+	border: none;
+	width: 16px;
+	height: 16px;
+	background: url(../img/bullet.png) no-repeat center center;
+}
+
+#SliderNameNavigation_4 a.active img
+{
+	background: url(../img/bullet_active.png) no-repeat center center;
+}

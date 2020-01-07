@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import control.validationField.DoubleValidationField?>
+<?import control.validationField.IntegerValidationField?>
+<?import org.controlsfx.control.ToggleSwitch?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="601.0" prefWidth="314.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.RfortExtendedPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+                        <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Spectrum Files" textFill="WHITE">
+      <content>
+                              <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+                                 <children>
+                                    <BorderPane fx:id="dropZone_" maxWidth="1.7976931348623157E308" onDragDropped="#onDragDroppedInput" onDragEntered="#onDragEnteredInput" onDragExited="#onDragExitedInput" onDragOver="#onDragOverInput" styleClass="roundPanel2">
+                                       <bottom>
+                                          <StackPane>
+                                             <children>
+                                                <VBox spacing="10.0" styleClass="roundPanel3">
+                                                   <children>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="ANA file (*.ana, *.gz, *.zip)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="ana_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" layoutX="20.0" layoutY="47.0" mouseTransparent="true" text="CVT file (*.cvt)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="cvt_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" layoutX="20.0" layoutY="74.0" mouseTransparent="true" text="FLS file (*.fls)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="fls_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" layoutX="20.0" layoutY="101.0" mouseTransparent="true" text="Conversion table (*.xls)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" fx:id="xls_">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="TXT file (*.txt)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="txt_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDownloadSampleInputClicked" prefHeight="28.0" prefWidth="28.0" styleClass="roundButton2" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/sample.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                   <tooltip>
+                                                      <Tooltip text="Download sample inputs" />
+                                                   </tooltip>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="-1.0" right="-1.0" />
+                                                   </StackPane.margin>
+                                                </Button>
+                                             </children>
+                                          </StackPane>
+                                       </bottom>
+                                       <center>
+                                          <StackPane>
+                                             <children>
+                                                <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="dropInputsImage_" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/dropZone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Drop spectrum files here" textAlignment="CENTER" textFill="GREY">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="20.0" top="20.0" />
+                                                   </BorderPane.margin>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="30.0" top="30.0" />
+                                                   </StackPane.margin>
+                                                </VBox>
+                                                <Hyperlink fx:id="browseInputs_" onAction="#onBrowseInputsClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </StackPane>
+                                       </center>
+                                    </BorderPane>
+                                    <ComboBox fx:id="sheet_" maxWidth="1.7976931348623157E308" promptText="Select conversion table sheet..." />
+                                 </children>
+                              </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane text="Eq. Stress Analysis Type">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="fatigueAnalysis_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Fatigue eq. stress analysis" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="preffasAnalysis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Preffas prop. eq. stress analysis" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="linearAnalysis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Linear prop. eq. stress analysis" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+      <TitledPane expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Pilot Points" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ListView fx:id="pilotPoints_" prefHeight="100.0" stylesheets="@../css/ListView.css" />
+                                    <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Button fx:id="resetPilotPoints_" disable="true" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onResetPilotPointsClicked" prefHeight="24.0" text="Reset list">
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/reset2.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Button fx:id="addPilotPoints_" layoutX="272.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#onAddPilotPointsClicked" prefHeight="24.0" text="Add...">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/add.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+      </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="84.0" minWidth="-Infinity" prefWidth="20.0" text="Omissions" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ListView fx:id="omissions_" layoutX="20.0" layoutY="58.0" prefHeight="100.0" stylesheets="@../css/ListView.css" />
+                                    <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Button fx:id="resetOmissions_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResetOmissionsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/reset2.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Reset list" />
+                                                   </tooltip>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Button fx:id="removeOmissions_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveOmissionsClicked" prefHeight="24.0" prefWidth="24.0">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/remove.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Remove selected omissions" />
+                                             </tooltip>
+                                          </Button>
+                                          <MenuButton fx:id="addOmissions_" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="24.0">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false" onAction="#onPercentageOmissionsClicked" text="Add percentage omissions">
+                                                   <graphic>
+                                                      <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.percent" />
+                                                   </graphic>
+                                                </MenuItem>
+                                              <MenuItem mnemonicParsing="false" onAction="#onOmissionValuesClicked" text="Add direct omission values">
+                                                   <graphic>
+                                                      <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.circle-code" />
+                                                   </graphic>
+                                                </MenuItem>
+                                            </items>
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/add.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Add omissions" />
+                                             </tooltip>
+                                          </MenuButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="46.0" minWidth="-Infinity" prefWidth="20.0" text="Options" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="addDP_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Add delta-P to stress sequences" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="NEVER" maxWidth="116.0" minWidth="95.0" prefWidth="96.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="207.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Overall factor:" GridPane.rowIndex="2" />
+                                          <Label text="DP factor:" GridPane.rowIndex="1" />
+                                          <Label text="Reference DP:" />
+                                          <Label text="Component:" GridPane.rowIndex="3" />
+                                          <ChoiceBox fx:id="stressComponent_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Rotation angle:" GridPane.rowIndex="4" />
+                                          <StackPane maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <children>
+                                                <IntegerValidationField fx:id="rotation_" disable="true" maxWidth="1.7976931348623157E308" text="0" />
+                                                <Label mouseTransparent="true" text="degrees" textFill="LIGHTGRAY" StackPane.alignment="CENTER_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets right="4.0" />
+                                                   </StackPane.margin>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <Label layoutX="10.0" layoutY="192.0" text="Target flights:" GridPane.rowIndex="6" />
+                                          <TextField id="overall_" fx:id="targetFlights_" layoutX="110.0" layoutY="47.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" prefWidth="-1.0" promptText="All flights" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <tooltip>
+                                                <Tooltip text="Use comma separated flight numbers (i.e. 2, 4, 5)" />
+                                             </tooltip>
+                                          </TextField>
+                                          <Label layoutX="10.0" layoutY="262.0" text="Run till flight:" GridPane.rowIndex="5" />
+                                          <DoubleValidationField fx:id="refDP_" disable="true" maxWidth="1.7976931348623157E308" text="1327.0" GridPane.columnIndex="1" />
+                                          <DoubleValidationField fx:id="dpFac_" disable="true" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <DoubleValidationField fx:id="overallFac_" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <IntegerValidationField fx:id="runTillFlight_" maxWidth="1.7976931348623157E308" promptText="All flights" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="enableSlog_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Enable SLOG mode" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

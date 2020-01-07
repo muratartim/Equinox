@@ -1,0 +1,36 @@
+
+.popoverlabel {
+	-fx-font-family: System;
+	-fx-font-size: 13px;
+	-fx-font-style: normal;
+	-fx-text-fill: gray;
+}
+
+.popoverheaderlabel {
+	-fx-font-family: System;
+	-fx-font-size: 13px;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+	-fx-text-fill: steelblue;
+}
+
+.popoverbutton {
+	-fx-base:steelblue;
+	-fx-text-fill:white;
+	-fx-font-family: System;
+	-fx-font-size: 11px;
+	-fx-font-style: normal;
+}
+
+.popovertextfield {
+	-fx-font-family: System;
+	-fx-font-size: 13px;
+	-fx-font-style: normal;
+	-fx-background-color: whitesmoke;
+	-fx-border-color: gray;
+	-fx-border-radius: 4.0;
+}
+
+.separator:horizontal .line {
+    -fx-border-color: gray transparent transparent transparent;
+}

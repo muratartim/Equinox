@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox fx:id="root_" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.IncomingRunRequestPanel">
+   <children>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Circle fx:id="image_" fill="DODGERBLUE" radius="32.0" stroke="WHITE" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label fx:id="title_" graphicTextGap="6.0" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="ts87am requests to run following instruction set:" wrapText="true" />
+                        <Label fx:id="fileName_" graphicTextGap="6.0" style="-fx-font-size: 15px;" text="File name goes here..." textFill="GREY" wrapText="true" HBox.hgrow="ALWAYS" />
+                        <Label graphicTextGap="6.0" layoutX="10.0" layoutY="34.0" style="-fx-font-size: 15px;" text="Do you accept the request?" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="accept_" layoutX="386.0" layoutY="33.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAcceptClicked" prefWidth="90.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="Accept">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="385.0" layoutY="21.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRejectClicked" prefWidth="90.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="Reject">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

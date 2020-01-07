@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+   equinox_mysql_server:
+      image: muratartim/equinox_mysql_server
+      ports:
+         - '3306:3306'
+      environment:
+         - MYSQL_ROOT_PASSWORD=Martim_17891917
+         - MYSQL_DATABASE=AFTwin
+         - MYSQL_USER=martim
+         - MYSQL_PASSWORD=Martim_17891917
+      volumes:
+         - equinox_mysql_data:/var/lib/mysql
+
+volumes:
+  equinox_mysql_data:
+    name: equinox_mysql_data

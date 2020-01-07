@@ -1,0 +1,8 @@
+
+.scroll-pane > .viewport {
+	-fx-background-color: white;
+}
+
+.scroll-pane .corner {
+   -fx-background-color: white;
+}

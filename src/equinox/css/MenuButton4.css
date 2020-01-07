@@ -1,0 +1,13 @@
+
+
+.menu-button {
+	-fx-base:steelblue;
+}
+
+.menu-button > .label {
+	-fx-text-fill:white;
+}
+
+.menu-button > .arrow-button .arrow {
+	-fx-background-color: white;
+}

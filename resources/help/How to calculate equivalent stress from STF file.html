@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to calculate equivalent stress from STF file</title>
+<link rel="stylesheet" href="css/Help.css">
+<!-- This help page has a video associated with it. -->
+</head>
+<body>
+<h1>How to calculate equivalent stress from STF file</h1>
+<par>
+Equivalent stresses can be calculated directly from stress input files (STF). Following video demonstrates how to do this.
+<p>
+<button type="button" class="hoverButton" onclick="app.helpVideoLink('How to calculate equivalent stress from STF file')" style="vertical-align:middle"><span>Play Demo</span></button>
+<br>
+For this, select and right-click on a STF file (or multiple STF files), 
+and select <item>Equivalent Stress Analysis</item> from the popup menu as shown in the following figure.<p><img class="centre" alt="help60" src="image/help60.png"><p>
+<h2><a name="Analysis Options">Analysis Options</a></h2>
+There are two analysis options as follows;
+<UL>
+<LI><item>Fast Analysis</item> This option is suitable for performing large number of analyses as the process is 3 to 4 times faster than the detailed analysis. Only equivalent stresses will be 
+generated as outputs and no plot or typical flight information will be generated. Plots can still be generated on demand once the analysis is complete.<p>
+<LI><item>Detailed Analysis</item> This option is suitable for performing detailed investigations on pilot points as all analysis data such as plots (mission profile, level crossing etc.) and 
+spectrum statistics will be generated.
+</UL>
+The process for calculating the equivalent stress directly from stress input file is composed of 2 sequential steps as listed below. Click on the links to see detailed information for 
+each step.
+<UL>
+<LI><button type="button" onclick="app.helpLink('How to generate stress sequence', '')" id="buttonlink">Generating stress sequence,</button> and,
+<LI><button type="button" onclick="app.helpLink('How to calculate equivalent stress', '')" id="buttonlink">Calculating equivalent stress</button>.
+</UL>
+</par>
+</body>
+</html>

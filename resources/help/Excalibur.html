@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Excalibur</title>
+<link rel="stylesheet" href="css/Help.css">
+</head>
+<body>
+<h1>Excalibur</h1>
+<par>
+Excalibur is a GFEM stress extraction and sorting tool. It utilizes fatigue spectrum - loadcase correlations in order to
+generate stress input files (STFs). Following sections describe the inputs necessary to run the plugin via Equinox. Click on
+the following button for a quick demonstration of the plugin in action.
+<p>
+<button type="button" class="hoverButton" onclick="app.helpVideoLink('How to sort stresses with Excalibur')" style="vertical-align:middle"><span>Play Demo</span></button>
+<br>
+<h2><a name="Loadcase correlations">Loadcase correlations</a></h2>
+In this section, the fatigue spectrum loadcase correlations are supplied. Following 2 files are expected as inputs;
+<UL>
+<LI><i>Attributes table (.xls)</i> Attributes table file is similar to a spectrum conversion table, but it also contains 
+additional loadcase information such as load type and criteria.
+<LI><i>Loadcase keys file (.lck)</i> This file contains EGL loadcase names, loadcase numbers and loadcase family information.
+</UL>
+Note that, usually correlation pairs are supplied for a certain A/C section and fatigue mission.
+<h2><a name="Element stresses">Element stresses</a></h2>
+Extracted GFEM element stresses are supplied within this section. First, select the stress type of input files, then browse
+(or darg & drop) the directory that contains all input stress files. Note that standard ISAMI generated GFEM stress files are the 
+expected file format. Each file should contain stresses for only 1 element.
+<h2><a name="Pressure">Pressure</a></h2>
+Cabin pressure loadcases are usually not contained within the loadcase correlatons. Therefore, in case delta-p cases are to be included, 
+enter the delta-p loadcase number within the stress files.
+<h2><a name="Stress sorting criteria">Stress sorting criteria</a></h2>
+Based on the selected criteria, 1 loadcase will be selected from a lodcase family representing each fatigue event within the correlated 
+spectrum. Stress sorting criteria depends on the input stress type selected in the <i>Element stresses</i> section.
+<h2><a name="Output directory">Output directory</a></h2>
+Select the output directory where the generated stress input files will be saved. Note that, the following 2 directories will be created 
+within the given output directory;
+<UL>
+<LI><i>stfs</i> This directory will contain all generated stress input files.
+<LI><i>logs</i> This directory will contain all generated log files. Note that, no log file wile will be generated if log level is selected 
+as <i>off</i>.
+</UL>
+<h2><a name="Options">Options</a></h2>
+Here, you can select the log level and whether to run the stress sorting tasks in parallel or sequentially.
+</par>
+</body>
+</html>

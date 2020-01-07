@@ -1,0 +1,49 @@
+{"equinoxInput": {
+   
+    "settings": {
+        "logger": {
+            "logDirectoryPath": "/path/to/logDir",
+            "logLevel": "WARNING"
+        },
+        "runMode": "parallel"
+    },   
+   
+    "downloadSpectrum": {
+        "searchEntry": {
+            "attributeName": "NAME",
+            "keyword": "A310Microgravity-211Sect13-MR2_61P"
+        },
+        "outputPath": "/path/to/download.zip",
+        "id": 1
+    },
+   
+    "addSpectrum": {
+        "downloadId": 1,
+        "id": 2
+    },   
+
+    "addStf": {
+        "spectrumId": 2,
+        "id": 3,
+        "stfPath": "/path/to/Fuselage_F26_MY.stf"
+    },
+
+    "equivalentStressAnalysis": {
+        "generateStressSequenceInputPath": "/path/to/generateStressSequenceInput.xml",
+        "stfId": 3,
+        "id": 4,
+        "equivalentStressAnalysisInputPath": "/path/to/equivalentStressAnalysisInput.xml"
+    },
+   
+    "plotLevelCrossing": {
+        "outputPath": "/path/to/levelCrossingPlot.png",
+        "equivalentStressId": 4,
+        "id": 5
+    },
+
+    "shareFile": {
+        "recipient": "DEPP, JONNY",
+        "id": 6,
+        "fileId": 5
+    }
+}}

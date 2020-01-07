@@ -1,0 +1,1875 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    2ab2470f-218a-4a51-bc1e-6a13e10209ea:
+      size:
+        width: 1290
+        height: 1270
+      position:
+        x: 270
+        'y': 250
+      z: 0
+      embeds:
+        - 3f888e3a-42ed-4a65-9366-350989e87675
+        - 6a4fb0e9-8031-4357-9226-758a6a7adc20
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 1c4925be-c882-4413-9a90-dadbf36ff042
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - 7573e208-c2fb-407b-aa74-b81a4f3f8a9a
+        - 8c5724c3-7062-4b11-b393-0be8f3accac3
+        - 9def5af8-6aea-4211-90e9-4e3aaa5420fc
+        - ad6957de-1999-41d5-8064-42e1d73a031f
+        - ac0c16f6-2b14-41f6-86f5-3fdb92590a6f
+        - 3fd410fc-d4f3-4cac-a7df-fec02f4043a3
+        - 7f3b9c4e-659c-4f5d-ba30-48a783059a9e
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 0f505588-8a55-4b6e-bd59-48692e427f6f
+        - 7548ff94-8c23-4d52-8c2d-48cc56740011
+        - 12758f35-a966-4cf4-b563-1c27f1017880
+        - cafdb7ac-23c7-4a26-b905-cbfa7f2ecb45
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+    0372e92e-a5c2-4d41-ba82-da19dcfe3a89:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 750
+        'y': 140
+      z: 0
+      embeds: []
+    d243b95f-b3c0-4298-8642-59688b575ad3:
+      source:
+        id: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      target:
+        id: 0372e92e-a5c2-4d41-ba82-da19dcfe3a89
+      z: 0
+    8195f301-8412-4d80-a3e3-fe1e0185fbce:
+      size:
+        width: 140
+        height: 140
+      position:
+        x: 750
+        'y': 310
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds:
+        - a2b90ad2-75ed-4781-b075-40033719c359
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    a2b90ad2-75ed-4781-b075-40033719c359:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 790
+        'y': 350
+      z: 2
+      parent: 8195f301-8412-4d80-a3e3-fe1e0185fbce
+      embeds: []
+      isassociatedwith:
+        - 0372e92e-a5c2-4d41-ba82-da19dcfe3a89
+      iscontainedinside:
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+        - 8195f301-8412-4d80-a3e3-fe1e0185fbce
+    4e3f343e-94b8-472d-888c-12a3a228e796:
+      size:
+        width: 140
+        height: 140
+      position:
+        x: 570
+        'y': 650
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds:
+        - e418f2e6-05d3-4850-935d-e14d03cbfe55
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    b5ffdc34-3325-4be0-a6e7-82740720477c:
+      source:
+        id: 8195f301-8412-4d80-a3e3-fe1e0185fbce
+      target:
+        id: 4e3f343e-94b8-472d-888c-12a3a228e796
+      z: 1
+    bfe94418-eae4-4635-a400-3bd0b5d82346:
+      size:
+        width: 110
+        height: 110
+      position:
+        x: 340
+        'y': 660
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds:
+        - 7f737d5a-df6b-475a-a788-28c8f399791b
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    7f3b9c4e-659c-4f5d-ba30-48a783059a9e:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 530
+        'y': 440
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    e418f2e6-05d3-4850-935d-e14d03cbfe55:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 594.9929330974591
+        'y': 683.1725057625724
+      z: 2
+      parent: 4e3f343e-94b8-472d-888c-12a3a228e796
+      embeds: []
+      isassociatedwith:
+        - 7f3b9c4e-659c-4f5d-ba30-48a783059a9e
+      iscontainedinside:
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+    7f737d5a-df6b-475a-a788-28c8f399791b:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 358.2453135125677
+        'y': 682.439902731257
+      z: 2
+      parent: bfe94418-eae4-4635-a400-3bd0b5d82346
+      embeds: []
+      isassociatedwith:
+        - e418f2e6-05d3-4850-935d-e14d03cbfe55
+      iscontainedinside:
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+        - bfe94418-eae4-4635-a400-3bd0b5d82346
+    ac0c16f6-2b14-41f6-86f5-3fdb92590a6f:
+      size:
+        width: 140
+        height: 140
+      position:
+        x: 590
+        'y': 980
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    0f95da20-edf9-497c-8e10-ca00de6a6627:
+      source:
+        id: bfe94418-eae4-4635-a400-3bd0b5d82346
+      target:
+        id: ac0c16f6-2b14-41f6-86f5-3fdb92590a6f
+      z: 1
+    7573e208-c2fb-407b-aa74-b81a4f3f8a9a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 800
+        'y': 510
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    d2bfc009-abb9-4622-a1b7-84864ac416a6:
+      size:
+        width: 220
+        height: 140
+      position:
+        x: 930
+        'y': 650
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds:
+        - af5c2173-a55e-4905-8ba9-5f8cdd1f00a7
+        - ab8fd462-5a97-4015-97e5-1bec06acad2a
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    1c4925be-c882-4413-9a90-dadbf36ff042:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1060
+        'y': 490
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    ab8fd462-5a97-4015-97e5-1bec06acad2a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1060
+        'y': 690
+      z: 2
+      parent: d2bfc009-abb9-4622-a1b7-84864ac416a6
+      embeds: []
+      isassociatedwith:
+        - 1c4925be-c882-4413-9a90-dadbf36ff042
+      iscontainedinside:
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+    2beffc4d-f29b-42f3-b426-8850b341073f:
+      size:
+        width: 140
+        height: 140
+      position:
+        x: 1240
+        'y': 640
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds:
+        - 8ac34e4e-21a4-4f80-8b89-2dd16660fefd
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    8ac34e4e-21a4-4f80-8b89-2dd16660fefd:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1283.7594334615544
+        'y': 688.3266858852519
+      z: 2
+      parent: 2beffc4d-f29b-42f3-b426-8850b341073f
+      embeds: []
+      isassociatedwith:
+        - ab8fd462-5a97-4015-97e5-1bec06acad2a
+      iscontainedinside:
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+        - 2beffc4d-f29b-42f3-b426-8850b341073f
+    af5c2173-a55e-4905-8ba9-5f8cdd1f00a7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 952.8656454560737
+        'y': 688.5429139197482
+      z: 2
+      parent: d2bfc009-abb9-4622-a1b7-84864ac416a6
+      embeds: []
+      isassociatedwith:
+        - 6a4fb0e9-8031-4357-9226-758a6a7adc20
+      iscontainedinside:
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+    6a4fb0e9-8031-4357-9226-758a6a7adc20:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1120
+        'y': 850
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    3f888e3a-42ed-4a65-9366-350989e87675:
+      size:
+        width: 250
+        height: 140
+      position:
+        x: 940
+        'y': 980
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    40921024-2616-4854-b557-54382a92760f:
+      source:
+        id: 2beffc4d-f29b-42f3-b426-8850b341073f
+      target:
+        id: 3f888e3a-42ed-4a65-9366-350989e87675
+      z: 1
+    0f505588-8a55-4b6e-bd59-48692e427f6f:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 800
+        'y': 680
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      isassociatedwith:
+        - 7573e208-c2fb-407b-aa74-b81a4f3f8a9a
+      iscontainedinside:
+        - 4e3f343e-94b8-472d-888c-12a3a228e796
+        - d2bfc009-abb9-4622-a1b7-84864ac416a6
+    09e2d3f8-ddea-4c13-ab2c-6e2355093a89:
+      source:
+        id: 8195f301-8412-4d80-a3e3-fe1e0185fbce
+      target:
+        id: d2bfc009-abb9-4622-a1b7-84864ac416a6
+      z: 1
+    8c5724c3-7062-4b11-b393-0be8f3accac3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 468.1972036296179
+        'y': 852.5823597387175
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    84ff0806-2295-4368-bef8-eb1ad1ca5e87:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 130
+        'y': 850
+      z: 0
+      embeds: []
+      isassociatedwith:
+        - 8c5724c3-7062-4b11-b393-0be8f3accac3
+    7548ff94-8c23-4d52-8c2d-48cc56740011:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 790.5268698854742
+        'y': 907.0606131904116
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      isassociatedwith:
+        - 84ff0806-2295-4368-bef8-eb1ad1ca5e87
+        - 0f505588-8a55-4b6e-bd59-48692e427f6f
+      iscontainedinside:
+        - ac0c16f6-2b14-41f6-86f5-3fdb92590a6f
+        - 3f888e3a-42ed-4a65-9366-350989e87675
+    12758f35-a966-4cf4-b563-1c27f1017880:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 789.3919062718971
+        'y': 1087.5198623854888
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      isassociatedwith:
+        - 7548ff94-8c23-4d52-8c2d-48cc56740011
+    9def5af8-6aea-4211-90e9-4e3aaa5420fc:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 381.9399689977691
+        'y': 1111.3540982706047
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    3fd410fc-d4f3-4cac-a7df-fec02f4043a3:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 710
+        'y': 1240
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      isassociatedwith:
+        - 9def5af8-6aea-4211-90e9-4e3aaa5420fc
+      iscontainedinside:
+        - ac0c16f6-2b14-41f6-86f5-3fdb92590a6f
+        - 3f888e3a-42ed-4a65-9366-350989e87675
+    ad6957de-1999-41d5-8064-42e1d73a031f:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 380
+        'y': 1270
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      iscontainedinside:
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+        - 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+    7a828958-a32a-47aa-8f36-dcb1dd6f883d:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 109.52689364967009
+        'y': 1213.7049118867071
+      z: 0
+      embeds: []
+      isassociatedwith:
+        - ad6957de-1999-41d5-8064-42e1d73a031f
+    cafdb7ac-23c7-4a26-b905-cbfa7f2ecb45:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1007.6180809474789
+        'y': 1193.7719385558064
+      z: 1
+      parent: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+      embeds: []
+      isassociatedwith:
+        - 7a828958-a32a-47aa-8f36-dcb1dd6f883d
+        - 3fd410fc-d4f3-4cac-a7df-fec02f4043a3
+      iscontainedinside:
+        - ac0c16f6-2b14-41f6-86f5-3fdb92590a6f
+        - 3f888e3a-42ed-4a65-9366-350989e87675
+      dependson:
+        - ab8fd462-5a97-4015-97e5-1bec06acad2a
+        - e418f2e6-05d3-4850-935d-e14d03cbfe55
+Parameters:
+  KeyPairName:
+    Type: String
+    Default: FrankfurtKeyPair
+    Description: >-
+      Enter key pair name. This entry is specific to AWS Region where the
+      default value is for 'eu-central-1'.
+  AMIForEC2:
+    Type: String
+    Default: ami-0cc293023f983ed53
+    Description: >-
+      Enter AMI to be used for EC2 instances. This entry is specific to AWS
+      Region where the default value is for 'eu-central-1'.
+  AMIForNAT:
+    Type: String
+    Default: ami-0097b5eb
+    Description: >-
+      Enter AMI to be used for NAT instances. This entry is specific to AWS
+      Region where the default value is for 'eu-central-1'.
+  InstanceTypeForEC2:
+    Type: String
+    Default: t3a.micro
+    Description: Instance type of EC2 instances.
+  IAMInstanceProfile:
+    Type: String
+    Default: >-
+      arn:aws:iam::413979829368:instance-profile/Equinox-Digital-Twin-S3-Bucket-Access-Role
+    Description: >-
+      ARN of the instance profile associated with the IAM role for instances.
+      This will enable instances to access S3 bucket.
+  BackupTime:
+    Type: String
+    Default: 55 19 * * *
+    Description: >-
+      Digital twin database and file server will be backed up to S3 bucket based
+      on this recurrence. Note that the input should be in UNIX Cron format and
+      time is in UTC.
+Resources:
+  EquinoxFullVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: EquinoxFullVPC
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 2ab2470f-218a-4a51-bc1e-6a13e10209ea
+  EquinoxFullIGW:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties:
+      Tags:
+        - Key: Name
+          Value: EquinoxFullIGW
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0372e92e-a5c2-4d41-ba82-da19dcfe3a89
+  EquinoxFullIGWAttach:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      InternetGatewayId: !Ref EquinoxFullIGW
+      VpcId: !Ref EquinoxFullVPC
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: d243b95f-b3c0-4298-8642-59688b575ad3
+  EquinoxFullPublicRT:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      Tags:
+        - Key: Name
+          Value: EquinoxFullPublicRT
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8195f301-8412-4d80-a3e3-fe1e0185fbce
+  EquinoxFullRoute1:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref EquinoxFullPublicRT
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref EquinoxFullIGW
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: a2b90ad2-75ed-4781-b075-40033719c359
+  EquinoxFullPublicSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      AvailabilityZone: eu-central-1a
+      CidrBlock: 10.0.0.0/24
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: EquinoxFullPublicSubnet1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 4e3f343e-94b8-472d-888c-12a3a228e796
+  EquinoxFullRTAssoc1:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref EquinoxFullPublicSubnet1
+      RouteTableId: !Ref EquinoxFullPublicRT
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b5ffdc34-3325-4be0-a6e7-82740720477c
+  EquinoxFullPrivateRT1:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      Tags:
+        - Key: Name
+          Value: EquinoxFullPrivateRT1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bfe94418-eae4-4635-a400-3bd0b5d82346
+  EquinoxFullNATSG1:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for NAT instance 1.
+      GroupName: EquinoxFullNATSG1
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 10.0.2.0/23
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 10.0.2.0/23
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: EquinoxFullNATSG1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7f3b9c4e-659c-4f5d-ba30-48a783059a9e
+  EquinoxFullNATInstance1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !Ref AMIForNAT
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      SubnetId: !Ref EquinoxFullPublicSubnet1
+      SourceDestCheck: false
+      SecurityGroupIds:
+        - !Ref EquinoxFullNATSG1
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      Tags:
+        - Key: Name
+          Value: EquinoxFullNATInstance1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: e418f2e6-05d3-4850-935d-e14d03cbfe55
+  EquinoxFullRoute2:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref EquinoxFullPrivateRT1
+      DestinationCidrBlock: 0.0.0.0/0
+      InstanceId: !Ref EquinoxFullNATInstance1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7f737d5a-df6b-475a-a788-28c8f399791b
+  EquinoxFullPrivateSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      AvailabilityZone: eu-central-1a
+      CidrBlock: 10.0.2.0/23
+      Tags:
+        - Key: Name
+          Value: EquinoxFullPrivateSubnet1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ac0c16f6-2b14-41f6-86f5-3fdb92590a6f
+  EquinoxFullRTAssoc3:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref EquinoxFullPrivateRT1
+      SubnetId: !Ref EquinoxFullPrivateSubnet1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0f95da20-edf9-497c-8e10-ca00de6a6627
+  EquinoxFullDSLBSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for data service load balancer.
+      GroupName: EquinoxFullDSLBSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 1235
+          ToPort: 1235
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: EquinoxFullDSLBSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7573e208-c2fb-407b-aa74-b81a4f3f8a9a
+  EquinoxFullFSLBSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for file server load balancer.
+      GroupName: EquinoxFullFSLBSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 2222
+          ToPort: 2222
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 2222
+          ToPort: 2222
+          SourceSecurityGroupId: !Ref EquinoxFullDSSG
+        - IpProtocol: tcp
+          FromPort: 2222
+          ToPort: 2222
+          SourceSecurityGroupId: !Ref EquinoxFullESSG
+        - IpProtocol: tcp
+          FromPort: 2222
+          ToPort: 2222
+          SourceSecurityGroupId: !Ref EquinoxFullASSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullFSLBSG
+  EquinoxFullESLBSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for exchange service load balancer.
+      GroupName: EquinoxFullESLBSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 1234
+          ToPort: 1234
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: EquinoxFullESLBSG
+  EquinoxFullASLBSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for analysis service load balancer.
+      GroupName: EquinoxFullASLBSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 1236
+          ToPort: 1236
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: EquinoxFullASLBSG
+  EquinoxFullPublicSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      AvailabilityZone: eu-central-1b
+      CidrBlock: 10.0.1.0/24
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: EquinoxFullPublicSubnet2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: d2bfc009-abb9-4622-a1b7-84864ac416a6
+  EquinoxFullNATSG2:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for NAT instance 2.
+      GroupName: EquinoxFullNATSG2
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 10.0.4.0/23
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 10.0.4.0/23
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: EquinoxFullNATSG2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 1c4925be-c882-4413-9a90-dadbf36ff042
+  EquinoxFullNATInstance2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !Ref AMIForNAT
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      SubnetId: !Ref EquinoxFullPublicSubnet2
+      SourceDestCheck: false
+      SecurityGroupIds:
+        - !Ref EquinoxFullNATSG2
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      Tags:
+        - Key: Name
+          Value: EquinoxFullNATInstance2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ab8fd462-5a97-4015-97e5-1bec06acad2a
+  EquinoxFullPrivateRT2:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      Tags:
+        - Key: Name
+          Value: EquinoxFullPrivateRT2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 2beffc4d-f29b-42f3-b426-8850b341073f
+  EquinoxFullRoute3:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref EquinoxFullPrivateRT2
+      DestinationCidrBlock: 0.0.0.0/0
+      InstanceId: !Ref EquinoxFullNATInstance2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8ac34e4e-21a4-4f80-8b89-2dd16660fefd
+  EquinoxFullBastionHost:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !Ref AMIForEC2
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      SubnetId: !Ref EquinoxFullPublicSubnet2
+      SecurityGroupIds:
+        - !Ref EquinoxFullBHSG
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      Tags:
+        - Key: Name
+          Value: EquinoxFullBastionHost
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: af5c2173-a55e-4905-8ba9-5f8cdd1f00a7
+  EquinoxFullBHSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for bastion host.
+      GroupName: EquinoxFullBHSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: EquinoxFullBHSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6a4fb0e9-8031-4357-9226-758a6a7adc20
+  EquinoxFullPrivateSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      AvailabilityZone: eu-central-1b
+      CidrBlock: 10.0.4.0/23
+      Tags:
+        - Key: Name
+          Value: EquinoxFullPrivateSubnet2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 3f888e3a-42ed-4a65-9366-350989e87675
+  EquinoxFullRTAssoc4:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref EquinoxFullPrivateRT2
+      SubnetId: !Ref EquinoxFullPrivateSubnet2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 40921024-2616-4854-b557-54382a92760f
+  EquinoxFullDSLB:
+    Type: 'AWS::ElasticLoadBalancing::LoadBalancer'
+    Properties:
+      Subnets:
+        - !Ref EquinoxFullPublicSubnet1
+        - !Ref EquinoxFullPublicSubnet2
+      CrossZone: true
+      Listeners:
+        - LoadBalancerPort: 1235
+          InstancePort: 1235
+          InstanceProtocol: TCP
+          Protocol: TCP
+      HealthCheck:
+        Target: 'TCP:1235'
+        HealthyThreshold: 3
+        UnhealthyThreshold: 5
+        Interval: 30
+        Timeout: 5
+      SecurityGroups:
+        - !Ref EquinoxFullDSLBSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullDSLB
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0f505588-8a55-4b6e-bd59-48692e427f6f
+  EquinoxFullFSLB:
+    Type: 'AWS::ElasticLoadBalancing::LoadBalancer'
+    Properties:
+      Subnets:
+        - !Ref EquinoxFullPublicSubnet1
+        - !Ref EquinoxFullPublicSubnet2
+      CrossZone: true
+      Listeners:
+        - LoadBalancerPort: 2222
+          InstancePort: 2222
+          InstanceProtocol: TCP
+          Protocol: TCP
+      HealthCheck:
+        Target: 'TCP:2222'
+        HealthyThreshold: 3
+        UnhealthyThreshold: 5
+        Interval: 30
+        Timeout: 5
+      SecurityGroups:
+        - !Ref EquinoxFullFSLBSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullFSLB
+  EquinoxFullESLB:
+    Type: 'AWS::ElasticLoadBalancing::LoadBalancer'
+    Properties:
+      Subnets:
+        - !Ref EquinoxFullPublicSubnet1
+        - !Ref EquinoxFullPublicSubnet2
+      CrossZone: true
+      Listeners:
+        - LoadBalancerPort: 1234
+          InstancePort: 1234
+          InstanceProtocol: TCP
+          Protocol: TCP
+      HealthCheck:
+        Target: 'TCP:1234'
+        HealthyThreshold: 3
+        UnhealthyThreshold: 5
+        Interval: 30
+        Timeout: 5
+      SecurityGroups:
+        - !Ref EquinoxFullESLBSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullESLB
+  EquinoxFullASLB:
+    Type: 'AWS::ElasticLoadBalancing::LoadBalancer'
+    Properties:
+      Subnets:
+        - !Ref EquinoxFullPublicSubnet1
+        - !Ref EquinoxFullPublicSubnet2
+      CrossZone: true
+      Listeners:
+        - LoadBalancerPort: 1236
+          InstancePort: 1236
+          InstanceProtocol: TCP
+          Protocol: TCP
+      HealthCheck:
+        Target: 'TCP:1236'
+        HealthyThreshold: 3
+        UnhealthyThreshold: 5
+        Interval: 30
+        Timeout: 5
+      SecurityGroups:
+        - !Ref EquinoxFullASLBSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullASLB
+  EquinoxFullRTAssoc2:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref EquinoxFullPublicRT
+      SubnetId: !Ref EquinoxFullPublicSubnet2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 09e2d3f8-ddea-4c13-ab2c-6e2355093a89
+  EquinoxFullDSSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for data service.
+      GroupName: EquinoxFullDSSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 1235
+          ToPort: 1235
+          SourceSecurityGroupId: !Ref EquinoxFullDSLBSG
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref EquinoxFullBHSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullDSSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8c5724c3-7062-4b11-b393-0be8f3accac3
+  EquinoxFullFSSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for file server.
+      GroupName: EquinoxFullFSSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 2222
+          ToPort: 2222
+          SourceSecurityGroupId: !Ref EquinoxFullFSLBSG
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref EquinoxFullBHSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullFSSG
+  EquinoxFullESSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for exchange service.
+      GroupName: EquinoxFullESSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 1234
+          ToPort: 1234
+          SourceSecurityGroupId: !Ref EquinoxFullESLBSG
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref EquinoxFullBHSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullESSG
+  EquinoxFullASSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for analysis service.
+      GroupName: EquinoxFullASSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 1236
+          ToPort: 1236
+          SourceSecurityGroupId: !Ref EquinoxFullASLBSG
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref EquinoxFullBHSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullASSG
+  EquinoxFullDSLC:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    Properties:
+      ImageId: !Ref AMIForEC2
+      SecurityGroups:
+        - !Ref EquinoxFullDSSG
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      IamInstanceProfile: !Ref IAMInstanceProfile
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            # update os
+            yum update -y
+            # install docker
+            amazon-linux-extras install docker
+            service docker start
+            usermod -a -G docker ec2-user
+            # install docker-compose
+            curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
+            # download docker compose file
+            aws s3 cp s3://equinox-digital-twin/equinox-data-server-docker-compose.yml .
+            mv equinox-data-server-docker-compose.yml docker-compose.yml
+            # replace parameters
+            sed -i.bak 's/equinox_mysql_server/${EquinoxFullDBLB.DNSName}/' docker-compose.yml && rm docker-compose.yml.bak
+            sed -i.bak 's/equinox_sftp_server/${EquinoxFullFSLB.DNSName}/' docker-compose.yml && rm docker-compose.yml.bak
+            # run containers
+            docker-compose up -d
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 84ff0806-2295-4368-bef8-eb1ad1ca5e87
+  EquinoxFullFSLC:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    Properties:
+      ImageId: !Ref AMIForEC2
+      SecurityGroups:
+        - !Ref EquinoxFullFSSG
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      IamInstanceProfile: !Ref IAMInstanceProfile
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            # update os
+            yum update -y
+            # install docker
+            amazon-linux-extras install docker
+            service docker start
+            usermod -a -G docker ec2-user
+            # install docker-compose
+            curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
+            # download sample data for file server from S3 bucket
+            mkdir backups
+            aws s3 cp s3://equinox-digital-twin/sftp_data.tar ./backups
+            # create a named volume from the file server sample data
+            docker container run --rm -v equinox_sftp_data:/filerdata -v $(pwd)/backups:/backup ubuntu bash -c "cd /filerdata && tar xvf /backup/sftp_data.tar --strip 1"
+            # download docker compose file
+            aws s3 cp s3://equinox-digital-twin/equinox-file-server-docker-compose.yml .
+            mv equinox-file-server-docker-compose.yml docker-compose.yml
+            # run containers
+            docker-compose up -d
+            # setup cron job for file server backup to S3 bucket
+            aws s3 cp s3://equinox-digital-twin/backup-sftp-cron-job.txt .
+            sed -i.bak 's/recurrence/${BackupTime}/' backup-sftp-cron-job.txt && rm backup-sftp-cron-job.txt.bak
+            crontab backup-sftp-cron-job.txt
+  EquinoxFullESLC:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    Properties:
+      ImageId: !Ref AMIForEC2
+      SecurityGroups:
+        - !Ref EquinoxFullESSG
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      IamInstanceProfile: !Ref IAMInstanceProfile
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            # update os
+            yum update -y
+            # install docker
+            amazon-linux-extras install docker
+            service docker start
+            usermod -a -G docker ec2-user
+            # install docker-compose
+            curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
+            # download docker compose file
+            aws s3 cp s3://equinox-digital-twin/equinox-exchange-server-docker-compose.yml .
+            mv equinox-exchange-server-docker-compose.yml docker-compose.yml
+            # replace parameters
+            sed -i.bak 's/equinox_mysql_server/${EquinoxFullDBLB.DNSName}/' docker-compose.yml && rm docker-compose.yml.bak
+            sed -i.bak 's/equinox_sftp_server/${EquinoxFullFSLB.DNSName}/' docker-compose.yml && rm docker-compose.yml.bak
+            # run containers
+            docker-compose up -d
+  EquinoxFullASLC:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    Properties:
+      ImageId: !Ref AMIForEC2
+      SecurityGroups:
+        - !Ref EquinoxFullASSG
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      IamInstanceProfile: !Ref IAMInstanceProfile
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            # update os
+            yum update -y
+            # install docker
+            amazon-linux-extras install docker
+            service docker start
+            usermod -a -G docker ec2-user
+            # install docker-compose
+            curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
+            # download docker compose file
+            aws s3 cp s3://equinox-digital-twin/equinox-analysis-server-docker-compose.yml .
+            mv equinox-analysis-server-docker-compose.yml docker-compose.yml
+            # replace parameters
+            sed -i.bak 's/equinox_sftp_server/${EquinoxFullFSLB.DNSName}/' docker-compose.yml && rm docker-compose.yml.bak
+            # run containers
+            docker-compose up -d
+  EquinoxFullDSASG:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      AutoScalingGroupName: EquinoxFullDSASG
+      LaunchConfigurationName: !Ref EquinoxFullDSLC
+      MinSize: 1
+      MaxSize: 3
+      VPCZoneIdentifier:
+        - !Ref EquinoxFullPrivateSubnet1
+        - !Ref EquinoxFullPrivateSubnet2
+      LoadBalancerNames:
+        - !Ref EquinoxFullDSLB
+      HealthCheckType: EC2
+      HealthCheckGracePeriod: 300
+      Tags:
+        - Key: Name
+          PropagateAtLaunch: true
+          Value: EquinoxFullDSASG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7548ff94-8c23-4d52-8c2d-48cc56740011
+    DependsOn:
+      - EquinoxFullDBASG
+      - EquinoxFullFSASG
+  EquinoxFullFSASG:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      AutoScalingGroupName: EquinoxFullFSASG
+      LaunchConfigurationName: !Ref EquinoxFullFSLC
+      MinSize: 1
+      MaxSize: 3
+      VPCZoneIdentifier:
+        - !Ref EquinoxFullPrivateSubnet1
+        - !Ref EquinoxFullPrivateSubnet2
+      LoadBalancerNames:
+        - !Ref EquinoxFullFSLB
+      HealthCheckType: EC2
+      HealthCheckGracePeriod: 300
+      Tags:
+        - Key: Name
+          PropagateAtLaunch: true
+          Value: EquinoxFullFSASG
+  EquinoxFullESASG:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      AutoScalingGroupName: EquinoxFullESASG
+      LaunchConfigurationName: !Ref EquinoxFullESLC
+      MinSize: 1
+      MaxSize: 3
+      VPCZoneIdentifier:
+        - !Ref EquinoxFullPrivateSubnet1
+        - !Ref EquinoxFullPrivateSubnet2
+      LoadBalancerNames:
+        - !Ref EquinoxFullESLB
+      HealthCheckType: EC2
+      HealthCheckGracePeriod: 300
+      Tags:
+        - Key: Name
+          PropagateAtLaunch: true
+          Value: EquinoxFullESASG
+    DependsOn:
+      - EquinoxFullDBASG
+      - EquinoxFullFSASG
+  EquinoxFullASASG:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      AutoScalingGroupName: EquinoxFullASASG
+      LaunchConfigurationName: !Ref EquinoxFullASLC
+      MinSize: 1
+      MaxSize: 3
+      VPCZoneIdentifier:
+        - !Ref EquinoxFullPrivateSubnet1
+        - !Ref EquinoxFullPrivateSubnet2
+      LoadBalancerNames:
+        - !Ref EquinoxFullASLB
+      HealthCheckType: EC2
+      HealthCheckGracePeriod: 300
+      Tags:
+        - Key: Name
+          PropagateAtLaunch: true
+          Value: EquinoxFullASASG
+    DependsOn:
+      - EquinoxFullDBASG
+      - EquinoxFullFSASG
+  EquinoxFullDSSP:
+    Type: 'AWS::AutoScaling::ScalingPolicy'
+    Properties:
+      AutoScalingGroupName: !Ref EquinoxFullDSASG
+      PolicyType: TargetTrackingScaling
+      EstimatedInstanceWarmup: 300
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization
+        TargetValue: 70
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 12758f35-a966-4cf4-b563-1c27f1017880
+  EquinoxFullFSSP:
+    Type: 'AWS::AutoScaling::ScalingPolicy'
+    Properties:
+      AutoScalingGroupName: !Ref EquinoxFullFSASG
+      PolicyType: TargetTrackingScaling
+      EstimatedInstanceWarmup: 300
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization
+        TargetValue: 70
+  EquinoxFullESSP:
+    Type: 'AWS::AutoScaling::ScalingPolicy'
+    Properties:
+      AutoScalingGroupName: !Ref EquinoxFullESASG
+      PolicyType: TargetTrackingScaling
+      EstimatedInstanceWarmup: 300
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization
+        TargetValue: 70
+  EquinoxFullASSP:
+    Type: 'AWS::AutoScaling::ScalingPolicy'
+    Properties:
+      AutoScalingGroupName: !Ref EquinoxFullASASG
+      PolicyType: TargetTrackingScaling
+      EstimatedInstanceWarmup: 300
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization
+        TargetValue: 70
+  EquinoxFullDBLBSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for database server load balancer.
+      GroupName: EquinoxFullDBLBSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          SourceSecurityGroupId: !Ref EquinoxFullDSSG
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          SourceSecurityGroupId: !Ref EquinoxFullESSG
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          SourceSecurityGroupId: !Ref EquinoxFullASSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullDBLBSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 9def5af8-6aea-4211-90e9-4e3aaa5420fc
+  EquinoxFullDBLB:
+    Type: 'AWS::ElasticLoadBalancing::LoadBalancer'
+    Properties:
+      Subnets:
+        - !Ref EquinoxFullPrivateSubnet1
+        - !Ref EquinoxFullPrivateSubnet2
+      CrossZone: true
+      Scheme: internal
+      Listeners:
+        - LoadBalancerPort: 3306
+          InstancePort: 3306
+          InstanceProtocol: TCP
+          Protocol: TCP
+      HealthCheck:
+        Target: 'TCP:3306'
+        HealthyThreshold: 3
+        UnhealthyThreshold: 5
+        Interval: 30
+        Timeout: 5
+      SecurityGroups:
+        - !Ref EquinoxFullDBLBSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullDBLB
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 3fd410fc-d4f3-4cac-a7df-fec02f4043a3
+  EquinoxFullDBSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref EquinoxFullVPC
+      GroupDescription: Security group for database server.
+      GroupName: EquinoxFullDBSG
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          SourceSecurityGroupId: !Ref EquinoxFullDBLBSG
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref EquinoxFullBHSG
+      Tags:
+        - Key: Name
+          Value: EquinoxFullDBSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ad6957de-1999-41d5-8064-42e1d73a031f
+  EquinoxFullDBLC:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    Properties:
+      ImageId: !Ref AMIForEC2
+      SecurityGroups:
+        - !Ref EquinoxFullDBSG
+      InstanceType: !Ref InstanceTypeForEC2
+      KeyName: !Ref KeyPairName
+      IamInstanceProfile: !Ref IAMInstanceProfile
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
+            DeleteOnTermination: true
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            # update os
+            yum update -y
+            # install docker
+            amazon-linux-extras install docker
+            service docker start
+            usermod -a -G docker ec2-user
+            # install docker-compose
+            curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
+            # download sample data for MySQL server from S3 bucket
+            mkdir backups
+            aws s3 cp s3://equinox-digital-twin/mysql_data.tar ./backups
+            # create a named volume from the MySQL sample data
+            docker container run --rm -v equinox_mysql_data:/dbdata -v $(pwd)/backups:/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/mysql_data.tar --strip 1"
+            # download docker compose file
+            aws s3 cp s3://equinox-digital-twin/equinox-database-server-docker-compose.yml .
+            mv equinox-database-server-docker-compose.yml docker-compose.yml
+            # run containers
+            docker-compose up -d
+            # setup cron job for database server backup to S3 bucket
+            aws s3 cp s3://equinox-digital-twin/backup-mysql-cron-job.txt .
+            sed -i.bak 's/recurrence/${BackupTime}/' backup-mysql-cron-job.txt && rm backup-mysql-cron-job.txt.bak
+            crontab backup-mysql-cron-job.txt
+            # signal AWS for creation completion
+            /opt/aws/bin/cfn-signal -e $? --stack ${AWS::StackName} --resource EquinoxFullDBASG --region ${AWS::Region}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7a828958-a32a-47aa-8f36-dcb1dd6f883d
+  EquinoxFullDBASG:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      AutoScalingGroupName: EquinoxFullDBASG
+      LaunchConfigurationName: !Ref EquinoxFullDBLC
+      MinSize: 1
+      MaxSize: 1
+      VPCZoneIdentifier:
+        - !Ref EquinoxFullPrivateSubnet1
+        - !Ref EquinoxFullPrivateSubnet2
+      LoadBalancerNames:
+        - !Ref EquinoxFullDBLB
+      HealthCheckType: EC2
+      HealthCheckGracePeriod: 300
+      Tags:
+        - Key: Name
+          PropagateAtLaunch: true
+          Value: EquinoxFullDBASG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: cafdb7ac-23c7-4a26-b905-cbfa7f2ecb45
+    CreationPolicy:
+      ResourceSignal:
+        Count: '1'
+        Timeout: PT5M
+    DependsOn:
+      - EquinoxFullNATInstance2
+      - EquinoxFullNATInstance1

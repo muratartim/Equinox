@@ -1,0 +1,9 @@
+// This file contains all newsfeed web page names and background colors. Values are tab separated. It is downloaded by the client 
+// application at application startup and a page is randomly selected for display.
+
+core_plugins/index.html	black
+tip_isami_html_files/index.html	transparent
+tip_install_plugins/index.html	transparent
+tip_roadmap/index.html	transparent
+ml_lstf/index.html	black
+ui_features/index.html	transparent

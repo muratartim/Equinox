@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.HelpPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+          <StackPane id="StackPane" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+            <children>
+              <TextField fx:id="search_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" prefWidth="-1.0" promptText="Search help" StackPane.alignment="CENTER">
+                     <padding>
+                        <Insets left="22.0" right="25.0" />
+                     </padding></TextField>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <image>
+                        <Image url="@../image/searchGray.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="4.0" />
+                     </StackPane.margin>
+                  </ImageView>
+              <Button fx:id="cancel_" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCancelSearchClicked" prefHeight="21.0" prefWidth="21.0" styleClass="searchButton" text="Button" visible="false" StackPane.alignment="CENTER_RIGHT">
+                <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../image/cancel.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+                <StackPane.margin>
+                  <Insets right="4.0" />
+                </StackPane.margin>
+              </Button>
+            </children>
+          </StackPane>
+            <Button mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="27.0" styleClass="menuButton" text="Cancel" HBox.hgrow="NEVER" />
+         </children>
+      </HBox>
+    <StackPane id="StackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+      <children>
+        <ListView fx:id="helpList_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" visible="false" StackPane.alignment="CENTER" />
+        <TreeView fx:id="helpTree_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" showRoot="false" stylesheets="@../css/TreeView.css" StackPane.alignment="CENTER" />
+      </children>
+    </StackPane>
+  </children>
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+  </padding>
+</VBox>

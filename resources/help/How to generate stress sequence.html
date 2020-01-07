@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to generate stress sequence</title>
+<link rel="stylesheet" href="css/Help.css">
+<!-- This help page has a video associated with it. -->
+</head>
+<body>
+<h1>How to generate stress sequence</h1>
+<par>
+Flight-by-flight stress sequences can be generated for a given stress input file (STF). Following video demonstrates how to do this.
+<p>
+<button type="button" class="hoverButton" onclick="app.helpVideoLink('How to generate stress sequence')" style="vertical-align:middle"><span>Play Demo</span></button>
+<br>
+For this, right-click on any STF file from the file tree and select <item>Generate Stress Sequence</item> from the popup menu.
+<p><img class="centre" alt="help9" src="image/help9.png"><p>This will open the <item>Generate Stress Sequence</item> panel.
+<h2><a name="Overall factors">Overall factors</a></h2>
+Overall stress modifiers multiply, add or set all 1g steady, incremental, delta-p and delta-t stresses in the spectrum. Modification 
+type is selected as shown in the following figure.<p><img class="centre" alt="help10" src="image/help10.png"><p>Modification types are as 
+follows;
+<UL>
+<LI><item>Multiply:</item> Stresses will be scaled by the given stress factor.
+<LI><item>Add:</item> Given constant value will be added to the existing stresses.
+<LI><item>Set:</item> Existing stresses will be replaced by the given value.
+</UL>
+<h2><a name="Loadcase factors">Loadcase factors</a></h2>
+Loadcase factors allow you to modify the stresses for the selected 1g or incremental fatigue events. Search for the 
+event you want to modify via its name or comment, select it (or multiple events), enter modification value, select modification method and add it 
+to the modifiers list.<p>In addition, you can also supply multiplication table files in order to apply loadcase factors. For this, click on the 
+Multiplication Table tab and simply drag & drop multiplication table file (*.mut) on the designated area. Select the table column (factors column 
+index starts with 1), and click Ok.<p><img class="centre" alt="help11" src="image/help11.png">
+<h2><a name="Segment factors">Segment factors</a></h2>
+You can modify the stresses based on the flight segment they belong to. For this, first select the flight segments you want to modify, 
+enter 1g, increment, delta-p and delta-t stress modifier values, select the modification method for each and add the modifier to the modifiers list.
+<p><img class="centre" alt="help50" src="image/help50.png">
+<h2><a name="Pressure">Pressure</a></h2>
+You can specify the delta-p load case number and the reference delta pressure value to be used when generating the delta-p stresses. Leave these 
+fields empty for automatic determination. By default the delta-p load case number will be determined from the load case having a flight type 
+identifier ending with '000' in the CVT file. Reference delta-p value will be searched from the conversion table, and if not found, 
+the maximum delta pressure value from the ANA file will be used as the reference DP.
+<h2><a name="Temperature">Delta temperature</a></h2>
+Equinox is able to generate delta-t stresses with the given delta-t interpolation method. Following options are available;
+<UL>
+<LI><item>None:</item> No delta-t stress will be generated.
+<LI><item>1 point interpolation:</item> Delta-t stresses will be generated from single stress/temperature ratio. For this, the delta-t load 
+case number and reference temperature value should be supplied.
+<LI><item>2 points interpolation:</item> In this case, delta-t stresses will be interpolated from the superior and inferior stress/temperature 
+values. For this, the superior and inferior delta-t load case numbers and reference temperature values should be supplied.
+</UL>
+<h2><a name="Stress rotation">Stress rotation</a></h2>
+Following inputs are required in order to define stress rotation;
+<UL>
+<LI><item>Stress component:</item> Stress component to use from the pilot point stresses file (STF). This can be normal x, y, shear xy or 
+rotated stresses with the given rotation angle in degrees.
+<LI><item>Rotation angle:</item> This is the angle in degrees in order to rotate the stress tensor.
+</UL>
+</par>
+</body>
+</html>

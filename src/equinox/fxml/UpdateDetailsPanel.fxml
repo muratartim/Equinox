@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+
+<TitledPane fx:id="root_" cache="true" cacheHint="SPEED" expanded="false" stylesheets="@../css/TitledPanel2.css" text="Show Details" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="equinox.controller.UpdateDetailsPanel">
+   <font>
+      <Font size="11.0" />
+   </font>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+   <content>
+      <VBox cache="true" cacheHint="SPEED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="550.0" stylesheets="@../css/Commons.css">
+         <padding>
+            <Insets bottom="5.0" top="10.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_RIGHT" cache="true" cacheHint="SPEED" maxWidth="1.7976931348623157E308" prefHeight="127.0" style="-fx-background-color: whitesmoke; -fx-border-color: slategray slategray whitesmoke slategray;" styleClass="updatePanel" VBox.vgrow="NEVER">
+               <children>
+                  <VBox alignment="CENTER_RIGHT" cache="true" cacheHint="SPEED" spacing="5.0">
+                     <children>
+                        <Label fx:id="versionLabel_" cache="true" cacheHint="SPEED" text="Version: 1.1" textFill="WHITE">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dateLabel_" cache="true" cacheHint="SPEED" layoutX="10.0" layoutY="48.0" text="Date: 11/12/2014" textFill="WHITE">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="sizeLabel_" cache="true" cacheHint="SPEED" layoutX="10.0" layoutY="61.0" text="Download size: 150 Mb" textFill="WHITE">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Button cache="true" cacheHint="SPEED" mnemonicParsing="false" onAction="#onInstallClicked" styleClass="menuButton" text="Install Now!">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="-5.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox cache="true" cacheHint="SPEED" style="-fx-border-color: whitesmoke slategray slategray slategray;" VBox.vgrow="ALWAYS">
+               <children>
+                  <WebView fx:id="view_" cache="true" cacheHint="SPEED" minHeight="-Infinity" minWidth="-1.0" prefHeight="400.0" prefWidth="-1.0" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </content>
+</TitledPane>

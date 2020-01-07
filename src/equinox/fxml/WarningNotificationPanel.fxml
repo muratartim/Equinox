@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.WarningNotificationPanel">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="4.0">
+         <children>
+            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../image/notifWarning.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="title_" graphicTextGap="6.0" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Warning" wrapText="true" />
+                  <Label fx:id="text_" graphicTextGap="6.0" style="-fx-font-size: 15px;" text="Please select a valid CDF set to proceed." wrapText="true" HBox.hgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

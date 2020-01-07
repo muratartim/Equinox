@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Equinox update</title>
+<style type="text/css">
+	body {
+		padding-left:10px;
+		font-family: Helvetica, Georgia, "Times New Roman", Times, serif;
+		font-size:14px;
+		color: black;
+		background-color: whitesmoke;
+	}
+	
+	h1 {
+		font-size:22px;
+		color: steelblue;
+		border-bottom: thin dotted;
+	}
+	
+	h2 {
+		font-size:18px;
+		color: steelblue;
+		border-bottom: thin dotted;
+	}
+	
+	h3 {
+		font-size:18px;
+		color: firebrick;
+		border-bottom: thin dotted;
+	}
+	
+	par {
+		line-height:130%
+	}
+	
+	item {
+		font-style:oblique;
+		font-weight:bold;
+	}
+	
+	notes {
+		font-weight:bold;
+		border-bottom: thin dotted;
+	}
+	
+	desc {
+		color: grey;
+	}
+</style>
+</head>
+<body>
+<h1>Equinox Digital Twin Update</h1>
+<par>
+This update contains improvements and bug fixes. It also introduces container technology in order to perform automatic updates
+without the need for re-installing the application.
+<h3><a name="Important">Important</a></h3>
+<UL>
+<LI>This update is backward compatible. Databases created with minimum Equinox v2.8 will be automatically updated to be compatible with this version.<p>
+<LI>Note that, due to application name change and the first time introduction of the container technology, user are required to uninstall the previous version 
+of the application (i.e. Equinox) and reinstall Equinox container. 
+</UL>
+<h2><a name="New Features">New Features</a></h2>
+<UL>
+<LI><item>Container Technology</item><br><desc>
+Application is now embedded inside an App Container. App container is a platform specific implementation and it is responsible for performing automatic updates. It
+also supplies the Java Runtime to execute the embedded application (i.e. Equinox).
+</desc><p>
+<LI><item>Server-side Update</item><br><desc>
+A new database connection pooling engine (DBPool) is added to Equinox Hub Server. With this, the server can be run using one of the 2 possible engines: Hikari or DBPool. This
+update is intended to solve connection loss issues experienced with the Hikari engine.
+</desc><p>
+<LI><item>Encrypted Application Settings</item><br><desc>
+With this version of Equinox, application settings are written to and read from disk using 64bit data encryption.
+</desc><p>
+<LI><item>Handling Unconventional FLS Files</item><br><desc>
+Reading tolerance is introduced in order to handle unconventionally formatted FLS files. It is observed that some of the FLS files did not have space separator between
+typical flight name and severities. This prevented Equinox to read the files. With the introduction of tolerance reader, application reads the files but warns the user
+for unconventional formatting.
+</desc><p>
+<LI><item>Uploading Container & Application Updates</item><br><desc>
+Administrators can now upload container and application update packages to server via the Equinox Admin menus.
+</desc><p>
+</UL>
+<h2><a name="Corrections & Bug Fixes">Corrections & Bug Fixes</a></h2>
+<UL>
+<LI><item>Bug Fix: Bug Reporting</item><br><desc>
+Bug reporting system was broken in the previous version. The reason for the bug is the buffer-overflow during network communication due to excessive bug report sizes. Problem is
+resolved by splitting bug reports and sending the partitions over the network.</desc><p>
+<LI><item>Bug Fix: Equivalent Stress Analysis with Sigma File Input</item><br><desc>
+Equivalent stress analysis did not work when Sigma file was supplied as input. Problem was due to wrong table reference to the local database. Bug is fixed.</desc><p>
+<LI><item>Bug Fix: User Interface Theme</item><br><desc>
+Application did not start if user changed the UI theme from settings menu. This was due to themes other than the default theme not being included in the application package. 
+Problem resolved.</desc><p>
+<LI><item>Search Pilot Points</item><br><desc>
+A feedback that the search results are limited to the top 100 and the order of results is given at the top of results panel.</desc><p>
+</UL>
+</desc><p>
+<h2><a name="New Plugins">New Plugins</a></h2>
+No new plugin is added in this release.
+</desc><p>
+</par>
+</body>
+</html>

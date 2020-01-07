@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CustomMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="root_" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.MenuBarPanel">
+   <children>
+      <MenuBar fx:id="menuBar_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="29.0" stylesheets="@../css/MenuBar.css" StackPane.alignment="TOP_CENTER">
+        <menus>
+          <Menu id="menu" mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onNewWorkspaceClicked" text="New Workspace">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.database" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onResetWorkspaceClicked" text="Reset Workspace">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.power-off" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onOpenWorkspaceClicked" text="Open Workspace">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.external-link" />
+                     </graphic>
+                  </MenuItem>
+                  <Menu fx:id="openRecentMenu_" mnemonicParsing="false" text="Open Recent" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveWorkspaceClicked" text="Save Workspace As...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                     </graphic>
+                  </MenuItem>
+                  <Menu fx:id="shareWorkspaceFileMenu_" mnemonicParsing="false" text="Share Workspace With...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.mail-forward" />
+                     </graphic>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#onBackupWorkspaceClicked" text="Backup Workspace">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.history" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Add New...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.plus-circle" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onAddCDFSetClicked" text="Add New Spectrum">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="D" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                           </accelerator>
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.chart" />
+                           </graphic>
+                        </MenuItem>
+                        <Menu mnemonicParsing="false" text="Add New Stress Sequences...">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onAddSTHClicked" text="From STH Files" />
+                              <MenuItem mnemonicParsing="false" onAction="#onAddSIGMAClicked" text="From SIGMA Files" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onDownloadSampleSIGMAClicked" text="Download Sample SIGMA File" />
+                           </items>
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.pulse2" />
+                           </graphic>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#onAddACModelClicked" text="Add New A/C Model">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.airplane" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="saveFile_" disable="true" mnemonicParsing="false" text="Save Selected File As...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="L" control="UP" meta="DOWN" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSettingsClicked" text="Settings...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="COMMA" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.gears" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onRestartClicked" text="Restart">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.spinner11" />
+                     </graphic>
+                  </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#onQuitClicked" text="Quit Equinox">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu id="menu" mnemonicParsing="false" text="View">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onNewsfeedViewClicked" text="Newsfeed">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="F10" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.newspaper-o" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onInfoViewClicked" text="File View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.info" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onPlotViewClicked" text="Typical Flight View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F2" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.airplane3" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onFlightComparisonViewClicked" text="Flight Comparison View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F3" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.balance-scale" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onComparisonViewClicked" text="Statistics View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F4" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.bar-chart-o" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onLevelCrossingViewClicked" text="Level Crossing View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F5" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/CustomFontLabel.css" text="%custom.line-graph" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onMissionProfileViewClicked" text="Mission Profile View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F6" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.area-chart" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onMissionParametersViewClicked" text="Mission Parameters View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F7" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.sliders" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onDamageContributionViewClicked" text="Damage Contribution View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F8" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.pie-chart" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="objectView_" mnemonicParsing="false" onAction="#on3DViewClicked" text="3D Object View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F9" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.glasses-3d2" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onDownloadsViewClicked" text="Downloads View">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.cloud-download" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onPluginsViewClicked" text="Plugins View">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.puzzle-piece" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onImageViewClicked" text="Image View">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.photo" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveViewClicked" text="Save View As...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="V" control="UP" meta="DOWN" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+          <Menu id="menu" fx:id="selectedMenu_" disable="true" mnemonicParsing="false" text="Selected" />
+            <Menu id="menu" mnemonicParsing="false" text="Collaboration">
+               <items>
+                  <Menu mnemonicParsing="false" text="Status">
+                     <items>
+                        <RadioMenuItem fx:id="available_" mnemonicParsing="false" onAction="#onAvailableSelected" selected="true" text="Available to All Users">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="status" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" onAction="#onBusySelected" text="Do Not Disturb" toggleGroup="$status" />
+                     </items>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.collaboration" />
+                     </graphic>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="shareFile_" disable="true" mnemonicParsing="false" text="Share File">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="UP" meta="DOWN" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.mail-forward" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onShareViewClicked" text="Share View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="UP" meta="DOWN" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <Menu fx:id="shareWorkspaceCollaborationMenu_" mnemonicParsing="false" text="Share Workspace With..." />
+                  <Menu fx:id="shareInstructionSetCollaborationMenu_" mnemonicParsing="false" text="Share Instruction Set With..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu fx:id="runInstructionSetCollaborationMenu_" mnemonicParsing="false" text="Run Instruction Set On...">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.users4" />
+                     </graphic>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMessageClicked" text="Send Text Message...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="T" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.comments-o" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu id="menu" mnemonicParsing="false" text="Eqx Database">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onSearchSpectrumClicked" text="Search Spectra">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.chart" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onSearchPilotPointsClicked" text="Search Pilot Points">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.file-powerpoint-o" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onSearchMultiplicationTablesClicked" text="Search Loadcase Factors">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.table" />
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="M" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#onSearchACModelClicked" text="Search A/C Models">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.airplane" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSearchSettingsClicked" text="Search Engine Settings...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.gears" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onDatabaseConnectionSettingsClicked" text="Database Connection Settings...">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.database-edit" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDataInsightsClicked" text="Equinox Data Insights">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.stats-growth" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu id="menu" mnemonicParsing="false" text="Automation">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onRunInstructionSetClicked" text="Run Instruction Set">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.play3" />
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="I" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onCheckInstructionSetClicked" text="Check Instruction Set">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.clipboard2" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onGenerateExecutionPlanClicked" text="Generate Execution Plan">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.tree7" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onScheduleInstructionSetClicked" text="Schedule Instruction Set">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveInstructionSetClicked" text="Save Instruction Set to Workspace">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu fx:id="shareInstructionSetMenu_" mnemonicParsing="false" text="Share Instruction Set With...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.mail-forward" />
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="runInstructionSetMenu_" mnemonicParsing="false" text="Run Instruction Set On...">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.users4" />
+                     </graphic>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Convert Instruction Set...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onConvertToJsonClicked" text="To JSON..." />
+                        <MenuItem mnemonicParsing="false" onAction="#onConvertToXmlClicked" text="To XML..." />
+                     </items>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.language" />
+                     </graphic>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Download Templates...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onDownloadRootTemplateClicked" text="Root Instruction Set Template" />
+                        <MenuItem mnemonicParsing="false" onAction="#onDownloadGenerateStressSequenceTemplateClicked" text="Generate Stress Sequence Template" />
+                        <MenuItem mnemonicParsing="false" onAction="#onDownloadEquivalentStressAnalysisTemplateClicked" text="Equivalent Stress Analysis Template" />
+                        <MenuItem mnemonicParsing="false" onAction="#onDownloadDamageContributionAnalysisTemplateClicked" text="Damage Contribution Analysis Template" />
+                     </items>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.insert-template" />
+                     </graphic>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#onDownloadSampleInstructionSetsClicked" text="Download Sample Instruction Sets">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.color-sampler" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu id="menu" fx:id="pluginMenu_" mnemonicParsing="false" text="Plugins">
+               <items>
+                  <CustomMenuItem mnemonicParsing="false" onAction="#onRFORTExtendedClicked" text="Unspecified Action">
+                     <content>
+                        <HBox alignment="CENTER_LEFT" prefWidth="220.0">
+                           <children>
+                              <Label fx:id="rfortExtendedLabel_" maxWidth="1.7976931348623157E308" text="RFORT Extended" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.filter" />
+                                 </graphic>
+                              </Label>
+                              <Button contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <tooltip>
+                                    <Tooltip text="Remove plugin" />
+                                 </tooltip>
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.minus-circle" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </content>
+                  </CustomMenuItem>
+                  <CustomMenuItem fx:id="myCheckMenuItem_" mnemonicParsing="false" onAction="#onMyCheckClicked" text="Unspecified Action">
+                     <content>
+                        <HBox alignment="CENTER_LEFT" prefWidth="220.0">
+                           <children>
+                              <Label fx:id="myCheckLabel_" maxWidth="1.7976931348623157E308" text="MyCheck" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.check-square-o" />
+                                 </graphic>
+                              </Label>
+                              <Button contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <tooltip>
+                                    <Tooltip text="Remove plugin" />
+                                 </tooltip>
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.minus-circle" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </content>
+                  </CustomMenuItem>
+                  <CustomMenuItem fx:id="adaptDRFMenuItem_" mnemonicParsing="false" onAction="#onAdaptDRFClicked" text="Unspecified Action">
+                     <content>
+                        <HBox alignment="CENTER_LEFT" prefWidth="220.0">
+                           <children>
+                              <Label fx:id="adaptDRFLabel_" maxWidth="1.7976931348623157E308" text="Adapt DRF" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.equalizer" />
+                                 </graphic>
+                              </Label>
+                              <Button contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <tooltip>
+                                    <Tooltip text="Remove plugin" />
+                                 </tooltip>
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.minus-circle" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </content>
+                  </CustomMenuItem>
+                  <CustomMenuItem fx:id="excaliburMenuItem_" mnemonicParsing="false" onAction="#onExcaliburClicked" text="Unspecified Action">
+                     <content>
+                        <HBox alignment="CENTER_LEFT" prefWidth="220.0">
+                           <children>
+                              <Label fx:id="excaliburLabel_" maxWidth="1.7976931348623157E308" text="Excalibur" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.sword" />
+                                 </graphic>
+                              </Label>
+                              <Button contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <tooltip>
+                                    <Tooltip text="Remove plugin" />
+                                 </tooltip>
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.minus-circle" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </content>
+                  </CustomMenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onInstallMorePluginsClicked" text="Install More Plugins...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.plus-circle" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+          <Menu id="menu" mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onHelpClicked" text="Help Contents...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.question-circle" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onHelpVideosClicked" text="'How to..' Videos">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.video-camera" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onShortcutsClicked" text="Shortcut Keys...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="K" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.key-A" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem />
+                  <MenuItem mnemonicParsing="false" onAction="#onBugReportClicked" text="Report a Bug">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="B" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.bug" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onRoadmapClicked" text="Equinox Roadmap">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.map-signs" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem />
+                  <MenuItem mnemonicParsing="false" onAction="#onCheckForUpdatesClicked" text="Check for Updates">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="U" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.refresh" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem />
+                  <MenuItem mnemonicParsing="false" onAction="#onEquinoxWebClicked" text="Equinox on the Web">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.sphere" />
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onCodeDocumentClicked" text="Source Code Documentation">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.code" />
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onWhatsNewClicked" text="What's New...">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.new" />
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onAboutClicked" text="About Equinox...">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/equinoxIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+               </items>
+          </Menu>
+            <Menu id="menu" fx:id="administratorMenu_" disable="true" mnemonicParsing="false" text="Administrator">
+               <items>
+                  <MenuItem fx:id="login_" mnemonicParsing="false" onAction="#onLoginClicked" text="Login as Administrator">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.sign-in" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu disable="true" mnemonicParsing="false" text="Upload...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.cloud-upload" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadSpectraClicked" text="Upload Spectra">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.chart" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadPilotPointsClicked" text="Upload Pilot Points">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.file-powerpoint-o" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadMultiplicationTablesClicked" text="Upload Loadcase Factors">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.table" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem disable="true" mnemonicParsing="false" onAction="#onUploadAircraftModelsClicked" text="Upload A/C Models">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.airplane" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadMaterialsClicked" text="Upload Materials">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.book" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadDamageContributionsClicked" text="Upload Damage Contributions">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.pie-chart" />
+                           </graphic>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadPluginClicked" text="Upload Plugin">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.puzzle-piece" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadSampleInputsClicked" text="Upload Sample Inputs">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.download" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadVideoClicked" text="Upload Help Video">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.video-camera" />
+                           </graphic>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadContainerUpdateClicked" text="Upload Container Update">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.cart4" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadApplicationUpdateClicked" text="Upload Application Update">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.cart-add2" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#onExecuteSQLStatementClicked" text="Execute SQL Statement...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.gear" />
+                     </graphic>
+                  </MenuItem>
+                  <Menu disable="true" mnemonicParsing="false" text="Manage User Accounts...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onAddNewUserClicked" text="Create New User Account">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.user-plus2" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onEditUserPermissionsClicked" text="Edit User Permissions">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.user-check2" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onDeleteUsersClicked" text="Delete User Accounts">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.user-minus2" />
+                           </graphic>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#onShowPermissionRequestsClicked" text="Show Permission Requests">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.clipboard2" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.users" />
+                     </graphic>
+                  </Menu>
+                  <Menu disable="true" mnemonicParsing="false" text="Manage Services...">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.weather-cloudy" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onManageDataServiceClicked" text="Data Service">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.database" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onManageAnalysisServiceClicked" text="Analysis Service">
+                           <graphic>
+                              <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.gear" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onManageExchangeServiceClicked" text="Collaboration Service">
+                           <graphic>
+                              <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.link" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem disable="true" mnemonicParsing="false" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#onResetExchangeDatabaseClicked" text="Reset Exchange Data">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.power-off" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#onHealthMonitoringClicked" text="Microservices Health Monitoring...">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.heartbeat" />
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem disable="true" mnemonicParsing="false" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.sign-out" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+        </menus>
+         <StackPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </StackPane.margin>
+      </MenuBar>
+      <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="260.0" spacing="8.0" StackPane.alignment="CENTER_RIGHT">
+         <children>
+            <StackPane>
+               <children>
+                  <TextField fx:id="searchField_" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="180.0" promptText="Search help" style="-fx-base: steelblue;">
+                     <padding>
+                        <Insets left="18.0" right="18.0" />
+                     </padding>
+                  </TextField>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <image>
+                        <Image url="@../image/searchGray.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="2.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Button fx:id="cancelSearch_" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" style="-fx-background-color: transparent;" text="Button" visible="false" StackPane.alignment="CENTER_RIGHT">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/cancel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <StackPane.margin>
+                        <Insets right="2.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+            <SplitMenuButton contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showActiveTasks" prefHeight="20.0" prefWidth="55.0" text="SplitMenuButton">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="notificationImage_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" translateX="-2.0">
+                     <image>
+                        <Image url="@../image/tm.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showActiveTasks" text="Active tasks">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#showQueuedTasks" text="Queued tasks">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.list-ol" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#showSavedTasks" text="Saved tasks">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#showScheduledTasks" text="Scheduled tasks">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#showTaskHistory" text="Task history">
+                     <graphic>
+                        <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.history" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+               <stylesheets>
+                  <URL value="@../css/ContextMenu.css" />
+                  <URL value="@../css/SplitMenuButton1.css" />
+               </stylesheets>
+            </SplitMenuButton>
+         </children>
+         <padding>
+            <Insets right="16.0" />
+         </padding>
+      </HBox>
+   </children>
+</StackPane>

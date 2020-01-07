@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="AF-Twin Devops" company="ESCSA" webLink="http://" view-date="2018-08-13" view-index="0" gantt-divider-location="518" resource-divider-location="300" version="2.8.8" locale="en_DE">
+    <description>
+        <![CDATA[This is the project planning for the software architecture, design and development activities of AF-Twin platform.]]>
+    </description>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Name" width="249" order="0"/>
+        <field id="tpd5" name="End date" width="90" order="1"/>
+        <field id="tpd6" name="Duration" width="49" order="2"/>
+        <field id="tpd13" name="Resources" width="61" order="3"/>
+        <field id="tpd1" name="Priority" width="48" order="4"/>
+        <option id="color.recent">
+            <![CDATA[#ff0033 #ff9900 #ffffff #990099 #999999 #666666 #009933 #000000 #660066 #0000ff]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="209" order="0"/>
+        <field id="1" name="Default role" width="85" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="67" name="Improving query performance by applying batch process" color="#990099" meeting="false" start="2018-08-20" duration="5" complete="0" thirdDate="2018-08-22" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[This is a performance improvement. Local database query performance should be improved by applying batch process. Task includes following steps:
+* Determine queries that have significant potential for performance improvement
+* Run queries (or tasks including these queries) and note runtimes
+* Implement batch process and compare runtimes.]]>
+            </notes>
+        </task>
+        <task id="231" name="Admin feature to see list of AF-Twin users" color="#990099" meeting="false" start="2018-09-03" duration="2" complete="0" thirdDate="2018-08-20" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Task for seeing a list of all users in the central database. The list should give basic information on users (such as names, departments, emails etc.). Menu button should be added to Admins menu under user management. The list should be exportable to an Excel file.]]>
+            </notes>
+        </task>
+        <task id="69" name="Bug-10: Health monitoring UI freezes at application startup" color="#8cb6ce" meeting="false" start="2018-09-03" duration="3" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" priority="0" expand="true">
+            <notes>
+                <![CDATA[Health monitoring UI freezes at application startup causing the whole app to crash.
+* Doesn't always occur
+* Diagnose problem by print statements to understand where exactly problem is originated from.]]>
+            </notes>
+        </task>
+        <task id="54" name="Plugin System Design &amp; Development" color="#ffffff" meeting="true" start="2018-08-13" duration="0" complete="0" thirdDate="2018-10-08" thirdDate-constraint="0" priority="2" expand="true">
+            <task id="57" name="Standardize Python executable creation process for all target OS (Plugins)" color="#990099" meeting="false" start="2018-08-13" duration="5" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="2" expand="true">
+                <notes>
+                    <![CDATA[In order to enable external plugins to interact with AF-Twin, we have to standardize Python executable creation process. This task includes:
+* Investigate and find software (preferably freeware) that compiles Python source codes into executables.
+* Write sample Python applications and convert them into executables using the software.
+* Add external libraries into sample applications and test converting into executables.
+* Generate executables for both Windows and Linux.
+* Once successful, write cookbook including step-by-step procedure to generate executables, limitations etc.]]>
+                </notes>
+            </task>
+            <task id="56" name="Enhance Java API for plugins (Plugins)" color="#8cb6ce" meeting="false" start="2018-08-13" duration="15" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="2" expand="true">
+                <notes>
+                    <![CDATA[The existing Java API for AF-Twin plugins should be extended to include services such as:
+* Local database connectivity
+* Central database connectivity
+* Fatigue & propagation equivalent stress analysis task creation
+* Stress sequence generation task creation
+* Plotting capabilities]]>
+                </notes>
+            </task>
+            <task id="61" name="Standardize Perl executable creation process for all target OS (Plugins)" color="#009933" meeting="false" start="2018-08-20" duration="10" complete="0" thirdDate="2018-08-20" thirdDate-constraint="0" priority="2" expand="true">
+                <notes>
+                    <![CDATA[In order to enable external plugins to interact with AF-Twin, we have to standardize Perl executable creation process. This task includes:
+* Investigate and find software (preferably freeware) that compiles Perl source codes into executables.
+* Write sample Perl applications and convert them into executables using the software.
+* Add external libraries into sample applications and test converting into executables.
+* Generate executables for both Windows and Linux.
+* Once successful, write cookbook including step-by-step procedure to generate executables, limitations etc.]]>
+                </notes>
+            </task>
+            <task id="58" name="Standardize FORTRAN executable creation process for all target OS (Plugins)" color="#8cb6ce" meeting="false" start="2018-09-06" duration="2" complete="0" thirdDate="2018-10-04" thirdDate-constraint="0" priority="2" expand="true">
+                <notes>
+                    <![CDATA[In order to enable external plugins to interact with AF-Twin, we have to standardize Fortran executable creation process. This task includes:
+* Investigate and find software (preferably freeware) that compiles Fortran source codes into executables.
+* Write sample Fortran applications and convert them into executables using the software.
+* Add external libraries into sample applications and test converting into executables.
+* Generate executables for both Windows and Linux.
+* Once successful, write cookbook including step-by-step procedure to generate executables, limitations etc.]]>
+                </notes>
+            </task>
+        </task>
+        <task id="267" name="Venus Release" color="#ff9900" meeting="true" start="2018-09-14" duration="0" complete="0" thirdDate="2018-09-10" thirdDate-constraint="0" priority="2" expand="true">
+            <notes>
+                <![CDATA[This milestone marks the release of Venus.]]>
+            </notes>
+        </task>
+        <task id="41" name="Add different ISAMI option for stress rotation" color="#ff0033" meeting="false" start="2018-09-04" duration="9" complete="0" thirdDate="2018-09-04" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Additional stress rotation options to be implemented for 2D stress state. Following options shall be considered:
+* Resolved fatigue stress (currently implemented)
+* Equivalent strain based resolved fatigue stress
+* Resolved 2D fatigue stress for specified angle.
+
+**Note 1:** In order to find the affected controller, process and task classes, do reference search in IDE for 'StressComponent.ROTATED'.
+
+**Note 2:** The pilot point table in the local database will need to be updated to store the resolution method.
+
+**Note 3:** Resolution method will have to be propagated to central database storage and consequently will affect pilot point upload/download process (data server tasks and client UI).]]>
+            </notes>
+        </task>
+        <task id="11" name="Replace Apache database engine with H2" color="#8cb6ce" meeting="false" start="2018-09-10" duration="5" complete="0" thirdDate="2018-09-10" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[This is a performance improvement. H2 database engine is known to be far faster than Apache Derby.
+* How to import H2 into Eclipse
+* Is there SQL accent differences between H2 and Derby
+* How to establish connection to H2 database via Java code]]>
+            </notes>
+        </task>
+        <task id="254" name="Batch Analysis Mode - Part 1" color="#990099" meeting="false" start="2018-09-19" duration="3" complete="0" thirdDate="2018-09-19" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Provide an overview of all analysis parameters to allow the user to quickly check and set up all parameters needed for the analysis
+(Excel file? ISAMI Template?)]]>
+            </notes>
+        </task>
+        <task id="47" name="Permissions for A/C program, component, section" color="#ff0033" meeting="false" start="2018-09-17" duration="10" complete="0" thirdDate="2018-09-10" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[User permissions should be extended to include A/C program, section and component.
+* User will only have access to specific A/C program, section data in the central database
+* Basic and Advanced Search or download tasks (for spectra, pilot points, loadcase factors etc.) on data server will need to be updated accordingly.
+* Either the search query needs to be modified to include only permitted A/C programs and sections
+* Or the search results can be filtered to exclude not permitted results
+* [Permission](https://gheprivate.intra.corp/Digital-Airframe-Solutions/AF-Twin-Server-Utilities/blob/master/src/equinox/serverUtilities/Permission.java) class in server utilities needs to be updated. See suggestions below.
+
+**Suggestions:**
+Permission class is an enumeration therefore it is for static permissions. For this task we need to implement dynamic permissions.
+1. Create 2 classes called AircraftProgramPermission and AircraftSectionPermission
+2. Add a final String-array field called programs (for AircraftProgramPermission)
+3. Create a constructor with variable String parameters (i.e. String... programs)
+
+This class should then be used to check permissions in the above mentioned search tasks.]]>
+            </notes>
+        </task>
+        <task id="49" name="Pilot Point Database Enhancement" color="#ffffff" meeting="true" start="2018-08-13" duration="0" complete="0" thirdDate="2018-10-01" thirdDate-constraint="0" priority="2" expand="true">
+            <notes>
+                <![CDATA[Pilot point tables in central database need to be renewed with extended attribute information. This task includes the following steps:
+* Pilot point storage design can be accessed from [here](https://gheprivate.intra.corp/Digital-Airframe-Solutions/AF-Twin-Data-Analyst/blob/master/docs/PP_Storage_Design.xlsx)
+* Create an SQL file containing create table and index statements
+* Create tables in validation database
+* Create scripts to migrate existing PPs to new tables - test i script on validation database
+* Update queries (tasks) in data server
+* Update network messages and network data objects in data server
+* Update client tasks (search pilot point, download  etc.)
+* Update client UI for pilot points]]>
+            </notes>
+            <task id="77" name="SQL Statement Creation" color="#ff0033" meeting="false" start="2018-08-13" duration="2" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="2" expand="true">
+                <notes>
+                    <![CDATA[This is a subtask of the task #3. This task includes the following steps:
+* Create an SQL file containing create table and index statements
+* Create tables in validation database
+
+Note 1: Pilot point storage design can be accessed from [here](https://gheprivate.intra.corp/Digital-Airframe-Solutions/AF-Twin-Data-Analyst/blob/master/docs/PP_Storage_Design.xlsx)
+
+Note 2: Please have a look at the file [resetDatabase.sql](https://gheprivate.intra.corp/Digital-Airframe-Solutions/AF-Twin-Server-Utilities/blob/master/sql/resetDatabase.sql) in AF-Twin-Server-Utilities project under sql folder. Would be best if you use same format as that file (for both creating and indexing statements)]]>
+                </notes>
+                <depend id="81" type="2" difference="3" hardness="Strong"/>
+            </task>
+            <task id="81" name="PP Data Migration - Part 1" color="#ff0033" meeting="false" start="2018-08-20" duration="3" complete="0" thirdDate="2018-08-20" thirdDate-constraint="0" priority="2" expand="true">
+                <notes>
+                    <![CDATA[This is a subtask of the task #3. This task includes the following steps:
+* Create scripts to migrate existing PPs from previous tables to new tables
+* Upload some sample PP data into validation database (to previous tables)
+* Test developed scripts to migrate the uploaded data on validation database
+
+Note 1: Pilot point storage design can be accessed from [here](https://gheprivate.intra.corp/Digital-Airframe-Solutions/AF-Twin-Data-Analyst/blob/master/docs/PP_Storage_Design.xlsx)]]>
+                </notes>
+                <depend id="344" type="2" difference="5" hardness="Strong"/>
+            </task>
+            <task id="344" name="PP Data Migration - Part 2" color="#ff0033" meeting="false" start="2018-08-30" duration="3" complete="0" thirdDate="2018-08-30" thirdDate-constraint="0" priority="2" expand="true">
+                <depend id="84" type="2" difference="2" hardness="Strong"/>
+            </task>
+            <task id="84" name="Update Data Server codebase" color="#990099" meeting="false" start="2018-09-06" duration="7" complete="0" thirdDate="2018-09-04" thirdDate-constraint="0" priority="2" expand="true">
+                <notes>
+                    <![CDATA[This is a subtask of the task #3. This task includes the following steps:
+* Update queries (pilot point table related) in data server
+* Update network messages and network data objects related to pilot point data in data server
+	
+Note 1: Pilot point storage design can be accessed from [here](https://gheprivate.intra.corp/Digital-Airframe-Solutions/AF-Twin-Data-Analyst/blob/master/docs/PP_Storage_Design.xlsx)]]>
+                </notes>
+                <depend id="63" type="2" difference="3" hardness="Strong"/>
+            </task>
+            <task id="63" name="Update Data Analyst codebase" color="#8cb6ce" meeting="false" start="2018-09-20" duration="12" complete="0" thirdDate="2018-09-19" thirdDate-constraint="0" expand="true">
+                <notes>
+                    <![CDATA[This is a subtask of the task muratartim/EquinoxDataServer#3. This task includes the following steps:
+* Update central database pilot point related client tasks (search pilot point, download  etc.)
+* Update client UI for pilot points
+	
+Note 1: Pilot point storage design can be accessed from [here](https://github.com/muratartim/Equinox/blob/master/docs/pilot_point_storage_design/PP_Storage_Design.xlsx)]]>
+                </notes>
+            </task>
+        </task>
+        <task id="37" name="Server Stop/Restart Implementation" color="#ff0033" meeting="false" start="2018-10-01" duration="5" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="0" expand="true">
+            <notes>
+                <![CDATA[Server stop/restart tasks should be implemented.
+* Network messages
+* Server & lobby implementations
+* Task implementations
+* Client UI implementations]]>
+            </notes>
+        </task>
+        <task id="43" name="Batch Analysis Mode - Part 2" color="#990099" meeting="false" start="2018-10-01" duration="5" complete="0" thirdDate="2018-10-01" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Provide an overview of all analysis parameters to allow the user to quickly check and set up all parameters needed for the analysis
+(Excel file? ISAMI Template?)]]>
+            </notes>
+        </task>
+        <task id="35" name="Server Announcement UI" color="#ff0033" meeting="false" start="2018-10-08" duration="4" complete="0" thirdDate="2018-10-08" thirdDate-constraint="0" priority="0" expand="true">
+            <notes>
+                <![CDATA[A server announcement panel should be implemented and connected to a menu item in Administrator menu.]]>
+            </notes>
+        </task>
+        <task id="208" name="Keeping only Most Significant 5 TFs in stress sequence" color="#8cb6ce" meeting="false" start="2018-10-15" duration="7" complete="0" thirdDate="2018-10-15" thirdDate-constraint="0" expand="true"/>
+        <task id="301" name="Mercury Release" color="#ff9900" meeting="true" start="2018-10-26" duration="0" complete="0" thirdDate="2018-10-05" thirdDate-constraint="0" expand="true"/>
+        <task id="199" name="Notification Center" color="#ff0033" meeting="false" start="2018-10-15" duration="10" complete="0" thirdDate="2018-10-29" thirdDate-constraint="0" expand="true"/>
+        <task id="45" name="Migration to GISEH 2.0 &amp; ISAMI 10" color="#990099" meeting="false" start="2018-11-01" duration="7" complete="0" thirdDate="2018-11-01" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Analysis server should be migrated to GISEH 2.0. This task includes following steps:
+* Investigate GISEH 2.0 access and environment
+* Determine differences to GISEH 1.0
+* Investigate ISAMI access in GISEH 2.0
+* Investigate ISAMI 10
+* Shift JDK from 1.8 to 10]]>
+            </notes>
+        </task>
+        <task id="86" name="Streamlining ISAMI material database to AF-Twin central database" color="#ff0033" meeting="false" start="2018-10-29" duration="10" complete="0" thirdDate="2018-10-15" thirdDate-constraint="0" priority="0" expand="true">
+            <notes>
+                <![CDATA[Currently, ISAMI fatigue materials are imported into AF-Twin central database via scripts in a half-automated way. One has to manually export ISAMI materials and then execute the scripts to create material-import-data for AF-Twin.
+
+This process needs to be replaced with **direct access to ISAMI material database**.]]>
+            </notes>
+        </task>
+        <task id="193" name="Automated Equivalent Stress Analysis" color="#8cb6ce" meeting="false" start="2018-10-29" duration="10" complete="0" thirdDate="2018-11-12" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Analysis service should have the capabilitiy to carry out automated equivalent stress analyses at non-prime times. This process will include:
+* Check the clculation input table for completeness,
+* Perform requested analyses on multiple nodes
+* Store output results]]>
+            </notes>
+        </task>
+        <task id="197" name="PC Services Deployment" color="#8cb6ce" meeting="false" start="2018-11-12" duration="5" complete="0" thirdDate="2018-11-12" thirdDate-constraint="0" expand="true"/>
+        <task id="198" name="Persistence of Analysis Parameters" color="#990099" meeting="false" start="2018-11-12" duration="5" complete="0" thirdDate="2018-11-22" thirdDate-constraint="0" expand="true"/>
+        <task id="309" name="Sun Release" color="#ff9900" meeting="true" start="2018-11-23" duration="0" complete="0" thirdDate="2018-08-20" thirdDate-constraint="0" priority="2" expand="true"/>
+        <task id="195" name="3D Stress Mapping Visualization" color="#ff0033" meeting="false" start="2018-11-12" duration="10" complete="0" thirdDate="2018-11-12" thirdDate-constraint="0" expand="true"/>
+        <task id="196" name="Store Pilot Point Charts with Attributes" color="#990099" meeting="false" start="2018-11-19" duration="5" complete="0" thirdDate="2018-11-29" thirdDate-constraint="0" expand="true"/>
+        <task id="215" name="Not Available" color="#ffffff" meeting="true" start="2018-08-23" duration="0" complete="0" thirdDate="2018-08-27" thirdDate-constraint="0" priority="3" expand="true">
+            <task id="318" name="Not Available" color="#ff0033" meeting="false" start="2018-08-23" duration="5" complete="0" thirdDate="2018-08-23" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="219" name="Not Available" color="#990099" meeting="false" start="2018-08-27" duration="5" complete="0" thirdDate="2018-08-27" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="226" name="Not Available" color="#990099" meeting="false" start="2018-09-17" duration="2" complete="0" thirdDate="2018-08-27" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="284" name="Not Available" color="#8cb6ce" meeting="false" start="2018-09-17" duration="3" complete="0" thirdDate="2018-09-17" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="229" name="Not Available" color="#990099" meeting="false" start="2018-09-24" duration="5" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="256" name="Not Available" color="#8cb6ce" meeting="false" start="2018-10-08" duration="5" complete="0" thirdDate="2018-10-08" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="322" name="Not Available" color="#ff0033" meeting="false" start="2018-10-12" duration="1" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="312" name="Not Available" color="#8cb6ce" meeting="false" start="2018-10-24" duration="2" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="236" name="Not Available" color="#990099" meeting="false" start="2018-10-08" duration="18" complete="0" thirdDate="2018-10-08" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="326" name="Not Available" color="#ff0033" meeting="false" start="2018-11-01" duration="2" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="3" expand="true"/>
+            <task id="316" name="Not Available" color="#8cb6ce" meeting="false" start="2018-11-20" duration="2" complete="0" thirdDate="2018-08-13" thirdDate-constraint="0" priority="3" expand="true"/>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Murat" function="1" contacts="" phone=""/>
+        <resource id="1" name="Servan" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="2" name="Gustavo" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="3" name="Julien" function="2" contacts="" phone=""/>
+        <resource id="4" name="Eugene" function="2" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="56" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="58" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="63" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="69" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="197" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="193" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="208" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="284" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="256" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="312" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="316" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="35" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="37" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="47" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="77" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="81" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="86" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="199" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="195" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="318" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="322" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="326" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="344" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="43" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="57" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="67" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="84" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="45" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="196" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="198" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="219" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="226" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="229" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="231" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="236" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="254" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="61" resource-id="4" function="2" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations>
+        <vacation start="2018-08-27" end="2018-09-01" resourceid="2"/>
+        <vacation start="2018-09-24" end="2018-09-29" resourceid="2"/>
+        <vacation start="2018-10-08" end="2018-11-01" resourceid="2"/>
+        <vacation start="2018-11-19" end="2018-11-24" resourceid="2"/>
+        <vacation start="2018-12-17" end="2018-12-22" resourceid="2"/>
+        <vacation start="2018-09-17" end="2018-09-19" resourceid="2"/>
+    </vacations>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+    <roles>
+        <role id="1" name="architect"/>
+        <role id="2" name="data analyst"/>
+    </roles>
+</project>

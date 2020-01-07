@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" cache="true" cacheHint="SPEED" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.UpdatePanel">
+   <children>
+      <StackPane fx:id="stack_" alignment="TOP_LEFT" cache="true" cacheHint="SPEED" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_RIGHT" cache="true" cacheHint="SPEED" maxHeight="-Infinity" prefHeight="57.0" spacing="10.0" StackPane.alignment="TOP_LEFT" VBox.vgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" cache="true" cacheHint="SPEED" spacing="4.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView cache="true" cacheHint="SPEED" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                           <image>
+                              <Image url="@../image/notifUpdates.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" cache="true" cacheHint="SPEED">
+                           <children>
+                              <Label cache="true" cacheHint="SPEED" graphicTextGap="6.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Updates available" wrapText="true" />
+                              <Label fx:id="message_" cache="true" cacheHint="SPEED" graphicTextGap="6.0" style="-fx-font-size: 15px;" text="Please select a valid CDF set to proceed.&#10;Deneme deneme" wrapText="true" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button cache="true" cacheHint="SPEED" contentDisplay="RIGHT" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDetailsClicked" prefWidth="100.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="Details">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fx:id="detailsImage_" cache="true" cacheHint="SPEED" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/arrowDownWhite.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="install_" cache="true" cacheHint="SPEED" layoutX="385.0" layoutY="21.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#onInstallClicked" prefWidth="100.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="Install">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+   </children>
+</VBox>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.CheckListView?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="181.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.EditUserPermissionsPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+      <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Search User">
+      <content>
+      <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <TextField fx:id="alias_" maxWidth="1.7976931348623157E308" onAction="#onGoClicked" promptText="Alias" HBox.hgrow="ALWAYS">
+                                             <tooltip>
+                                                <Tooltip text="E.g. ts87am" />
+                                             </tooltip>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" onAction="#onGoClicked" styleClass="menuButton" text="Go" />
+                                       </children>
+                                    </HBox>
+      </children>
+      </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefWidth="20.0" text="Permissions">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ComboBox fx:id="profiles_" maxWidth="1.7976931348623157E308" onAction="#onProfileSelected" promptText="Select a profile (optional)..." />
+                                    <CheckListView fx:id="permissions_" maxWidth="1.7976931348623157E308" prefHeight="350.0" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

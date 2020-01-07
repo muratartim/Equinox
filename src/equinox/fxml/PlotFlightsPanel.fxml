@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="588.0" prefWidth="352.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.PlotFlightsPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox maxWidth="1.7976931348623157E308" prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+                        <TitledPane fx:id="peakInfoPane_" text="Show Peak Information">
+                           <content>
+                              <VBox>
+                                 <children>
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" minHeight="-Infinity" pannable="true" prefHeight="300.0" styleClass="scrollPane">
+                                       <content>
+                                          <VBox spacing="15.0">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                                             </padding>
+                                             <children>
+                                                <StackPane styleClass="zoomPanel">
+                                                   <children>
+                                                      <GridPane>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                                         </StackPane.margin>
+                                                         <children>
+                                                            <RadioButton fx:id="totalStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" selected="true" text="Total stress">
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="info" />
+                                                               </toggleGroup>
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="classCode_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Class code" toggleGroup="$info" GridPane.columnIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="segment_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Segment" toggleGroup="$info" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="peakNumber_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Peak number" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                      </GridPane>
+                                                      <Label styleClass="borderTitle" text="General" StackPane.alignment="TOP_LEFT">
+                                                         <padding>
+                                                            <Insets left="2.0" right="2.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets left="10.0" top="-10.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                </StackPane>
+                                                <StackPane styleClass="zoomPanel">
+                                                   <children>
+                                                      <GridPane>
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <RadioButton fx:id="onegEvent_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g event" toggleGroup="$info">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="onegIssy_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g load case" toggleGroup="$info" GridPane.columnIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="onegStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g stress" toggleGroup="$info" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="onegComment_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="1g comment" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                                         </StackPane.margin>
+                                                      </GridPane>
+                                                      <Label styleClass="borderTitle" text="1G" StackPane.alignment="TOP_LEFT">
+                                                         <StackPane.margin>
+                                                            <Insets left="10.0" top="-10.0" />
+                                                         </StackPane.margin>
+                                                         <padding>
+                                                            <Insets left="2.0" right="2.0" />
+                                                         </padding>
+                                                      </Label>
+                                                   </children>
+                                                </StackPane>
+                                                <StackPane styleClass="zoomPanel">
+                                                   <children>
+                                                      <GridPane>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                                         </StackPane.margin>
+                                                         <children>
+                                                            <RadioButton fx:id="incEvent_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. event" toggleGroup="$info">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="incIssy_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. load case" toggleGroup="$info" GridPane.columnIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="incStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. stress" toggleGroup="$info" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="incFac_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. factor" toggleGroup="$info" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="incComment_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. comment" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="incLinear_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Inc. linearity" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                      </GridPane>
+                                                      <Label styleClass="borderTitle" text="Increment" StackPane.alignment="TOP_LEFT">
+                                                         <padding>
+                                                            <Insets left="2.0" right="2.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets left="10.0" top="-10.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                </StackPane>
+                                                <StackPane styleClass="zoomPanel">
+                                                   <children>
+                                                      <GridPane>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                                                         </StackPane.margin>
+                                                         <children>
+                                                            <RadioButton fx:id="dpPressure_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Pressure" toggleGroup="$info">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="dpStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="DP stress" toggleGroup="$info" GridPane.columnIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="dtTemperature_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="Temperature" toggleGroup="$info" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="dtStress_" mnemonicParsing="false" onAction="#onPeakInfoSelected" text="DT stress" toggleGroup="$info" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="12.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                      </GridPane>
+                                                      <Label styleClass="borderTitle" text="Pressure &amp; Temperature" StackPane.alignment="TOP_LEFT">
+                                                         <padding>
+                                                            <Insets left="2.0" right="2.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets left="10.0" top="-10.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                </StackPane>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                       <VBox.margin>
+                                          <Insets bottom="-8.0" left="-8.0" right="-8.0" top="-8.0" />
+                                       </VBox.margin>
+                                    </ScrollPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Show Stress Components">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="increment_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Increment stress" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="dp_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Delta-P stress" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="dt_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Delta-T stress" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="oneg_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="1g stress" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <Separator prefWidth="200.0" />
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="110.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="total_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Plot on total stress" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Show Segment">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ComboBox fx:id="selectFlight_" maxWidth="1.7976931348623157E308" onAction="#onFlightSelected" promptText="Select flight..." />
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ComboBox fx:id="selectSegment_" maxWidth="1.7976931348623157E308" onAction="#onSegmentSelected" promptText="Select segment..." HBox.hgrow="ALWAYS" />
+                                          <ToggleButton fx:id="showSegment_" minWidth="55.0" mnemonicParsing="false" onAction="#onSegmentSelected" text="Show" HBox.hgrow="NEVER" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="94.0" text="Show/Hide Series">
+                           <content>
+                              <VBox fx:id="flightsContainer_" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="namingPane_" text="Series Naming">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeSpectrumName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include spectrum name" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="216.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeSTFName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include pilot point (STF) name" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="190.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeEID_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include element ID" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="192.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeSequenceName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include stress sequence name" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="224.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeProgram_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include A/C program" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="226.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeSection_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include A/C section" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="228.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeMission_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include fatigue mission" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+      <TitledPane expanded="false" text="Options">
+      <content>
+      <VBox spacing="10.0">
+      <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="showMarkers_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Show markers" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="104.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="showCrosshair_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Show crosshair" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="134.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="showPeakInfo_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Show peak information" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+      </children>
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      </VBox>
+      </content>
+      </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0">
+                     <children>
+                        <HBox maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/helpWhite.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="242.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" HBox.hgrow="NEVER" />
+                        <Button fx:id="refresh_" disable="true" mnemonicParsing="false" onAction="#onRefreshClicked" styleClass="menuButton" text="Refresh" />
+                     </children>
+                  </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

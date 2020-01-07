@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.DownloadPilotPointInfoPage">
+   <children>
+      <GridPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="416.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="134.0" minWidth="134.0" prefWidth="134.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="spectrumNameLabel_" layoutX="10.0" layoutY="17.0" text="Spectrum name:" textFill="SLATEGRAY" />
+            <Label fx:id="programLabel_" layoutX="10.0" layoutY="47.0" text="A/C program:" textFill="SLATEGRAY" GridPane.rowIndex="1" />
+            <Label fx:id="sectionLabel_" layoutX="10.0" layoutY="77.0" text="A/C section:" textFill="SLATEGRAY" GridPane.rowIndex="2" />
+            <Label fx:id="missionLabel_" layoutX="10.0" layoutY="107.0" text="Fatigue mission:" textFill="SLATEGRAY" GridPane.rowIndex="3" />
+            <Label fx:id="descriptionLabel_" layoutX="10.0" layoutY="137.0" text="Description:" textFill="SLATEGRAY" GridPane.rowIndex="4" />
+            <Label fx:id="elementTypeLabel_" layoutX="10.0" layoutY="167.0" text="Element type:" textFill="SLATEGRAY" GridPane.rowIndex="6" />
+            <Label fx:id="framePosLabel_" layoutX="10.0" layoutY="197.0" text="Frame/rib position:" textFill="SLATEGRAY" GridPane.rowIndex="7" />
+            <Label fx:id="stringerPosLabel_" layoutX="10.0" layoutY="227.0" text="Stringer position:" textFill="SLATEGRAY" GridPane.rowIndex="8" />
+            <Label fx:id="spectrumName_" layoutX="155.0" layoutY="17.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" />
+            <Label fx:id="program_" layoutX="155.0" layoutY="47.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="section_" layoutX="155.0" layoutY="77.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="mission_" layoutX="155.0" layoutY="107.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="description_" layoutX="155.0" layoutY="137.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="elementType_" layoutX="155.0" layoutY="167.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="framePos_" layoutX="155.0" layoutY="197.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label fx:id="stringerPos_" layoutX="155.0" layoutY="227.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label fx:id="dataSourceLabel_" layoutX="10.0" layoutY="197.0" text="Data source:" textFill="SLATEGRAY" GridPane.rowIndex="9" />
+            <Label fx:id="dataSource_" layoutX="115.0" layoutY="197.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label fx:id="genSourceLabel_" layoutX="10.0" layoutY="223.0" text="Generation source:" textFill="SLATEGRAY" GridPane.rowIndex="10" />
+            <Label fx:id="genSource_" layoutX="130.0" layoutY="223.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label fx:id="deliveryRefLabel_" layoutX="10.0" layoutY="249.0" text="Delivery reference:" textFill="SLATEGRAY" GridPane.rowIndex="11" />
+            <Label fx:id="deliveryRef_" layoutX="134.0" layoutY="249.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label fx:id="issueLabel_" layoutX="10.0" layoutY="275.0" text="Pilot point issue:" textFill="SLATEGRAY" GridPane.rowIndex="12" />
+            <Label fx:id="issue_" layoutX="140.0" layoutY="275.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label fx:id="fatigueMaterialLabel_" layoutX="10.0" layoutY="301.0" text="Fatigue material:" textFill="SLATEGRAY" GridPane.rowIndex="13" />
+            <Label fx:id="fatigueMaterial_" layoutX="144.0" layoutY="301.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <Label fx:id="eidLabel_" layoutX="10.0" layoutY="171.0" text="EID/LIQ/SG:" textFill="SLATEGRAY" GridPane.rowIndex="5" />
+            <Label fx:id="eid_" layoutX="144.0" layoutY="115.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="preffasMaterialLabel_" layoutX="10.0" layoutY="345.0" text="Preffas material:" textFill="SLATEGRAY" GridPane.rowIndex="14" />
+            <Label fx:id="linearMaterialLabel_" layoutX="10.0" layoutY="373.0" text="Linear pr. material:" textFill="SLATEGRAY" GridPane.rowIndex="15" />
+            <Label fx:id="preffasMaterial_" layoutX="144.0" layoutY="345.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <Label fx:id="linearMaterial_" layoutX="144.0" layoutY="373.0" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>

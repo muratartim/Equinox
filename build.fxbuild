@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
+  <deploy packagingFormat="image">
+    <application name="STHPlotter" mainclass="equinox.Equinox" version="3.8" toolkit="fx"/>
+    <info title="Equinox Difital Twin" vendor="No Magic Inc."/>
+  </deploy>
+  <signjar/>
+  <manifestEntries name="Notify-Update" value="true"/>
+  <manifestEntries name="Allow-Ignore-Update" value="true"/>
+  <manifestEntries name="Jar-Version" value="3.8.0"/>
+  <manifestEntries name="Lib-Version" value="3.8.0"/>
+  <manifestEntries name="Resource-Version" value="3.8.0"/>
+</anttasks:AntTask>

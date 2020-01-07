@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to compare equivalent stresses</title>
+<link rel="stylesheet" href="css/Help.css">
+<!-- This help page has a video associated with it. -->
+</head>
+<body>
+<h1>How to compare equivalent stresses</h1>
+<par>
+Equivalent stresses can be compared via equivalent stress values or life factors. Following video demonstrates this process.
+<p>
+<button type="button" class="hoverButton" onclick="app.helpVideoLink('How to compare equivalent stresses')" style="vertical-align:middle"><span>Play Demo</span></button>
+<br>
+For this, select the equivalent stresses you want to compare from the file tree, right-click and select <item>
+Compare Equivalent Stresses</item> from the popup menu as shown in the following figure.
+<p><img class="centre" alt="help61" src="image/help61.png">
+<h2><a name="Comparison inputs">Comparison inputs</a></h2>
+You should first select a comparison criteria (i.e. what to compare). This can be either direct equivalent stress values or 
+life factors derived from a basis mission. For life factor comparison, basis mission shall also be selected. The life factor 
+calculation is based on the following equations;
+<br><img class="centre" alt="help33" src="image/help33.png"><br>where <i>p</i> is the fatigue material slope and <i>m</i> is the propagation material constant.
+<h2><a name="Plotting life factors against mission parameters">Plotting life factors against mission parameters</a></h2>
+Life factors can be plotted against mission parameters assigned to spectra. For this, select basis mission of comparison and 
+select <item>Plot against mission parameters</item>. Finally, select the mission parameter that you want 
+to plot and click ok. Note that, mission parameters should have been set to spectra prior to performing this operation. For more 
+information see <button type="button" onclick="app.helpLink('How to edit spectrum info', '')" id="buttonlink">Creating mission parameters</button>.
+</par>
+</body>
+</html>

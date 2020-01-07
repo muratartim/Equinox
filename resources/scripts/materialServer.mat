@@ -1,0 +1,159 @@
+! Copyright SAMTECH - ASAV ............................. VERSION 10.0-04
+! Responsable: "MOZAR"      Librairies: Dev\"FT" Off\"FT" Date: 25-10-02
+!
+! Historique de la routine (creation,modification,correction)
+! +--------------------------------------------------------------------+
+! !Programmeur! Commentaires                          ! Date   !Version!
+! +-----------!---------------------------------------!--------!-------+
+! ! Grassin   ! creation                              !16-03-99! 8.0-07!
+! ! Mozar     ! remplacement loi PARIS par loi ELBER  !03-08-00! 8.1-03!
+! !           ! ajout version, ABREMAT                !        !       !
+! ! klein     ! version anglaise                      !16-01-01! 9.0-06!
+! ! Mozar     ! ajout SIGMAD                          !17-01-01! 9.0-06!
+! ! Mozar     ! modif abretab,add tableau for coef C  !30-04-01! 9.0-08!
+! ! robert    ! modif libelles                        !29-05-01! 9.0-08!
+! ! klein     ! ajout trace de la courbe R            !07-06-01! 9.0-08!
+! ! robert    ! modif libelles                        !08-06-01! 9.0-08!
+! ! Mozar     ! add coef thermique                    !07-09-01! 9.0-09!
+! ! Mozar     ! retrait valeur endurance              !25-09-01! 9.1-02!
+! ! Klein     ! ajout unite SIGMAD                    !09-10-01! 9.1-02!
+! ! Klein     ! partie visu via INPUT -> version 5    !12-11-01!10.0-01!
+! ! Mozar     ! add abrecom                           !25-10-02!10.0-04!
+! +--------------------------------------------------------------------+
+!
+! **********************************************************************
+! ==================================
+ABREMAT '%CHAINE'  'material'
+ABRE    '%VERSION' '6'     ! MODEL VERSION
+ABRETIT '%CHAINE' 'MATERIAL DESCRIPTION'
+ABRECOM '%CHAINE' 'TOUGHNESS: (Kq value ref:530.0029/02)'
+ABRETIT '%CHAINE' 'MATERIAL DATA'
+ABRE    '%NOMM' 'material' ! MATERIAL NAME
+ABREMOD '%YOUN'  '71000.'            ! YOUNG'S MODULUS
+ABREMOD '%POIS' '0.33'               ! POISSON'S RATIO
+ABREMOD '%THEX' ' '             ! THERMAL EXPANSION FACTOR (1/K)
+ABREMOD '%LIEL' '395.'              ! YIELD STRESS (MPa)
+ABREMOD '%TENA' '1062.52'            ! TOUGHNESS (MPa mm^1/2)
+ABREMOD '%RM'   '470.'              ! ULTIMATE STRESS (MPa)
+ABREMOD '%SIGMAD' ' '               ! ENDURANCE LIMIT AT 1E7 CYCLES (MPa)
+
+ABRETIT '%CHAINE' 'FATIGUE METHODS MANUAL DATA'
+ABREAID '%CHAINE' 'THE LAW SLOPE p COEFFICIENT MUST BE NEGATIVE'
+ABREMOD '%MANP' '-4.6'              ! SLOPE p
+ABREMOD '%MANQ' '.6'                ! f(R) PARAMETER q
+ABREMOD '%MANM' '.85'                ! MATERIAL COEFFICIENT M
+
+ABRETIT '%CHAINE' 'ELBER DATA'
+ABREMOD '%ELBA' '0.64'                 ! A
+ABREMOD '%ELBB' '0.36'                 ! B
+ABREMOD '%ELBC' '4.62E-7'                 ! Ceff  (MPa m^1/2)
+ABREMOD '%ELBN' '3.0'                 ! m
+
+ABRETIT '%CHAINE' 'Modified FORMAN DATA'
+ABREMOD '%FORC' ' '                 ! C (for a given R) (MPa m^1/2)
+ABREMOD '%FORN' ' '                 ! n
+ABREMOD '%FORP' ' '                 ! p
+ABREMOD '%FORQ' ' '                 ! q
+ABREMOD '%FORS' ' '                 ! dKs (MPa m^1/2)
+ABREMOD '%FORK' ' '                 ! Kc  (MPa m^1/2)
+
+! ============================
+! RESEAU DISCRET DE TYPE HAIGH
+! ============================
+ABRETIT '%CHAINE' 'HAIGH DIAGRAM S_av (MPa), N (Flights), S_alt (MPa)'
+ABRETAB '%CHAINE' 'HAIGH' ! /LIN
+ABRETAB '%HAIGH_ROW' '9' ! /FIX
+ABRETAB '%HAIGH_COL' '6' ! /FIX
+ABRETAB '%HAIGH_COL_1' 'N'
+ABRETAB '%HAIGH_COL_2' 'S_alt'
+ABRETAB '%HAIGH_COL_3' 'S_alt'
+ABRETAB '%HAIGH_COL_4' 'S_alt'
+ABRETAB '%HAIGH_COL_5' 'S_alt'
+ABRETAB '%HAIGH_COL_6' 'S_alt'
+ABREMOD '%HAIGH_1_1' ' '
+ABREMOD '%HAIGH_1_2' ' '
+ABREMOD '%HAIGH_1_3' ' '
+ABREMOD '%HAIGH_1_4' ' '
+ABREMOD '%HAIGH_1_5' ' '
+ABREMOD '%HAIGH_1_6' ' '
+ABREMOD '%HAIGH_2_1' ' '
+ABREMOD '%HAIGH_2_2' ' '
+ABREMOD '%HAIGH_2_3' ' '
+ABREMOD '%HAIGH_2_4' ' '
+ABREMOD '%HAIGH_2_5' ' '
+ABREMOD '%HAIGH_2_6' ' '
+ABREMOD '%HAIGH_3_1' ' '
+ABREMOD '%HAIGH_3_2' ' '
+ABREMOD '%HAIGH_3_3' ' '
+ABREMOD '%HAIGH_3_4' ' '
+ABREMOD '%HAIGH_3_5' ' '
+ABREMOD '%HAIGH_3_6' ' '
+ABREMOD '%HAIGH_4_1' ' '
+ABREMOD '%HAIGH_4_2' ' '
+ABREMOD '%HAIGH_4_3' ' '
+ABREMOD '%HAIGH_4_4' ' '
+ABREMOD '%HAIGH_4_5' ' '
+ABREMOD '%HAIGH_4_6' ' '
+ABREMOD '%HAIGH_5_1' ' '
+ABREMOD '%HAIGH_5_2' ' '
+ABREMOD '%HAIGH_5_3' ' '
+ABREMOD '%HAIGH_5_4' ' '
+ABREMOD '%HAIGH_5_5' ' '
+ABREMOD '%HAIGH_5_6' ' '
+ABREMOD '%HAIGH_6_1' ' '
+ABREMOD '%HAIGH_6_2' ' '
+ABREMOD '%HAIGH_6_3' ' '
+ABREMOD '%HAIGH_6_4' ' '
+ABREMOD '%HAIGH_6_5' ' '
+ABREMOD '%HAIGH_6_6' ' '
+ABREMOD '%HAIGH_7_1' ' '
+ABREMOD '%HAIGH_7_2' ' '
+ABREMOD '%HAIGH_7_3' ' '
+ABREMOD '%HAIGH_7_4' ' '
+ABREMOD '%HAIGH_7_5' ' '
+ABREMOD '%HAIGH_7_6' ' '
+ABREMOD '%HAIGH_8_1' ' '
+ABREMOD '%HAIGH_8_2' ' '
+ABREMOD '%HAIGH_8_3' ' '
+ABREMOD '%HAIGH_8_4' ' '
+ABREMOD '%HAIGH_8_5' ' '
+ABREMOD '%HAIGH_8_6' ' '
+ABREMOD '%HAIGH_9_1' ' '
+ABREMOD '%HAIGH_9_2' ' '
+ABREMOD '%HAIGH_9_3' ' '
+ABREMOD '%HAIGH_9_4' ' '
+ABREMOD '%HAIGH_9_5' ' '
+ABREMOD '%HAIGH_9_6' ' '
+
+ABRETAB '%CHAINE' 'SMOY' ! /CELL
+ABRETAB '%SMOY_ROW' '1' ! /FIX
+ABRETAB '%SMOY_COL' '5' ! /FIX
+ABRETAB '%SMOY_ROW_1' 'S_av'
+ABREMOD '%SMOY_1_1' ' '
+ABREMOD '%SMOY_1_2' ' '
+ABREMOD '%SMOY_1_3' ' '
+ABREMOD '%SMOY_1_4' ' '
+ABREMOD '%SMOY_1_5' ' '
+
+ABRETIT '%CHAINE' 'C AND Delta a max COEFFICIENTS ACCORDING TO THE THICKNESS'
+ABREAID '%CHAINE' 'R CURVE EQUATION:    Keff = C1*(Delta a)^C2+C3*(Delta a)+C4'
+ABREAID '%CHAINE' 'UNITS:     Keff = MPa.m^(1/2)                            '
+ABREAID '%CHAINE' '           Delta a = mm                                  '
+
+ABRETAB '%CHAINE' 'COEFFC' ! /LIN
+ABRETAB '%COEFFC_ROW' '1' ! /FIX
+ABRETAB '%COEFFC_COL' '5' ! /FIX
+ABRETAB '%COEFFC_COL_1' 'C1'
+ABRETAB '%COEFFC_COL_2' 'C2'
+ABRETAB '%COEFFC_COL_3' 'C3'
+ABRETAB '%COEFFC_COL_4' 'C4'
+ABRETAB '%COEFFC_COL_5' 'Delta a max'
+ABREMOD '%COEFFC_1_1' ' '
+ABREMOD '%COEFFC_1_2' ' '
+ABREMOD '%COEFFC_1_3' ' '
+ABREMOD '%COEFFC_1_4' ' '
+ABREMOD '%COEFFC_1_5' ' '
+
+INPUT "&SAFEDIVERS./ftsee_mater.dat"
+
+RETURN

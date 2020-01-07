@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:  
+  equinox_sftp_server:
+    image: muratartim/equinox_sftp_server
+    ports:
+      - '2222:22'
+    environment: 
+      - SFTP_USERS=aurora:17891917
+    volumes: 
+      - equinox_sftp_data:/home/aurora/filerRoot
+  
+  ouroboros:
+    image: circa10a/ouroboros
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60 --cleanup
+    depends_on:
+      - "equinox_sftp_server"
+
+volumes:
+  equinox_sftp_data:
+    name: equinox_sftp_data

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Root input element. This element is obligatory.-->
+<equivalentStressAnalysisInput>
+	<material>
+		<analysisType>fatigue</analysisType>
+		<name>2024_T351_Plate</name><specification>AIMS03-02-004</specification><orientation>LT</orientation><configuration>AFI/thickness:6-12</configuration></material>
+	<omission>
+		<removeNegativeStresses>false</removeNegativeStresses>
+		<stressRange>0.0</stressRange></omission></equivalentStressAnalysisInput>

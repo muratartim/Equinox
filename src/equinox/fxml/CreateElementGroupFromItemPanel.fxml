@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" spacing="10.0" stylesheets="@../css/PopOver.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.CreateElementGroupFromItemPanel">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+         <children>
+            <Label focusTraversable="false" styleClass="popoverlabel" text="Group name:" />
+            <TextField fx:id="rename_" onAction="#onOkClicked" prefWidth="200.0" promptText="Enter group name" styleClass="popovertextfield" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onCancelClicked" styleClass="popoverbutton" text="Cancel" />
+            <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="popoverbutton" text="Ok" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

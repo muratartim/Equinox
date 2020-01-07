@@ -1,0 +1,6 @@
+
+.bread-crumb-bar .button {
+	-fx-base: steelblue;
+	-fx-text-fill: white;
+	-fx-font-size: 0.9em;
+}

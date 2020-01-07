@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import control.validationField.*?>
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.SegmentFactorsPopup">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox alignment="BOTTOM_LEFT" fillHeight="false" maxWidth="1.7976931348623157E308" spacing="20.0">
+         <children>
+            <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" text="Add Segment Factors" textFill="STEELBLUE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Enter a keyword in the search box to find your segment." textFill="SLATEGRAY" />
+               </children>
+            </VBox>
+            <StackPane id="StackPane" HBox.hgrow="NEVER">
+               <children>
+                  <TextField fx:id="search_" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="220.0" promptText="Search" StackPane.alignment="CENTER">
+                     <padding>
+                        <Insets left="22.0" right="25.0" />
+                     </padding>
+                  </TextField>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                     <image>
+                        <Image url="@../image/searchGray.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="4.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Button fx:id="cancelSearch_" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCancelSearchClicked" prefHeight="21.0" prefWidth="21.0" styleClass="searchButton" text="Button" visible="false" StackPane.alignment="CENTER_RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/cancel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <StackPane.margin>
+                        <Insets right="4.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ListView fx:id="segmentList_" maxWidth="1.7976931348623157E308" prefHeight="10.0" HBox.hgrow="ALWAYS" />
+            <VBox prefWidth="220.0" spacing="10.0">
+               <children>
+                  <HBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <children>
+                        <DoubleValidationField fx:id="onegSegmentFactor_" prefWidth="100.0" promptText="1G steady" HBox.hgrow="ALWAYS" />
+                        <MenuButton fx:id="onegSegmentMethod_" mnemonicParsing="false" text="Multiply">
+                           <items>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="onegMethod" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$onegMethod" />
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$onegMethod" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+                  <HBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <children>
+                        <DoubleValidationField fx:id="incSegmentFactor_" prefWidth="100.0" promptText="Increment" HBox.hgrow="ALWAYS" />
+                        <MenuButton fx:id="incSegmentMethod_" mnemonicParsing="false" text="Multiply">
+                           <items>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="incrementMethod" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$incrementMethod" />
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$incrementMethod" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+                  <HBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                     <children>
+                        <DoubleValidationField fx:id="dpSegmentFactor_" prefWidth="100.0" promptText="Delta-P" HBox.hgrow="ALWAYS" />
+                        <MenuButton fx:id="dpSegmentMethod_" mnemonicParsing="false" text="Multiply">
+                           <items>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="dpMethod" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$dpMethod" />
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$dpMethod" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+                  <HBox maxWidth="1.7976931348623157E308" spacing="5.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <DoubleValidationField fx:id="dtSegmentFactor_" prefWidth="100.0" promptText="Delta-T" HBox.hgrow="ALWAYS" />
+                        <MenuButton fx:id="dtSegmentMethod_" mnemonicParsing="false" text="Multiply">
+                           <items>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="dtMethod" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$dtMethod" />
+                              <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$dtMethod" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+            <Button fx:id="ok_" layoutX="711.0" layoutY="10.0" mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

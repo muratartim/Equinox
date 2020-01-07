@@ -1,0 +1,1 @@
+recurrence rm -f backups/sftp_data.tar;docker container run --rm -v equinox_sftp_data:/filerdata -v /backups:/backup ubuntu tar cvf /backup/sftp_data.tar /filerdata;aws s3 cp /backups/sftp_data.tar s3://equinox-digital-twin/sftp_data.tar 1>/tmp/sftp-backup.log 2>&1

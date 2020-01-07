@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:  
+  equinox_exchange_server:
+    image: muratartim/equinox_exchange_server
+    ports:
+      - '1234:1234'
+    environment:
+      - ds.hostname=equinox_mysql_server
+      - ds.port=3306
+      - ds.databaseName=AFTwin
+      - ds.username=root
+      - ds.password=Martim_17891917
+      - sftp.hostname=equinox_sftp_server
+      - sftp.password=17891917
+      - sftp.port=22
+      - sftp.rootPath=filerRoot/
+      - sftp.username=aurora
+  
+  ouroboros:
+    image: circa10a/ouroboros
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60 --cleanup
+    depends_on:
+      - "equinox_exchange_server"

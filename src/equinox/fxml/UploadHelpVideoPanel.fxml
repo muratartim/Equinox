@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <?import control.validationField.*?> -->
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="379.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.UploadHelpVideoPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+      <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Info">
+      <content>
+      <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <TextField fx:id="name_" maxWidth="1.7976931348623157E308" promptText="Video name" />
+                                    <TextField fx:id="duration_" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" promptText="Video duration" />
+                                    <TextArea fx:id="description_" maxWidth="1.7976931348623157E308" prefHeight="150.0" promptText="Enter video description (max. 500 characters)" wrapText="true" />
+      </children>
+      </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Files">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <BorderPane fx:id="dropZone_" maxWidth="1.7976931348623157E308" onDragDropped="#onDragDropped" onDragEntered="#onDragEntered" onDragExited="#onDragExited" onDragOver="#onDragOver" styleClass="roundPanel2">
+                                       <center>
+                                          <StackPane maxWidth="1.7976931348623157E308">
+                                             <children>
+                                                <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="dropImage_" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/dropZone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Drop file here&#10;" textAlignment="CENTER" textFill="GREY">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="60.0" top="60.0" />
+                                                   </BorderPane.margin>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="40.0" top="40.0" />
+                                                   </StackPane.margin>
+                                                </VBox>
+                                                <Hyperlink fx:id="browse_" onAction="#onBrowseClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </StackPane>
+                                       </center>
+                                       <bottom>
+                                          <StackPane>
+                                             <children>
+                                                <VBox fx:id="container_" spacing="10.0" styleClass="roundPanel3">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Movie file (*.mov)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="mov_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </StackPane>
+                                       </bottom>
+                                    </BorderPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

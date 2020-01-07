@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.ChatMessagePanel">
+   <children>
+      <HBox spacing="5.0">
+         <children>
+            <Label fx:id="id_" maxWidth="1.7976931348623157E308" text="ts87am" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="-10.0" left="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="time_" alignment="CENTER_RIGHT" minWidth="55.0" text="12:59 PM" textFill="GREY">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox fx:id="baloon_" VBox.vgrow="NEVER">
+         <children>
+            <Label fx:id="message_" text="Of course. 21.30 is good.. We see us there&#10;then. Cheers" wrapText="true" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>

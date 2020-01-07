@@ -1,0 +1,25 @@
+
+
+.titled-pane {
+	-fx-text-fill:black;
+}
+
+.titled-pane > .title {
+	-fx-background-color:white;
+	-fx-border-color:gainsboro;
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+	-fx-shape: null;
+	-fx-background-color: null;
+	-fx-padding: -2px -3px 12px 12px;
+	-fx-background-image: url("../image/expandBlack.png");
+}
+
+.titled-pane:expanded > .title > .arrow-button .arrow {
+	-fx-shape: null;
+	-fx-background-color: null;
+	-fx-padding: -2px -3px 12px 12px;
+	-fx-rotate: null;
+	-fx-background-image: url("../image/collectBlack.png");
+}

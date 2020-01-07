@@ -1,0 +1,9 @@
+
+
+.check-box:selected .mark {
+    -fx-background-color:white;
+}
+
+.check-box:indeterminate .mark {
+    -fx-background-color:white;
+}

@@ -1,0 +1,11 @@
+
+@font-face {
+   font-family: IcoMoon-Ultimate;
+   src: url("../font/IcoMoon-Ultimate.ttf");
+}
+
+.label {
+  -fx-font-family: IcoMoon-Ultimate;
+  -fx-font-size: 28;
+  -fx-text-fill: white;
+}

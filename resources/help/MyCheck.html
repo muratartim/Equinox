@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MyCheck</title>
+<link rel="stylesheet" href="css/Help.css">
+</head>
+<body>
+<h1>MyCheck</h1>
+<par>
+MyCheck plugin is a fatigue spectrum validation tool. It checks whether the given fatigue spectrum fulfills 
+comformity and quality requirements. Following sections describe the inputs necessary to run the plugin via Equinox.
+<h2><a name="Fatigue missions">Fatigue missions</a></h2>
+In this section, the fatigue missions to be checked are defined. Each mission requires the following inputs;
+<UL>
+<LI>Select the fatigue mission type from the drop-down list.
+<LI>Drag and drop (or browse for) the following spectrum files specific to the mission;<p>
+<UL>
+<LI>ANA file (.ana, .gz, .zip),
+<LI>TXT file (.txt),
+<LI>CVT file (.cvt),
+<LI>Conversion table excel file .xls),
+<LI>STF file (.stf). Note that, STF file is optional. If no file is given, MyCheck will generate a dummy STF file to perform
+the checks.<p>
+</UL>
+<LI>Select worksheet from the conversion table specific to the mission.
+</UL>
+By clicking the <item>add</item> button, the mission will be added to the missions list. You can add multiple missions to 
+be checked. Note that, when you supply multiple missions that includes a MIX mission, MyCheck will perform an additional 
+check to compare the MIX mission against the single missions for comformity.
+<h2><a name="Output directory">Output directory</a></h2>
+Drag and drop (or browse for) the output directory. After the process is completed, all output files are produced within 
+the specified output directory. For each defined fatigue mission, there will be a sub-folder containing the output files 
+specific to the mission.
+<h2><a name="Count ANA options">Count ANA options</a></h2>
+A brief explanation of available options is provided below in the order they appear within the user interface;
+<UL>
+<LI><item>esg_switch</item><br>Select this option for some Legacy CDFs (e.g. LRESG CDFs) where there is an extra column required 
+for the Correlation of Oracle database load case names.<p>
+<LI><item>check_round_the_clock</item><br>If selected, additional routines are launched for the assessments of Severity Levels 
+Combinations in Increment positions 1 and 2 of the 14 digit codes. Note that all events in all segments (e.g. ground and flight) 
+will be investigated, and reported where discrepancies are found. Note: Due to huge data exploitation, expect MyCheck process 
+to be slower if this option is selected.<p>
+<LI><item>print_special_fsftest</item><br>Additional Information for 1g usage is provided in the LOG files. Usually only used for 
+Test Spectra.<p>
+<LI><item>print_factors_in_log</item><br>The CVT/TXT factors will be provided together with their relevant Statistics in the LOG 
+files. This option is recommended.<p>
+<LI><item>write_all_1g_sequence</item><br>An additional LOG file is generated showing list of '1g' available per flight. It might 
+be interesting to know why some flights may have missing '1g' segments.<p>
+<LI><item>check_4_return_2_1g</item><br>Return to 1g of the Rotation and MLG Impact segments are checked. The CLASS codes relevant 
+to these Events are pre-defined per A/C project selected in the MyCheck 'Global Inputs'.<p>
+<LI><item>aircraft_program</item><br>This option is valid if check for return to 1g is selected. The rotation and MLG load case codes
+are aircraft program specific.<p>
+<LI><item>count_flight_separate</item><br>Counts Statistics per flight separately instead of all flights together. Usually needed to 
+count Statistics of 'Monster Flights'. The Flights with peaks above number defined for max_pointsper_flight are counted separately. 
+If you require all flights to be counted separately, simply select this option and define value of max_pointsper_flight to 1.<p>
+<LI><item>max_pointsper_flight</item><br>Not used unless option count_flight_separate is selected. An integer value is expected.<p>
+<LI><item>run_only_till_flight_num</item><br>An integer. MyCheck will process the first flights up to this number. Required for quick 
+feedbacks and plots on first few flights. Default value is usually very high to ensure MyCheck processes all flights.<p>
+<LI><item>cvt_factor_warn</item><br>An Integer Value. A warning will be provided for CVT factors found above this value.
+</UL>
+<h2><a name="Generate STH options">Generate STH options</a></h2>
+A brief explanation of available options is provided below in the order they appear within the user interface;
+<UL>
+<LI><item>enable_SLOG_mode</item><br>Additional LOG information with additional details of ANA data as would be interpreted by ISAMI. 
+Note that this LOG File is usually 3 times larger than the ANA file and you may have issues to view the contents. If you need this 
+information for some flights, simply RUN MyCheck later for a few Flights.<p>
+<LI><item>esg_on</item><br>Select this option for some Legacy CDFs (e.g. LRESG CDFs) where there is an extra column required for the 
+Correlation of Oracle database load case names.<p>
+<LI><item>warn_if_li_nl_cases_comb</item><br>If selected, additional warnings are provided when Linear and NonLinear cases are 
+combined!<p>
+<LI><item>Delete_Negative_Values_from_Spectrum / set_it_zero</item><br>YES/NO? (Yes will delete all negative Values from Stress 
+Sequence).<p>
+<LI><item>add2sth_Delta_P</item><br>Select this option to Use the Delta Pressure Load case for the profile plots generation. Not needed 
+for CDFs with no Delta Pressure profile.<p>
+<LI><item>reference_Delta_P</item><br>The 'Reference Delta Pressure' value is required here. This is the value also provided in the 
+'ConvTable'. However for Active Pilot Points, please confirm from Stress Teams which Value they are using.<p>
+<LI><item>delta_p_fac_only</item><br>Factor multiplies ONLY Delta Pressure Unitary Loadcase Value.<p>
+<LI><item>fatigue_fac_all</item><br>Factor multiplies all Unitary Loadcase Values (i.e. Mechanical, Thermal and Pressure Cases)<p>
+<LI><item>use_stress_column</item><br>The Pilot Points or STF files may have several columns (e.g. for loads in different X, Y, Z 
+directions) and only 1 direction (e.g. main X loads) needs to be investigated. Also for standard Pilot Points or STF with only 1 
+columns, please set the value of this option to 1. A maximum of 3 columns is recognized.<p>
+<LI><item>rotation_degrees</item><br>Provide a Rotation Angle (i.e. 0 to 180) for the rotation of Stresses. Usually only required 
+for 'Plausibility' Analyses of 2D Element Stresses where the Customer explicitely requires to have feedback on 'Maximum Damage Angle'. 
+The angle value provided here is only used if use_stress_column value is set to Zero (i.e. 0).<p>
+<LI><item>run_only_till_flight_num</item><br>An integer number. MyCHECK will process the first flights up to this number. Required for 
+quick feedbacks and plots on first few flights. Default value is usually very high to ensure MyCHECK processes all flights.
+</UL>
+<h2><a name="Plot options">Plot options</a></h2>
+<UL>
+<LI><item>show_text_more</item><br>More explanatory 'Text' will be displayed with the Plots. Do not select this option if you can do 
+without this additional information.<p>
+<LI><item>flights_per_page</item><br>Define how many Flights you wish to have plotted per page. Note that Selecting too many flights 
+per page may crowd the page AND selecting too few flights per page may lead to too many pages. However the choice is yours.<p>
+<LI><item>load_flights_up2num</item><br>Only these number of Flights will be loaded for plotting purposes. An integer is expected. 
+To plot all flights just input a number more than the total number of flights in the CDF.<p>
+<LI><item>do_fixed_scale_x</item><br>This option provides the possibility to fix the scaling of the X-axis which is otherwise Dynamic 
+to allow all Data to be shown no matter how large or long. However for dedicated 'Plausibility' analyses you may require to fix the 
+scaling to ease the visual comparison of two sets of different of similar data.<p>
+<LI><item>force_scale_x_to</item><br>Provide a Fixed Scaling Factor value to be used for X-axis. Note that this value is only used when 
+the option do_fixed_scale_x is selected.<p>
+<LI><item>do_fixed_scale_y</item><br>This option provides the possibility to fix the scaling of the Y-axis which is otherwise Dynamic to 
+allow all Data to be shown no matter how large or long. However for dedicated 'Plausibility' analyses you may require to fix the scaling 
+to ease the visual comparison of two sets of different of similar data.<p>
+<LI><item>force_scale_y_to</item><br>Provide a Fixed Scaling Factor value to be used for Y-axis. Note that this value is only used when 
+the option do_fixed_scale_y is selected.<p>
+<LI><item>shift_Y_text_to</item><br>Although explanatory comments are very useful in plots, there may be occasions when a certain plot area 
+of particular interesting may be covered by 'Text'. This option allows you to shift text vertically.<p>
+<LI><item>neutral_axis_y_shift</item><br>This option allows the vertical shift of the 'Neutral Axis' of plots. It is usually mainly required 
+for Pilot Points with significant Negative loads/stresses where you may require to focus on the Negative quadrant.
+</UL>
+</par>
+</body>
+</html>

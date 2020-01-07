@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" alignment="CENTER" spacing="10.0" stylesheets="@../css/PopOver.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.ShareFilePopup">
+   <children>
+      <Label styleClass="popoverheaderlabel" text="Share file with:" />
+      <VBox fx:id="container_" VBox.vgrow="ALWAYS" />
+      <Button fx:id="share_" mnemonicParsing="false" onAction="#onShareClicked" styleClass="popoverbutton" text="Share">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" translateY="-1.0">
+               <image>
+                  <Image url="@../image/shareWhite.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

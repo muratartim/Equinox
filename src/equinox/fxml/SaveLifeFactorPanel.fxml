@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="598.0" prefWidth="291.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.SaveLifeFactorPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css">
+                     <panes>
+                        <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Options">
+                           <content>
+                              <ScrollPane fitToWidth="true" maxWidth="1.7976931348623157E308" pannable="true" prefHeight="460.0">
+                                 <content>
+                                    <VBox spacing="10.0">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <ComboBox fx:id="basisMission_" maxWidth="1.7976931348623157E308" promptText="Select basis mission" />
+                                          <Separator maxWidth="1.7976931348623157E308" />
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="lifeFactor_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Life factor" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="20.0" layoutY="20.0" text="Material info" textFill="STEELBLUE">
+                                             <VBox.margin>
+                                                <Insets bottom="-2.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="materialName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Material name" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="materialData_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Material data" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="20.0" layoutY="128.0" text="Naming" textFill="STEELBLUE">
+                                             <VBox.margin>
+                                                <Insets bottom="-2.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="ppName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Pilot point name" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="eid_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Element ID" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="sequenceName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Stress sequence name" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="spectrumName_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Spectrum name" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="program_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="A/C program" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="section_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="A/C section" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="mission_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Fatigue mission" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="20.0" layoutY="320.0" text="Rainflow info" textFill="STEELBLUE">
+                                             <VBox.margin>
+                                                <Insets bottom="-2.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="validity_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Spectrum validity" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="maxStress_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Maximum stress" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="minStress_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Minimum stress" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="rRatio_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="R-ratio" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                             <children>
+                                                <ToggleSwitch fx:id="omission_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                <Label maxWidth="1.7976931348623157E308" text="Omission level" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="recipientsPane_" minWidth="-Infinity" prefWidth="20.0" text="Select Recipients">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ListView fx:id="recipients_" maxWidth="1.7976931348623157E308" prefHeight="200.0" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children>
+<Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic><ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image></ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

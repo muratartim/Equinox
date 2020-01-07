@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import control.validationField.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="390.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.MissionParametersPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+<TitledPane collapsible="false" minWidth="-Infinity" prefWidth="20.0" stylesheets="@../css/TitledPanel.css" text="Mission Parameters" textFill="WHITE">
+                     <content>
+                        <VBox spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="parameterName_" maxWidth="1.7976931348623157E308" promptText="Enter parameter name" />
+                              <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                 <children>
+                                    <DoubleValidationField fx:id="parameterValue_" maxWidth="1.7976931348623157E308" onAction="#onValueEntered" promptText="Enter parameter value" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="add_" contentDisplay="GRAPHIC_ONLY" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddClicked" prefWidth="26.0" text="Button">
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/add.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <tooltip>
+                                          <Tooltip text="Add" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="remove_" contentDisplay="GRAPHIC_ONLY" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveClicked" prefWidth="26.0" text="Button">
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/remove.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <tooltip>
+                                          <Tooltip text="Remove" />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="parametersTable_" prefHeight="200.0" stylesheets="@../css/HiddenHeaderTable.css" />
+                           </children>
+                        </VBox>
+                     </content>
+</TitledPane>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

@@ -1,0 +1,31 @@
+
+
+.menu-bar {
+	-fx-background-radius:0.0 0.0 10.0 10.0;
+	-fx-base:steelblue;
+}
+
+#menu .label {
+	-fx-text-fill: white;
+}
+
+#menu:hover {
+    -fx-background-color: white;
+}
+
+#menu:hover .label {
+	-fx-text-fill: black;
+}
+
+#menu:showing {
+	-fx-background-color: white;
+    -fx-base:white;
+}
+
+#menu:showing .label {
+	-fx-text-fill: black;
+}
+
+#menu .menu-item:focused .label {
+  -fx-text-fill:white;
+}

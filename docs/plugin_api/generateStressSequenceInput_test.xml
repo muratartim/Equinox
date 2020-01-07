@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generateStressSequenceInput>
+	<overallFactors>
+		<oneg>
+			<value>0.001</value><method>Multiply</method>
+			</oneg>
+		<increment>
+			<value>0.001</value>
+			<method>Multiply</method></increment>
+		<deltaP>
+			<value>0.001</value>
+			<method>Multiply</method></deltaP>
+		<deltaT>
+			<value>0.001</value>
+			<method>Multiply</method></deltaT>
+	</overallFactors>
+</generateStressSequenceInput>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Sliderman.js - Examples - Created by Devtrix.net</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="keywords" content="slideman, sliderman.js, javascript slider, jquery, slideshow, effects" />
+	<meta name="description" content="Sliderman.js - will do all the sliding for you :)" />
+	<style type="text/css">
+		* { margin: 0; outline: none; }
+		body { background-color: whitesmoke; }
+		.c { clear: both; }
+		#wrapper { margin: 0 auto; padding: 0 40px 60px 40px; width: 960px; }
+		h2 { padding: 20px 0 10px 0; font-size: 24px; line-height: 40px; font-weight: normal; color: #adc276; text-shadow: 0 1px 3px #222222; }
+	</style>
+
+	<!-- sliderman.js -->
+	<script type="text/javascript" src="js/sliderman.1.3.8.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/sliderman.css" />
+	<!-- /sliderman.js -->
+
+	<!-- use the latest jquery library here -->
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+</div>
+<body>
+	<div id="examples_outer">
+			<!-- <h2>Sliderman.js &mdash; Demo 4</h2> -->
+
+			<div id="slider_container_4">
+				<div class="SliderName_4_left">
+					<a href="javascript:void(0);" id="sliderPrevBtn">Previous</a>
+				</div>
+				<div id="SliderName_4" class="SliderName_4">
+					<img src="img/01.jpg" width="492" height="560" alt="" title="" />
+					<img src="img/02.jpg" width="492" height="560" alt="" title="" />
+					<img src="img/03.jpg" width="492" height="560" alt="" title="" />
+					<img src="img/04.jpg" width="492" height="560" alt="" title="" />
+					<img src="img/05.jpg" width="492" height="560" alt="" title="" />
+					<img src="img/06.jpg" width="492" height="560" alt="" title="" />
+					<img src="img/07.jpg" width="492" height="560" alt="" title="" />
+					<img src="img/08.jpg" width="492" height="560" alt="" title="" />
+				</div>
+				<div class="SliderName_4_right">
+					<a href="javascript:void(0);" id="sliderNextBtn">Next</a>
+				</div>
+				<div class="c"></div>
+				<div class="SliderName_4_navigation_outer" id="SliderName_4_navigation_outer">
+					<div class="SliderName_4_navigation" id="SliderName_4_navigation"></div>
+				</div>
+
+				<script type="text/javascript">
+					// this is a demo for more advanced users, who are familiar with JavaScript
+					// also we're using jQuery library for easier selecting elements and bind actions to them.
+					$(document).ready(function() {
+
+						demo4Easing = { name: 'pow2', method: function(x) { return Math.pow(x,2); }};
+
+						demo4Effect1 = {name: 'myEffect41', rows: 6, cols: 12, fade: true, easing: 'swing', order: 'cross', delay: 100, duration: 492};
+						demo4Effect2 = {name: 'myEffect42', rows: 6, cols: 12, fade: true, easing: 'swing', order: 'cross', delay: 100, duration: 492, reverse: true};
+						demo4Effect3 = {name: 'myEffect43', rows: 6, cols: 12, fade: true, easing: 'pow2', order: 'rectangle', delay: 200, duration: 1000};
+						demo4Effect4 = {name: 'myEffect44', rows: 6, cols: 12, fade: true, easing: 'pow2', order: 'rectangle', delay: 200, duration: 1000, reverse: true};
+						demo4Effect5 = {name: 'myEffect45', rows: 3, cols: 10, zoom: true, move: true, right: true, easing: 'swing', order: 'circle', delay: 150, duration: 800};
+						demo4Effect6 = {name: 'myEffect46', rows: 3, cols: 10, zoom: true, move: true, left: true, easing: 'swing', order: 'circle', delay: 150, duration: 800, reverse: true};
+						demo4Effect7 = {name: 'myEffect49', rows: 5, cols: 1, zoom: true, move: true, bottom: true, easing: 'bounce', order: 'circle', delay: 150, duration: 800};
+						demo4Effect8 = {name: 'myEffect410', rows: 5, cols: 1, zoom: true, move: true, top: true, easing: 'bounce', order: 'circle', delay: 150, duration: 800, reverse: true};
+
+						effectsDemo4 = [demo4Effect1,demo4Effect2,demo4Effect3,demo4Effect4,demo4Effect5,demo4Effect6,demo4Effect7,demo4Effect8];
+
+						var demoSlider_4 = Sliderman.slider({
+							container: 'SliderName_4',
+							width: 492,
+							height: 560,
+							effects: effectsDemo4,
+							display: {
+								autoplay: 3000,
+								autostart: false,
+								first_slide: true,
+								effects_order: 'effects'
+							},
+							events: {
+								// after method will be executed after all animation is complete.
+								after: function() {
+									// removing active class from all links
+									$("#SliderName_4_navigation").find("a").removeClass("active_page");
+									// setting the active page class to the new slide.
+									$("#SliderName_4_page_" + demoSlider_4.get('current')).addClass("active_page");
+								}
+							}
+						});
+
+						// building navigation manually
+						var demoSlider_4TotalSlides = demoSlider_4.get('length');
+						var demoSlider_4Navigation = $("#SliderName_4_navigation");
+
+						// here we're *not* checking data for validness. this is only for illustration purposes.
+						for (var i = 0; i < demoSlider_4TotalSlides; i++)
+						{
+							// adding pages to the navigation bar
+							demoSlider_4Navigation.append('<a href="javascript:void()" class="SliderName_4_page" id="SliderName_4_page_' + i + '">' + (i+1) + '</a>');
+						}
+						$("#SliderName_4_page_0").addClass("active_page");
+						demoSlider_4Navigation.css({'marginLeft': '-' + parseInt(demoSlider_4Navigation.width()/2) + 'px'}).fadeIn("fast");
+
+						// next button click
+						$("#sliderNextBtn").click(function() {
+							demoSlider_4.next();
+						});
+
+						// previous button click
+						$("#sliderPrevBtn").click(function() {
+							demoSlider_4.prev();
+						});
+
+						// clicking on pages
+						$("#SliderName_4_navigation").find("a.SliderName_4_page").click(function() {
+							demoSlider_4.go( $(this).attr("id").replace("SliderName_4_page_", "") );
+						});
+
+
+
+
+
+					});
+
+				</script>
+
+				<div class="c"></div>
+			</div>
+			<div class="c"></div>
+		</div>
+
+		<div class="c"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.QuestionNotificationPanel">
+   <children>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                     <image>
+                        <Image url="@../image/notifQuestion.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label fx:id="title_" graphicTextGap="6.0" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Title" wrapText="true" />
+                        <Label fx:id="text_" graphicTextGap="6.0" style="-fx-font-size: 15px;" text="Please select a valid CDF set to proceed." wrapText="true" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="yesButton_" layoutX="385.0" layoutY="21.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="80.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="Yes">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="noButton_" layoutX="353.0" layoutY="21.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="80.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="No">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

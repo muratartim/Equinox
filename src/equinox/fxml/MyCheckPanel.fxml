@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import control.validationField.DoubleValidationField?>
+<?import control.validationField.IntegerValidationField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="617.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.MyCheckPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+      <TitledPane fx:id="missionsPane_" expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Fatigue Missions" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <ComboBox fx:id="missionType_" maxWidth="1.7976931348623157E308" onAction="#onMissionTypeSelected" promptText="Select fatigue mission type" />
+                                    <BorderPane fx:id="inputZone_" maxWidth="1.7976931348623157E308" onDragDropped="#onDragDroppedInput" onDragEntered="#onDragEnteredInput" onDragExited="#onDragExitedInput" onDragOver="#onDragOverInput" styleClass="roundPanel2">
+                                       <bottom>
+                                          <StackPane>
+                                             <children>
+                                                <VBox fx:id="container_" spacing="10.0" styleClass="roundPanel3">
+                                                   <children>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="ANA file (*.ana, *.gz, *.zip)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="ana_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="TXT file (*.txt)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="txt_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="CVT file (*.cvt)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="cvt_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Conversion table (*.xls)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" fx:id="xls_">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <Label fx:id="stfLabel_" focusTraversable="false" mouseTransparent="true" text="STF file (*.stf)" textAlignment="CENTER" textFill="WHITE">
+                                                               <graphic>
+                                                                  <ImageView fx:id="stf_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/empty.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Label>
+                                                            <Label text="- Optional" textFill="ORANGE">
+                                                               <font>
+                                                                  <Font name="System Italic" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDownloadSampleInputClicked" prefHeight="28.0" prefWidth="28.0" styleClass="roundButton2" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/sample.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                   <tooltip>
+                                                      <Tooltip text="Download sample inputs" />
+                                                   </tooltip>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="-1.0" right="-1.0" />
+                                                   </StackPane.margin>
+                                                </Button>
+                                             </children>
+                                          </StackPane>
+                                       </bottom>
+                                       <center>
+                                          <StackPane maxWidth="1.7976931348623157E308">
+                                             <children>
+                                                <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="dropInputsImage_" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/dropZone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Drop files here&#10;" textAlignment="CENTER" textFill="GREY">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="60.0" top="60.0" />
+                                                   </BorderPane.margin>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="30.0" top="15.0" />
+                                                   </StackPane.margin>
+                                                </VBox>
+                                                <Hyperlink fx:id="browseInputs_" onAction="#onBrowseInputsClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </StackPane>
+                                       </center>
+                                    </BorderPane>
+                                    <HBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ComboBox fx:id="sheet_" disable="true" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" onAction="#onWorksheetSelected" promptText="Select worksheet..." HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="addMission_" contentDisplay="GRAPHIC_ONLY" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddMissionClicked" prefWidth="26.0" text="Button" HBox.hgrow="NEVER">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/add.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Add" />
+                                             </tooltip>
+                                          </Button>
+                                          <Button fx:id="removeMission_" contentDisplay="GRAPHIC_ONLY" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveMissionClicked" prefWidth="26.0" text="Button" HBox.hgrow="NEVER">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/remove.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Remove" />
+                                             </tooltip>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <ListView fx:id="missionList_" maxWidth="1.7976931348623157E308" prefHeight="50.0" />
+                                 </children>
+                              </VBox>
+                           </content>
+      </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="46.0" minWidth="-Infinity" prefWidth="20.0" text="Options" textFill="WHITE">
+                           <content>
+                              <VBox>
+                                 <children>
+                                    <TabPane fx:id="optionsTabPane_" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                        <Tab text="Count">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="10.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="esgCount_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="For extended service goal (ESG)" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="roundTheClock_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Check round the clock" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="printFSF_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Print special FSF test" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="printFactors_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Print factors in log file" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="110.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="write1g_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Write out all 1g sequence" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="140.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="returnTo1g_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Check for return to 1g" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="countFlights_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Count flights separately" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" />
+                                                            <ColumnConstraints hgrow="ALWAYS" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Label text="Max. points per flight:" />
+                                                            <Label layoutX="10.0" layoutY="192.0" text="CVT factor warnings:" GridPane.rowIndex="3" />
+                                                            <Label layoutX="10.0" layoutY="262.0" text="Run till flight:" GridPane.rowIndex="2" />
+                                                            <ChoiceBox fx:id="program_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <Label text="Aircraft program:" GridPane.rowIndex="1" />
+                                                            <IntegerValidationField fx:id="runTillFlightCount_" maxWidth="1.7976931348623157E308" promptText="All flights" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <IntegerValidationField fx:id="maxPoints_" disable="true" maxWidth="1.7976931348623157E308" text="123456" GridPane.columnIndex="1" />
+                                                            <IntegerValidationField fx:id="cvtWarnings_" maxWidth="1.7976931348623157E308" text="10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </GridPane>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </Tab>
+                                        <Tab text="Generate">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="10.0">
+                                                   <padding>
+                                                      <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="enableSlog_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Enable SLOG mode" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="esgSTH_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="For extended service goal (ESG)" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="warnCombo_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Warn if linear/nonlinear cases are combined" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="removeNegative_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Remove negative stresses" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="110.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <ToggleSwitch fx:id="addDP_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                            <Label maxWidth="1.7976931348623157E308" text="Add delta-P to sequence" HBox.hgrow="ALWAYS" />
+                                                         </children>
+                                                      </HBox>
+                                                      <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0">
+                                                         <children>
+                                                            <Label text="Reference DP:" />
+                                                            <Label layoutX="10.0" layoutY="192.0" text="Overall factor:" GridPane.rowIndex="2" />
+                                                            <Label layoutX="10.0" layoutY="262.0" text="DP factor:" GridPane.rowIndex="1" />
+                                                            <Label layoutX="10.0" layoutY="87.0" text="Component:" GridPane.rowIndex="3" />
+                                                            <ChoiceBox fx:id="stressComponent_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            <Label text="Rotation angle:" GridPane.rowIndex="4" />
+                                                            <StackPane maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                               <children>
+                                                                  <IntegerValidationField fx:id="rotation_" disable="true" maxWidth="1.7976931348623157E308" text="0" />
+                                                                  <Label mouseTransparent="true" text="degrees" textFill="LIGHTGRAY" StackPane.alignment="CENTER_RIGHT">
+                                                                     <StackPane.margin>
+                                                                        <Insets right="4.0" />
+                                                                     </StackPane.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </StackPane>
+                                                            <Label text="Run till flight:" GridPane.rowIndex="5" />
+                                                            <Label layoutX="10.0" layoutY="17.0" text="Reference DT:" GridPane.rowIndex="6" />
+                                                            <DoubleValidationField fx:id="refDP_" maxWidth="1.7976931348623157E308" text="1327.0" GridPane.columnIndex="1" />
+                                                            <DoubleValidationField fx:id="dpFactor_" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <DoubleValidationField fx:id="overallFactor_" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <IntegerValidationField fx:id="runTillFlightSTH_" maxWidth="1.7976931348623157E308" promptText="All flights" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                            <DoubleValidationField fx:id="refDT_" maxWidth="1.7976931348623157E308" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                         </children>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="NEVER" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" />
+                                                            <ColumnConstraints hgrow="ALWAYS" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </GridPane>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Plot">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="10.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0">
+                                                         <children>
+                                                            <Label text="Force Y-axis scale to:" GridPane.rowIndex="6" />
+                                                            <Label layoutX="10.0" layoutY="192.0" text="Neutral Y-axis shift:" GridPane.rowIndex="8" />
+                                                            <Label layoutX="10.0" layoutY="262.0" text="Shift Y-axis text to:" GridPane.rowIndex="7" />
+                                                            <Label text="Force X-axis scale to:" GridPane.rowIndex="4" />
+                                                            <Label text="Flights per page:" GridPane.rowIndex="1" />
+                                                            <Label layoutX="10.0" layoutY="17.0" text="Load flights up to:" GridPane.rowIndex="2" />
+                                                            <IntegerValidationField fx:id="flightsPerPage_" maxWidth="1.7976931348623157E308" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <IntegerValidationField fx:id="loadFlights_" maxWidth="1.7976931348623157E308" text="6" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <DoubleValidationField maxWidth="1.7976931348623157E308" text="0.25" GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="xAxisScale_" />
+                                                            <DoubleValidationField fx:id="yAxisScale_" maxWidth="1.7976931348623157E308" text="2.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                            <IntegerValidationField fx:id="yAxisText_" maxWidth="1.7976931348623157E308" text="425" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                            <IntegerValidationField fx:id="neutralYAxis_" maxWidth="1.7976931348623157E308" text="290" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnSpan="2147483647">
+                                                               <children>
+                                                                  <ToggleSwitch fx:id="moreText_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Show more text on plot" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                                                               <children>
+                                                                  <ToggleSwitch fx:id="fixedXaxis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Fixed X-axis scale" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
+                                                               <children>
+                                                                  <ToggleSwitch fx:id="fixedYaxis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                                  <Label maxWidth="1.7976931348623157E308" text="Fixed Y-axis scale" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="NEVER" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" />
+                                                            <ColumnConstraints hgrow="ALWAYS" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </GridPane>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="-10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="outputPane_" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefWidth="20.0" text="Output Directory" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <BorderPane maxWidth="1.7976931348623157E308" onDragDropped="#onDragDroppedOutput" onDragEntered="#onDragEnteredOutput" onDragExited="#onDragExitedOutput" onDragOver="#onDragOverOutput" styleClass="roundPanel2">
+                                       <bottom>
+                                          <VBox spacing="10.0" styleClass="roundPanel3">
+                                             <children>
+                                                <Label focusTraversable="false" mouseTransparent="true" text="Output directory" textAlignment="CENTER" textFill="WHITE">
+                                                   <graphic>
+                                                      <ImageView fx:id="outputDir_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/empty.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </bottom>
+                                       <center>
+                                          <StackPane>
+                                             <children>
+                                                <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="dropOutputImage_" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/dropZone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Drop output directory here" textAlignment="CENTER" textFill="GREY">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="20.0" top="20.0" />
+                                                   </BorderPane.margin>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="30.0" top="30.0" />
+                                                   </StackPane.margin>
+                                                </VBox>
+                                                <Hyperlink fx:id="browseOutput_" onAction="#onBrowseOutputClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </StackPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

@@ -1,0 +1,22 @@
+.root {
+  -fx-background-color:white; 
+  -fx-padding:10;
+}
+
+.context-menu {
+  -fx-background-color:white;
+  -fx-text-fill: black;
+  -fx-border-color:#808080
+}
+
+.context-menu .separator {
+    -fx-color:gainsboro;
+}
+
+.menu-item .label {
+  -fx-text-fill:black;
+}
+
+.menu-item:focused {
+  -fx-background-color:white;
+}

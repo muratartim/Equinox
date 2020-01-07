@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="root_" alignment="CENTER_RIGHT" disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" spacing="4.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.BugReportViewControls">
+  <!-- TODO Add Nodes -->
+  <children>
+      <MenuButton fx:id="status_" focusTraversable="false" mnemonicParsing="false" text="All bug reports">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../css/MenuButton4.css" />
+            <URL value="@../css/ContextMenu.css" />
+         </stylesheets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <items>
+            <RadioMenuItem fx:id="all_" mnemonicParsing="false" onAction="#onStatusSelected" selected="true" text="All bug reports">
+               <toggleGroup>
+                  <ToggleGroup fx:id="type" />
+               </toggleGroup>
+            </RadioMenuItem>
+            <RadioMenuItem fx:id="open_" mnemonicParsing="false" onAction="#onStatusSelected" text="Open bug reports" toggleGroup="$type" />
+            <RadioMenuItem fx:id="closed_" mnemonicParsing="false" onAction="#onStatusSelected" text="Closed bug reports" toggleGroup="$type" />
+         </items>
+      </MenuButton>
+  </children>
+</HBox>

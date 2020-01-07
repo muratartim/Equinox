@@ -1,0 +1,13 @@
+
+
+.split-menu-button {
+	-fx-base:steelblue;
+}
+
+.split-menu-button > .label {
+	-fx-text-fill:white;
+}
+
+.split-menu-button > .arrow-button .arrow {
+	-fx-background-color: white;
+}

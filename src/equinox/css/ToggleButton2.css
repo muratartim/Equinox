@@ -1,0 +1,20 @@
+
+
+.toggle-button {
+	-fx-font-family: System;
+	-fx-font-size: 13px;
+	-fx-font-style: normal;
+	-fx-background-color:white;
+	-fx-text-fill:black;
+	-fx-background-radius:0.0;
+	-fx-border-color:grey;
+	-fx-border-width:0.5 0.5 0.5 0.5;
+}
+
+.toggle-button:selected {
+	-fx-background-color:steelblue;
+	-fx-text-fill:white;
+	-fx-background-radius:0.0;
+	-fx-border-color:lightgrey;
+	-fx-border-width:0.5 0.5 0.0 0.5;
+}

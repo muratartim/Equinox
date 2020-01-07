@@ -1,0 +1,106 @@
+version: '3.7'
+
+services: 
+  equinox_mysql_server:
+    image: muratartim/equinox_mysql_server
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=Martim_17891917
+      - MYSQL_DATABASE=AFTwin
+      - MYSQL_USER=martim
+      - MYSQL_PASSWORD=Martim_17891917
+    networks: 
+      - equinox_network
+    volumes:
+      - equinox_mysql_data:/var/lib/mysql
+  
+  equinox_sftp_server:
+    image: muratartim/equinox_sftp_server
+    ports:
+      - '2222:22'
+    environment: 
+      - SFTP_USERS=aurora:17891917
+    networks: 
+      - equinox_network
+    volumes: 
+      - equinox_sftp_data:/home/aurora/filerRoot
+  
+  equinox_data_server:
+    image: muratartim/equinox_data_server
+    ports:
+      - '1235:1235'
+    environment:
+      - ds.hostname=equinox_mysql_server
+      - ds.port=3306
+      - ds.databaseName=AFTwin
+      - ds.username=root
+      - ds.password=Martim_17891917
+      - sftp.hostname=equinox_sftp_server
+      - sftp.password=17891917
+      - sftp.port=22
+      - sftp.rootPath=filerRoot/
+      - sftp.username=aurora
+    networks: 
+      - equinox_network
+    depends_on:
+      - "equinox_mysql_server"
+      - "equinox_sftp_server"
+  
+  equinox_exchange_server:
+    image: muratartim/equinox_exchange_server
+    ports:
+      - '1234:1234'
+    environment:
+      - ds.hostname=equinox_mysql_server
+      - ds.port=3306
+      - ds.databaseName=AFTwin
+      - ds.username=root
+      - ds.password=Martim_17891917
+      - sftp.hostname=equinox_sftp_server
+      - sftp.password=17891917
+      - sftp.port=22
+      - sftp.rootPath=filerRoot/
+      - sftp.username=aurora
+    networks: 
+      - equinox_network
+    depends_on:
+      - "equinox_mysql_server"
+      - "equinox_sftp_server"
+  
+  equinox_analysis_server:
+    image: muratartim/equinox_analysis_server
+    ports:
+      - '1236:1236'
+    environment:
+      - sftp.hostname=equinox_sftp_server
+      - sftp.password=17891917
+      - sftp.port=22
+      - sftp.rootPath=filerRoot/
+      - sftp.username=aurora
+    networks: 
+      - equinox_network
+    depends_on:
+      - "equinox_sftp_server"
+  
+  ouroboros:
+    image: circa10a/ouroboros
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60 --cleanup
+    depends_on:
+      - "equinox_mysql_server"
+      - "equinox_sftp_server"
+      - "equinox_analysis_server"
+      - "equinox_exchange_server"
+      - "equinox_data_server"
+
+networks: 
+  equinox_network:
+    name: equinox_network
+
+volumes: 
+  equinox_mysql_data:
+    name: equinox_mysql_data
+  equinox_sftp_data:
+    name: equinox_sftp_data

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import control.validationField.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="299.0" prefWidth="352.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.DummySTFPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox maxWidth="1.7976931348623157E308" prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+                        <TitledPane text="File Attributes">
+      <content>
+                              <VBox>
+      <children>
+                  <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0" VBox.vgrow="NEVER">
+                    <children>
+                      <Label text="File name:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                      <TextField id="overall_" fx:id="fileName_" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" prefWidth="-1.0" text="" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Label layoutX="31.0" layoutY="87.0" text="Stress state:" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                          <ChoiceBox fx:id="stressState_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                    </children>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="NEVER" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="207.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <VBox.margin>
+                      <Insets />
+                    </VBox.margin>
+                  </GridPane>
+      </children>
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+                              </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane text="1G &amp; Incremental Stresses">
+      <content>
+                              <VBox>
+      <children>
+                  <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0" VBox.vgrow="NEVER">
+                    <children>
+                      <Label text="1G steady:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                      <Label text="Increment:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                          <StackPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="oneGX_" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="X" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="incrementX_" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="X" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="oneGY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="Y" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="oneGXY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="XY" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="incrementY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="Y" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="incrementXY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="XY" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                    </children>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="NEVER" maxWidth="106.0" minWidth="75.0" prefWidth="75.0" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="228.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="228.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="228.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <VBox.margin>
+                      <Insets />
+                    </VBox.margin>
+                  </GridPane>
+      </children>
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+                              </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="46.0" text="Delta-P Stresses">
+                           <content>
+                              <VBox>
+                                 <children>
+                                    <GridPane hgap="5.0" layoutX="20.0" layoutY="53.0" prefWidth="192.0" vgap="5.0">
+                                       <children>
+                                          <Label text="DP stress:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                          <StackPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="deltaPX_" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="X" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="deltaPY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="Y" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="deltaPXY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="XY" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <Label text="Load case:" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />
+                                          <IntegerValidationField fx:id="dpLC_" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" promptText="Automatic" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="NEVER" maxWidth="106.0" minWidth="75.0" prefWidth="75.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="228.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="228.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="228.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="82.0" text="Delta-T Stresses">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="dtSup_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" translateY="3.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="115.0" text="Load case (Sup.):" HBox.hgrow="NEVER" />
+                                          <IntegerValidationField fx:id="dtSupLC_" disable="true" maxWidth="1.7976931348623157E308" promptText=" " HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="dtInf_" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" translateY="3.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="115.0" text="Load case (Inf.):" HBox.hgrow="NEVER" />
+                                          <IntegerValidationField fx:id="dtInfLC_" disable="true" maxWidth="1.7976931348623157E308" promptText=" " HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <GridPane hgap="5.0" layoutX="20.0" layoutY="53.0" prefWidth="192.0" vgap="5.0">
+                                       <children>
+                                          <Label text="Stress (Inf.):" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                          <StackPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="dtInfX_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="X" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="dtInfY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="Y" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="dtInfXY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="XY" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <Label layoutX="10.0" layoutY="87.0" text="Stress (Sup.):" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                                          <StackPane layoutX="90.0" layoutY="80.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="dtSupX_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="X" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="167.0" layoutY="80.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="dtSupY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="Y" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                          <StackPane layoutX="245.0" layoutY="80.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="dtSupXY_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="28.0" text="10.0" />
+                                                <Label mouseTransparent="true" text="XY" textFill="LIGHTGRAY" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="4.0" right="4.0" />
+                                                   </StackPane.margin>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="NEVER" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+                                          <ColumnConstraints hgrow="NEVER" maxWidth="64.0" minWidth="64.0" prefWidth="64.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" />
+                                          <ColumnConstraints hgrow="ALWAYS" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="242.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" HBox.hgrow="NEVER" />
+                <Button fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" styleClass="menuButton" text="Ok" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

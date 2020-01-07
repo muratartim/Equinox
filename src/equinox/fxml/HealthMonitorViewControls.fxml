@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="root_" alignment="CENTER_RIGHT" disable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" spacing="4.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.HealthMonitorViewControls">
+  <!-- TODO Add Nodes -->
+  <children>
+      <MenuButton fx:id="period_" focusTraversable="false" mnemonicParsing="false" text="Show last 2 hours">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../css/MenuButton4.css" />
+            <URL value="@../css/ContextMenu.css" />
+         </stylesheets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <items>
+            <RadioMenuItem fx:id="last2Hours_" mnemonicParsing="false" onAction="#onPeriodSelected" selected="true" text="Last 2 hours">
+               <toggleGroup>
+                  <ToggleGroup fx:id="type" />
+               </toggleGroup>
+            </RadioMenuItem>
+            <RadioMenuItem fx:id="last6Hours_" mnemonicParsing="false" onAction="#onPeriodSelected" text="Last 6 hours" toggleGroup="$type" />
+            <RadioMenuItem fx:id="last12Hours_" mnemonicParsing="false" onAction="#onPeriodSelected" text="Last 12 hours" toggleGroup="$type" />
+         </items>
+      </MenuButton>
+  </children>
+</HBox>

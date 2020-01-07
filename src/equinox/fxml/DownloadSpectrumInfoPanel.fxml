@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="370.0" spacing="5.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.DownloadSpectrumInfoPanel">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+   </padding>
+   <children>
+      <StackPane fx:id="headerPane_" maxWidth="1.7976931348623157E308">
+         <children>
+            <Label fx:id="name_" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Label" textAlignment="CENTER" textFill="GREY" StackPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="14.0" fitWidth="14.0" onMouseClicked="#onCloseClicked" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+               <image>
+                  <Image url="@../image/cancel.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </StackPane>
+      <Separator maxWidth="1.7976931348623157E308">
+         <VBox.margin>
+            <Insets left="-10.0" right="-10.0" />
+         </VBox.margin></Separator>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="NEVER" maxWidth="138.0" minWidth="138.0" prefWidth="138.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label layoutX="10.0" layoutY="47.0" text="A/C program:" textFill="SLATEGRAY" />
+            <Label layoutX="10.0" layoutY="77.0" text="A/C section:" textFill="SLATEGRAY" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="107.0" text="Fatigue mission:" textFill="SLATEGRAY" GridPane.rowIndex="2" />
+            <Label layoutX="10.0" layoutY="137.0" text="Mission issue:" textFill="SLATEGRAY" GridPane.rowIndex="3" />
+            <Label layoutX="10.0" layoutY="167.0" text="FLP issue:" textFill="SLATEGRAY" GridPane.rowIndex="4" />
+            <Label layoutX="10.0" layoutY="197.0" text="IFLP issue:" textFill="SLATEGRAY" GridPane.rowIndex="5" />
+            <Label layoutX="10.0" layoutY="227.0" text="CDF issue:" textFill="SLATEGRAY" GridPane.rowIndex="6" />
+            <Label layoutX="10.0" layoutY="197.0" text="Delivery reference:" textFill="SLATEGRAY" GridPane.rowIndex="7" />
+            <Label layoutX="10.0" layoutY="223.0" text="Description:" textFill="SLATEGRAY" GridPane.rowIndex="8" />
+            <Label text="Pilot points:" textFill="SLATEGRAY" GridPane.rowIndex="9" />
+            <Label text="Loadcase factor files:" textFill="SLATEGRAY" GridPane.rowIndex="10" />
+            <Label text="Download size:" textFill="SLATEGRAY" GridPane.rowIndex="11" />
+            <Label fx:id="program_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" />
+            <Label fx:id="section_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="mission_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="missionIssue_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="flpIssue_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="iflpIssue_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="cdfIssue_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="deliveryRef_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label fx:id="description_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label fx:id="pilotPoints_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label fx:id="multiplicationTables_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label fx:id="size_" text="Label" textFill="DIMGRAY" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>

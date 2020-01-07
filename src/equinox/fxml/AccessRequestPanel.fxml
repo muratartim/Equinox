@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root_" spacing="5.0" style="-fx-background-color: white; -fx-border-color: gainsboro; -fx-background-radius: 10; -fx-border-radius: 10;" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.AccessRequestPanel">
+<children>
+      <HBox maxWidth="1.7976931348623157E308" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Label fx:id="permission_" maxWidth="1.7976931348623157E308" text="Permission name goes here..." wrapText="true" HBox.hgrow="ALWAYS" VBox.vgrow="NEVER">
+      <font>
+      <Font name="System Bold" size="13.0" />
+      </font>
+            </Label>
+            <Label fx:id="status_" text="Status" textFill="GREEN" HBox.hgrow="NEVER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+<Label fx:id="username_" text="User name:" textFill="GREY" wrapText="true" VBox.vgrow="ALWAYS" />
+      <Label fx:id="alias_" layoutX="21.0" layoutY="43.0" text="User alias:" textFill="GREY" wrapText="true" />
+      <Label fx:id="organization_" layoutX="21.0" layoutY="65.0" text="User organization:" textFill="GREY" wrapText="true" />
+      <Label fx:id="email_" layoutX="21.0" layoutY="87.0" text="User email:" textFill="GREY" wrapText="true" />
+      <Separator prefWidth="200.0" VBox.vgrow="NEVER" />
+<HBox alignment="CENTER_LEFT" VBox.vgrow="NEVER">
+<children>
+            <Label fx:id="date_" text="Request Date: 15/06/14" textFill="GREY" HBox.hgrow="NEVER" />
+<HBox fx:id="container_" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="4.0" HBox.hgrow="ALWAYS" />
+</children>
+</HBox>
+</children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding></VBox>

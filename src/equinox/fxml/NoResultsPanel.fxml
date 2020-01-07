@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="10.0" style="-fx-background-color: whitesmoke;" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.NoResultsPanel">
+<children><HBox alignment="CENTER_LEFT" spacing="5.0">
+<children>
+<ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/sad.png" />
+</image>
+</ImageView>
+<VBox alignment="CENTER_LEFT">
+<children>
+<Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="noResultsText" text="OOPS!" />
+<Label fx:id="message_" maxWidth="1.7976931348623157E308" text="Your search did not match any files.&#10;" wrapText="true">
+<font>
+<Font size="16.0" />
+</font>
+</Label>
+</children>
+</VBox>
+</children>
+</HBox><Separator maxWidth="1.7976931348623157E308" />
+      <HBox maxWidth="1.7976931348623157E308" spacing="4.0">
+         <children>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../image/tip.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="suggestions_" lineSpacing="1.5" maxWidth="1.7976931348623157E308" wrapText="true" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+</children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding></VBox>

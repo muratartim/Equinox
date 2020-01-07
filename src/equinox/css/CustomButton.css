@@ -1,0 +1,11 @@
+
+@font-face {
+   font-family: custom-icons;
+   src: url("../font/custom-icons.ttf");
+}
+
+.button {
+  -fx-font-family: custom-icons;
+  -fx-font-size: 14;
+  -fx-text-fill: white;
+}

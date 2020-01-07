@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.embed.swing.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.DamageContributionViewPanel">
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+   <children>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <SwingNode fx:id="container_" StackPane.alignment="CENTER" />
+            <Hyperlink fx:id="gagEvents_" focusTraversable="false" onAction="#onGAGEventsClicked" text="Click to see events&#10;contributing to GAG" textAlignment="CENTER" StackPane.alignment="TOP_RIGHT">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </StackPane>
+   </children></VBox>

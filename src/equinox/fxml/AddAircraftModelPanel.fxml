@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="464.0" prefWidth="291.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.AddAircraftModelPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <TitledPane collapsible="false" layoutX="20.0" layoutY="20.0" minWidth="-Infinity" prefWidth="20.0" stylesheets="@../css/TitledPanel.css" text="Files">
+                     <content>
+                        <VBox spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <BorderPane fx:id="dropZone_" maxWidth="1.7976931348623157E308" onDragDropped="#onDragDropped" onDragEntered="#onDragEntered" onDragExited="#onDragExited" onDragOver="#onDragOver" styleClass="roundPanel2" VBox.vgrow="ALWAYS">
+                                 <center>
+                                    <StackPane maxWidth="1.7976931348623157E308">
+                                       <children>
+                                          <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                             <children>
+                                                <ImageView fx:id="dropImage_" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/dropZone.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label focusTraversable="false" mouseTransparent="true" text="Drop files here&#10;" textAlignment="CENTER" textFill="GREY">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets bottom="60.0" top="60.0" />
+                                             </BorderPane.margin>
+                                             <StackPane.margin>
+                                                <Insets bottom="40.0" top="40.0" />
+                                             </StackPane.margin>
+                                          </VBox>
+                                          <Hyperlink fx:id="browse_" onAction="#onBrowseClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Hyperlink>
+                                       </children>
+                                    </StackPane>
+                                 </center>
+                                 <bottom>
+                                    <StackPane>
+                                       <children>
+                                          <VBox fx:id="container_" spacing="10.0" styleClass="roundPanel3">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Label focusTraversable="false" mouseTransparent="true" text="F07 grid data file (*.f07)" textAlignment="CENTER" textFill="WHITE">
+                                                   <graphic>
+                                                      <ImageView fx:id="f07_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/empty.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                                <Label focusTraversable="false" mouseTransparent="true" text="F06 element data file (*.f06)" textAlignment="CENTER" textFill="WHITE">
+                                                   <graphic>
+                                                      <ImageView fx:id="f06_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/empty.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                                <HBox fx:id="stfLabelPane_" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Groups file (*.grp)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="grp_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label text="- Optional" textFill="ORANGE">
+                                                         <font>
+                                                            <Font name="System Italic" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDownloadSampleInputClicked" prefHeight="28.0" prefWidth="28.0" styleClass="roundButton2" StackPane.alignment="BOTTOM_RIGHT">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/sample.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <tooltip>
+                                                <Tooltip text="Download sample inputs" />
+                                             </tooltip>
+                                             <StackPane.margin>
+                                                <Insets bottom="-1.0" right="-1.0" />
+                                             </StackPane.margin>
+                                          </Button>
+                                       </children>
+                                    </StackPane>
+                                 </bottom>
+                              </BorderPane>
+                              <TextField fx:id="program_" layoutX="20.0" layoutY="268.0" maxWidth="1.7976931348623157E308" promptText="Enter A/C program..." />
+                              <TextField fx:id="modelName_" layoutX="20.0" layoutY="294.0" maxWidth="1.7976931348623157E308" onAction="#onModelNameEntered" promptText="Enter A/C model name..." />
+                           </children>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children>
+<Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic><ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image></ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

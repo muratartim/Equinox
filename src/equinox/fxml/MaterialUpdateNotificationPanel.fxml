@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.MaterialUpdateNotificationPanel">
+   <children>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                     <image>
+                        <Image url="@../image/notifUpdates.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label graphicTextGap="6.0" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Material library update available" wrapText="true" />
+                        <Label graphicTextGap="6.0" style="-fx-font-size: 15px;" text="Do you want to proceed with material library update?" wrapText="true" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="385.0" layoutY="21.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#onYesClicked" prefWidth="80.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="Yes">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="353.0" layoutY="21.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#onNoClicked" prefWidth="80.0" style="-fx-font-size: 13px;" styleClass="menuButton" text="No">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

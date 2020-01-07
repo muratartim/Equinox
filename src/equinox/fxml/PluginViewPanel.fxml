@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="556.0" prefWidth="394.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.PluginViewPanel">
+  <padding>
+    <Insets bottom="10.0" />
+  </padding>
+<children>
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefViewportHeight="33.0" prefViewportWidth="372.0" styleClass="scrollPane" VBox.vgrow="ALWAYS">
+<content>
+<VBox fx:id="container_" spacing="10.0">
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+</VBox>
+</content>
+</ScrollPane>
+</children>
+</VBox>

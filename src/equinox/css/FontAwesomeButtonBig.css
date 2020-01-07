@@ -1,0 +1,11 @@
+
+@font-face {
+   font-family: FontAwesome;
+   src: url("../font/fontawesome-webfont.ttf");
+}
+
+.button {
+  -fx-font-family: FontAwesome;
+  -fx-font-size: 20;
+  -fx-text-fill: white;
+}

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" prefHeight="-1.0" prefWidth="-1.0" styleClass="roundPanel" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.InputPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ToolBar fx:id="toolbar_" minWidth="-1.0" styleClass="titleBar" VBox.vgrow="NEVER">
+      <items>
+        <Label fx:id="header_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="204.0" styleClass="titleBarLabel" text="Generate Stress Sequence" />
+        <Region fx:id="region_" prefHeight="-1.0" prefWidth="-1.0" />
+            <MenuButton fx:id="addButton_" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="27.0" text="MenuButton">
+               <graphic>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" translateX="-1.0">
+                     <image>
+                        <Image url="@../image/addWhite.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <stylesheets>
+                  <URL value="@../css/MenuButton6.css" />
+                  <URL value="@../css/ContextMenu.css" />
+               </stylesheets>
+               <items>
+                <MenuItem mnemonicParsing="false" onAction="#onAddCDFSetClicked" text="Add New Spectrum">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.chart" />
+                     </graphic>
+                  </MenuItem>
+                  <Menu mnemonicParsing="false" text="Add New Stress Sequences...">
+                     <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onAddSTHClicked" text="From STH Files" />
+                        <MenuItem mnemonicParsing="false" onAction="#onAddSIGMAClicked" text="From SIGMA Files" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#onDownloadSampleSIGMAClicked" text="Download Sample SIGMA File" />
+                     </items>
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.pulse2" />
+                     </graphic>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#onAddACModelClicked" text="Add New A/C Model">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.airplane" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </MenuButton>
+            <MenuButton fx:id="automateButton_" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="27.0" text="MenuButton">
+               <graphic>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" translateX="-1.0">
+                     <image>
+                        <Image url="@../image/android.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <stylesheets>
+                  <URL value="@../css/MenuButton6.css" />
+                  <URL value="@../css/ContextMenu.css" />
+               </stylesheets>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onRunInstructionSetClicked" text="Run Instruction Set">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.play3" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#onCheckInstructionSetClicked" text="Check Instruction Set">
+                     <graphic>
+                        <Label stylesheets="@../css/IcoMoonLabel.css" text="%icon.clipboard2" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </MenuButton>
+      </items>
+    </ToolBar>
+      <ToolBar fx:id="statusbar_" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-1.0" prefHeight="30.0" styleClass="statusBar">
+         <items>
+            <HBox fx:id="services_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="140.0" spacing="4.0">
+               <children>
+                  <Button fx:id="authentication_" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAuthenticationClicked" prefHeight="20.0" prefWidth="20.0" style="-fx-base: red;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/authenticationService.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip fx:id="authenticationTooltip_" text="User Authentication: Expired" />
+                     </tooltip>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="82.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHealthMonitoringClicked" prefHeight="20.0" prefWidth="20.0" style="-fx-base: green;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/pulse.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="Microservices Health Monitoring" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="dataService_" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onConnectToDataServiceClicked" prefHeight="20.0" prefWidth="20.0" style="-fx-base: red;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/dataService.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip fx:id="dataServiceTooltip_" text="Data Service: Not available" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="analysisService_" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onConnectToAnalysisServiceClicked" prefHeight="20.0" prefWidth="20.0" style="-fx-base: red;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/analysisService.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip fx:id="analysisServiceTooltip_" text="Analysis Service: Not available" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="exchangeService_" contentDisplay="GRAPHIC_ONLY" layoutX="34.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onConnectToExchangeServiceClicked" prefHeight="20.0" prefWidth="20.0" style="-fx-base: red;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/exchangeService.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip fx:id="exchangeServiceTooltip_" text="Collaboration Service: Not available" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="automationService_" contentDisplay="GRAPHIC_ONLY" layoutX="106.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAutomationServiceClicked" prefHeight="20.0" prefWidth="20.0" style="-fx-base: red;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/android.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip fx:id="automationServiceTooltip_" text="Automation Service: Not available" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </HBox>
+            <Region fx:id="region2_" prefHeight="-1.0" prefWidth="-1.0" />
+            <Label fx:id="statusLabel_" alignment="CENTER_RIGHT" contentDisplay="RIGHT" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefWidth="106.0" style="-fx-background-radius: 5;" textFill="WHITE" />
+         </items>
+      </ToolBar>
+  </children>
+</VBox>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to perform damage angle analysis</title>
+<link rel="stylesheet" href="css/Help.css">
+<!-- This help page has a video associated with it. -->
+</head>
+<body>
+<h1>How to perform damage angle analysis</h1>
+<par>
+Damage angle analysis is performed to obtain the maximum damaging angle for 2D stress states. At the end of the analysis, maximum damaging 
+angle (in degrees) and the related equivalent stress value are computed. In addition, all incremental angles with their equivalent stresses 
+are also displayed from within the Equinox UI. Following video demonstrates how to do this.
+<p>
+<button type="button" class="hoverButton" onclick="app.helpVideoLink('How to perform damage angle analysis')" style="vertical-align:middle"><span>Play Demo</span></button>
+<br>
+For this, right-click on a 2D STF file in the file tree and select 
+<item>Damage Angle Analysis</item> from the popup menu as follows;<p><img class="centre" alt="help39" src="image/help39.png"><p>
+This will open the damage angle analysis input panel. Input panel contains all necessary input fields in order to perform the analysis. 
+These are; stress sequence generation parameters, material data, rainflow omission parameters, iteration settings and post-processing options. 
+You can find detailed information on the first 3 input panels from the following links;
+<UL>
+<LI><button type="button" onclick="app.helpLink('How to generate stress sequence', '')" id="buttonlink">Generating stress sequence,</button>
+<LI><button type="button" onclick="app.helpLink('How to calculate equivalent stress', '')" id="buttonlink">Calculating equivalent stress</button>.
+</UL>
+<h2><a name="Iteration Settings">Iteration Settings</a></h2>
+Overall iteration parameters govern damage angle analysis iteration cycle;
+<UL>
+<LI><item>Angle range:</item> Select the start and end angles in degrees. Analysis will be performed within this range.
+<LI><item>Increment angle:</item> The angle in degrees for rotating the stresses in each iteration step. Stress sequence will be generated 
+for each incremental angle within the given angle range calculated by the given increment angle.
+</UL>
+<h2><a name="Post-processing">Post-processing</a></h2>
+You can keep the generated stress sequence for the maximum damaging equivalent stress of your choice. The stress sequence will be kept in the database.
+</par>
+</body>
+</html>

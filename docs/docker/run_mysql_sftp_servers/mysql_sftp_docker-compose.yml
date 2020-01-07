@@ -1,0 +1,46 @@
+version: '3.7'
+
+services: 
+  equinox_mysql_server:
+    image: muratartim/equinox_mysql_server
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=Martim_17891917
+      - MYSQL_DATABASE=AFTwin
+      - MYSQL_USER=martim
+      - MYSQL_PASSWORD=Martim_17891917
+    networks: 
+      - equinox_network
+    volumes:
+      - equinox_mysql_data:/var/lib/mysql
+  
+  equinox_sftp_server:
+    image: muratartim/equinox_sftp_server
+    ports:
+      - '2222:22'
+    environment: 
+      - SFTP_USERS=aurora:17891917
+    networks: 
+      - equinox_network
+    volumes: 
+      - equinox_sftp_data:/home/aurora/filerRoot
+  
+  ouroboros:
+    image: circa10a/ouroboros
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60 --cleanup
+    depends_on:
+      - "equinox_mysql_server"
+      - "equinox_sftp_server"
+
+networks: 
+  equinox_network:
+    name: equinox_network
+
+volumes: 
+  equinox_mysql_data:
+    name: equinox_mysql_data
+  equinox_sftp_data:
+    name: equinox_sftp_data

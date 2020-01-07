@@ -1,0 +1,21 @@
+
+
+.titled-pane {
+	-fx-text-fill: steelblue;
+}
+
+.titled-pane > .title {
+	visibility: false;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+	-fx-background-color: steelblue;
+}
+
+.titled-pane > .content {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-padding: 25.0 0.0 0.0 0.0;
+}

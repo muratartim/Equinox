@@ -1,0 +1,28 @@
+
+.combo-box {
+	-fx-base:steelblue;
+	-fx-text-fill: white;
+	-fx-mark-color: white ;
+	-fx-font-size:10px;
+}
+
+.combo-box-popup .list-view {
+	-fx-background-color: white;
+	-fx-border-color:#808080;
+}
+
+.combo-box-popup .list-view .list-cell {
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-font-size:13px;
+}
+ 
+.combo-box-popup .list-view .list-cell:hover {
+	-fx-background-color: steelblue;
+	-fx-text-fill: white;
+	-fx-font-size:13px;
+}
+
+.combo-box .cell:selected {
+	-fx-text-fill: white;
+}

@@ -1,0 +1,38 @@
+
+
+.table-view {
+    -fx-background-color: -fx-box-border, -fx-control-inner-background;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 1;
+}
+
+.table-view:focused {
+    -fx-background-color: -fx-box-border, -fx-control-inner-background;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 2, 0, 0;
+    -fx-padding: 1;
+}
+
+/* Selected row */
+.table-view:focused .table-row-cell:filled:selected {
+    -fx-background-color: steelblue;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background: -fx-accent;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+/* Selected row when table not focused */
+.table-row-cell:filled:selected {
+    -fx-background-color: steelblue;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background: -fx-accent;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+.table-view .column-header .label{
+    -fx-text-alignment: center;
+}
+
+.table-cell {
+    -fx-alignment: center-left;
+}

@@ -1,0 +1,570 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- configure project specs -->
+  <groupId>Equinox</groupId>
+  <artifactId>Equinox</artifactId>
+  <version>1.0</version>
+  <name>Equinox</name>
+  <description>Airframe Fatigue Twin Platform Desktop Client</description>
+  <url>https://github.com/muratartim/Equinox</url>
+  <packaging>jar</packaging>
+
+  <!-- build block -->
+  <build>
+
+    <!-- specify source and resource directories -->
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+
+    <!-- configure plugins -->
+    <plugins>
+
+      <!-- configure compiler plugin to use JDK 8 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <!-- configure exec plugin to run the application in IDE -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>equinox.Equinox</mainClass>
+          <arguments>
+            <argument>--maxParallelTasks=3</argument>
+            <argument>--maxParallelSubtasks=2</argument>
+            <argument>--databasePageSize=8192</argument>
+            <argument>--databasePageCacheSize=4000</argument>
+            <argument>--maxVisibleSTFsPerSpectrum=20</argument>
+            <argument>--colorTheme=steelblue</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+
+      <!-- configure dependency plugin to copy dependencies into libs directory -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/libs
+              </outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- configure jar plugin to deploy project artifacts -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries />
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>libs/</classpathPrefix>
+              <mainClass>equinox.Equinox</mainClass>
+            </manifest>
+            <manifestEntries>
+              <Notify-Update>true</Notify-Update>
+              <Allow-Ignore-Update>true</Allow-Ignore-Update>
+              <Jar-Version>5.0</Jar-Version>
+              <Lib-Version>5.0</Lib-Version>
+              <Resource-Version>4.0</Resource-Version>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <!-- define fabric8 plugin in order to run all containers of the platform -->
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>0.28.0</version>
+        <configuration>
+          <dockerHost>unix:///var/run/docker.sock</dockerHost>
+          <verbose>true</verbose>
+          <autoCreateCustomNetworks>true</autoCreateCustomNetworks>
+          <images>
+
+            <!-- sql server -->
+            <image>
+              <name>muratartim/equinox_sql_server</name>
+              <alias>equinox_sql_server</alias>
+              <run>
+                <containerNamePattern>%a</containerNamePattern>
+                <ports>
+                  <port>1433:1433</port>
+                </ports>
+                <network>
+                  <mode>custom</mode>
+                  <name>equinox_network</name>
+                </network>
+                <volumes>
+                  <bind>
+                    <volume>equinox_sql_data:/var/opt/mssql</volume>
+                  </bind>
+                </volumes>
+                <wait>
+                  <time>5000</time>
+                </wait>
+              </run>
+            </image>
+
+            <!-- sftp server -->
+            <image>
+              <name>muratartim/equinox_sftp_server</name>
+              <alias>equinox_sftp_server</alias>
+              <run>
+                <containerNamePattern>%a</containerNamePattern>
+                <ports>
+                  <port>2222:22</port>
+                </ports>
+                <network>
+                  <mode>custom</mode>
+                  <name>equinox_network</name>
+                </network>
+                <volumes>
+                  <bind>
+                    <volume>equinox_sftp_data:/home/aurora/filerRoot</volume>
+                  </bind>
+                </volumes>
+                <wait>
+                  <time>5000</time>
+                </wait>
+              </run>
+            </image>
+
+            <!-- analysis server -->
+            <image>
+              <name>muratartim/equinox_analysis_server</name>
+              <alias>equinox_analysis_server</alias>
+              <run>
+                <containerNamePattern>%a</containerNamePattern>
+                <ports>
+                  <port>1236:1236</port>
+                </ports>
+                <env>
+                  <sftp.hostname>localhost</sftp.hostname>
+                  <sftp.port>2222</sftp.port>
+                  <sftp.username>aurora</sftp.username>
+                  <sftp.password>17891917</sftp.password>
+                  <sftp.rootPath>filerRoot/</sftp.rootPath>
+                </env>
+                <network>
+                  <mode>custom</mode>
+                  <name>equinox_network</name>
+                </network>
+                <dependsOn>
+                  <container>equinox_sftp_server</container>
+                </dependsOn>
+              </run>
+            </image>
+
+            <!-- exchange server -->
+            <image>
+              <name>muratartim/equinox_exchange_server</name>
+              <alias>equinox_exchange_server</alias>
+              <run>
+                <containerNamePattern>%a</containerNamePattern>
+                <ports>
+                  <port>1234:1234</port>
+                </ports>
+                <env>
+                  <sftp.hostname>localhost</sftp.hostname>
+                  <sftp.port>2222</sftp.port>
+                  <sftp.username>aurora</sftp.username>
+                  <sftp.password>17891917</sftp.password>
+                  <sftp.rootPath>filerRoot/</sftp.rootPath>
+                  <ds.hostname>localhost</ds.hostname>
+                  <ds.port>1433</ds.port>
+                  <ds.databaseName>AFTwin</ds.databaseName>
+                  <ds.username>sa</ds.username>
+                  <ds.password>Martim_17891917</ds.password>
+                </env>
+                <network>
+                  <mode>custom</mode>
+                  <name>equinox_network</name>
+                </network>
+                <dependsOn>
+                  <container>equinox_sftp_server</container>
+                </dependsOn>
+              </run>
+            </image>
+
+            <!-- data server -->
+            <image>
+              <name>muratartim/equinox_data_server</name>
+              <alias>equinox_data_server</alias>
+              <run>
+                <containerNamePattern>%a</containerNamePattern>
+                <ports>
+                  <port>1235:1235</port>
+                </ports>
+                <env>
+                  <sftp.hostname>localhost</sftp.hostname>
+                  <sftp.port>2222</sftp.port>
+                  <sftp.username>aurora</sftp.username>
+                  <sftp.password>17891917</sftp.password>
+                  <sftp.rootPath>filerRoot/</sftp.rootPath>
+                  <ds.hostname>localhost</ds.hostname>
+                  <ds.port>1433</ds.port>
+                  <ds.databaseName>AFTwin</ds.databaseName>
+                  <ds.username>sa</ds.username>
+                  <ds.password>Martim_17891917</ds.password>
+                </env>
+                <network>
+                  <mode>custom</mode>
+                  <name>equinox_network</name>
+                </network>
+                <dependsOn>
+                  <container>equinox_sftp_server</container>
+                  <container>equinox_sql_server</container>
+                </dependsOn>
+              </run>
+            </image>
+
+            <!-- web server -->
+            <image>
+              <name>muratartim/equinox_web_server</name>
+              <alias>equinox_web_server</alias>
+              <run>
+                <containerNamePattern>%a</containerNamePattern>
+                <ports>
+                  <port>8080:8080</port>
+                </ports>
+                <network>
+                  <mode>custom</mode>
+                  <name>equinox_network</name>
+                </network>
+              </run>
+            </image>
+
+            <!-- ouroboros -->
+            <image>
+              <name>circa10a/ouroboros</name>
+              <alias>ouroboros</alias>
+              <run>
+                <containerNamePattern>%a</containerNamePattern>
+                <network>
+                  <mode>custom</mode>
+                  <name>equinox_network</name>
+                </network>
+                <volumes>
+                  <bind>
+                    <volume>/var/run/docker.sock:/var/run/docker.sock</volume>
+                  </bind>
+                </volumes>
+                <dependsOn>
+                  <container>equinox_sftp_server</container>
+                  <container>equinox_sql_server</container>
+                  <container>equinox_web_server</container>
+                  <container>equinox_analysis_server</container>
+                  <container>equinox_exchange_server</container>
+                  <container>equinox_data_server</container>
+                </dependsOn>
+                <env>
+                  <INTERVAL>60</INTERVAL>
+                  <CLEANUP>true</CLEANUP>
+                </env>
+              </run>
+            </image>
+          </images>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- dependency repositories -->
+  <repositories>
+
+    <!-- repository for javafx-filterable-table-columns dependency -->
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+
+    <!-- repository for org.apache.commons.collections15 dependency
+    <repository>
+      <id>openanzo.org</id>
+      <url>http://www.openanzo.org/maven-repositories/release/</url>
+    </repository> -->
+
+    <!-- local repository -->
+    <repository>
+      <id>my-local-repo</id>
+      <url>file://${basedir}/lib</url>
+    </repository>
+
+  </repositories>
+
+  <!-- dependencies -->
+  <dependencies>
+
+	<!-- AWS Java SDK For Amazon S3 -->
+	<dependency>
+	    <groupId>com.amazonaws</groupId>
+	    <artifactId>aws-java-sdk-s3</artifactId>
+	    <version>1.11.699</version>
+	</dependency>
+
+    <!-- jxl -->
+    <dependency>
+      <groupId>net.sourceforge.jexcelapi</groupId>
+      <artifactId>jxl</artifactId>
+      <version>2.6.12</version>
+    </dependency>
+
+    <!-- jfreechart -->
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>1.0.19</version>
+    </dependency>
+
+    <!-- javafx-filterable-table-columns -->
+    <dependency>
+      <groupId>com.github.jhsheets</groupId>
+      <artifactId>javafx-filterable-table-columns</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+    <!-- derby -->
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derby</artifactId>
+      <version>10.14.2.0</version>
+    </dependency>
+
+    <!-- derbyclient -->
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derbyclient</artifactId>
+      <version>10.14.2.0</version>
+    </dependency>
+
+    <!-- itextpdf -->
+    <dependency>
+      <groupId>com.itextpdf</groupId>
+      <artifactId>itextpdf</artifactId>
+      <version>5.5.13</version>
+    </dependency>
+
+    <!-- controlsfx -->
+    <dependency>
+      <groupId>org.controlsfx</groupId>
+      <artifactId>controlsfx</artifactId>
+      <version>8.40.15</version>
+    </dependency>
+
+    <!-- javax.mail -->
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
+    <!-- jfoenix -->
+    <dependency>
+      <groupId>com.jfoenix</groupId>
+      <artifactId>jfoenix</artifactId>
+      <version>8.0.9</version>
+    </dependency>
+
+    <!-- commons-text -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-text</artifactId>
+      <version>1.3</version>
+    </dependency>
+
+    <!-- HikariCP -->
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
+    <!-- kryonet -->
+    <dependency>
+      <groupId>com.esotericsoftware</groupId>
+      <artifactId>kryonet</artifactId>
+      <version>2.22.0-RC1</version>
+    </dependency>
+
+    <!-- mssql-jdbc -->
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>mssql-jdbc</artifactId>
+      <version>6.4.0.jre8</version>
+    </dependency>
+
+    <!-- jsch -->
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.1.54</version>
+    </dependency>
+
+    <!-- tilesfx -->
+    <dependency>
+      <groupId>eu.hansolo</groupId>
+      <artifactId>tilesfx</artifactId>
+      <version>1.6.4</version>
+    </dependency>
+
+    <!-- jasypt -->
+    <dependency>
+      <groupId>org.jasypt</groupId>
+      <artifactId>jasypt</artifactId>
+      <version>1.9.2</version>
+    </dependency>
+
+    <!-- jdom2 -->
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jdom2</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+
+    <!-- json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20180813</version>
+    </dependency>
+
+    <!-- jung-api -->
+    <dependency>
+      <groupId>net.sf.jung</groupId>
+      <artifactId>jung-api</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
+    <!-- jung-graph-impl -->
+    <dependency>
+      <groupId>net.sf.jung</groupId>
+      <artifactId>jung-graph-impl</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
+    <!-- jung-algorithms -->
+    <dependency>
+      <groupId>net.sf.jung</groupId>
+      <artifactId>jung-algorithms</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
+    <!-- jung-io -->
+    <dependency>
+      <groupId>net.sf.jung</groupId>
+      <artifactId>jung-io</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
+    <!-- jung-visualization -->
+    <dependency>
+      <groupId>net.sf.jung</groupId>
+      <artifactId>jung-visualization</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
+    <!-- org.apache.commons.collections15
+    <dependency>
+      <groupId>org.openanzo.dependencies</groupId>
+      <artifactId>org.apache.commons.collections15</artifactId>
+      <version>4.01</version>
+    </dependency> -->
+
+    <!-- local repository: com.base64.base64-all -->
+    <dependency>
+      <groupId>com.base64</groupId>
+      <artifactId>base64-all</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- local repository: com.controls.controls -->
+    <dependency>
+      <groupId>com.controls</groupId>
+      <artifactId>controls</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- local repository: com.inf.inf -->
+    <dependency>
+      <groupId>com.inf</groupId>
+      <artifactId>inf</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- local repository: com.equinox.appContainer -->
+    <dependency>
+      <groupId>com.equinox</groupId>
+      <artifactId>appContainer</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- local repository: com.equinox.serverUtilities -->
+    <dependency>
+      <groupId>com.equinox</groupId>
+      <artifactId>serverUtilities</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- local repository: com.equinox.analysisServer -->
+    <dependency>
+      <groupId>com.equinox</groupId>
+      <artifactId>analysisServer</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- local repository: com.equinox.exchangeServer -->
+    <dependency>
+      <groupId>com.equinox</groupId>
+      <artifactId>exchangeServer</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- local repository: com.equinox.dataServer -->
+    <dependency>
+      <groupId>com.equinox</groupId>
+      <artifactId>dataServer</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+  </dependencies>
+
+</project>

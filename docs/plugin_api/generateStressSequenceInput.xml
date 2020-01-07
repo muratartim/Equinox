@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Root input element. This element is obligatory.-->
+<generateStressSequenceInput>
+	
+	<!--Overall factors. This element and all its children are optional.-->
+	<overallFactors>
+		<!--Stress modification entry for 1G cases.-->
+		<oneg>
+			<!--Stress modification value. Real number is expected.-->
+			<value></value>
+			<!--Stress modification method. Can be one of 'Multiply', 'Add' or 'Set'.-->
+			<method></method>
+		</oneg>
+		<!--Stress modification entry for increment cases.-->
+		<increment>
+			<!--Stress modification value. Real number is expected.-->
+			<value></value>
+			<!--Stress modification method. Can be one of 'Multiply', 'Add' or 'Set'.-->
+			<method></method>
+		</increment>
+		<!--Stress modification entry for delta-p cases.-->
+		<deltaP>
+			<!--Stress modification value. Real number is expected.-->
+			<value></value>
+			<!--Stress modification method. Can be one of 'Multiply', 'Add' or 'Set'.-->
+			<method></method>
+		</deltaP>
+		<!--Stress modification entry for delta-t cases.-->
+		<deltaT>
+			<!--Stress modification value. Real number is expected.-->
+			<value></value>
+			<!--Stress modification method. Can be one of 'Multiply', 'Add' or 'Set'.-->
+			<method></method>
+		</deltaT>
+	</overallFactors>
+	
+	<!--Loadcase factors. This element is optional.-->
+	<loadcaseFactors>
+		<!--Path to multiplication table file. The file name should end with .mut.-->
+		<mutPath></mutPath>
+		<!--Multiplication table column index. Integer is expected. Note that, index is 1 based.-->
+		<tableColumn></tableColumn>
+		<!--Stress modification method. Can be one of 'Multiply', 'Add' or 'Set'.-->
+		<method></method>
+	</loadcaseFactors>
+	
+	<!--Cabin pressure inputs. This element and all children are optional.-->
+	<pressure>
+		<!--Delta-P loadcase number.-->
+		<dpLoadcase></dpLoadcase>
+		<!--Reference Delta-P value. A real number is expected.-->
+		<referenceDp></referenceDp>
+	</pressure>
+	
+	<!--Temperature inputs. This element is optional.-->
+	<temperature>
+		<!--Delta-t interpolation method. Can be either '1 point' or '2 points'.-->
+		<dtInterpolation></dtInterpolation>
+		<!--Delta-t superior loadcase number.-->
+		<dtLoadcaseSuperior></dtLoadcaseSuperior>
+		<!--Delta-t superior reference delta-t value. A real number is expected.-->
+		<referenceDtSuperior></referenceDtSuperior>
+		<!--Delta-t inferior loadcase number.-->
+		<dtLoadcaseInferior></dtLoadcaseInferior>
+		<!--Delta-t inferior reference delta-t value. A real number is expected.-->
+		<referenceDtInferior></referenceDtInferior>
+	</temperature>
+	
+	<!--Stress rotation inputs. This element is optional.-->
+	<stressRotation>
+		<!--Stress component. Can be one of 'Normal X', 'Normal Y', Shear XY' or 'Rotated'.-->
+		<component></component>
+		<!--Rotation angle in degrees. Note that this element is required only if the component is 'Rotated'.-->
+		<rotationAngle></rotationAngle>
+	</stressRotation>
+	
+	<!--Name of generated stress sequence name. This element is optional, if not given, the parent STF file name will be used to name the sequence.-->
+	<sequenceName></sequenceName>
+</generateStressSequenceInput>

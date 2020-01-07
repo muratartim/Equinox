@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root_" alignment="CENTER" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.IntroPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+      <ImageView fx:id="banner_" fitHeight="158.0" fitWidth="685.0" onMouseClicked="#onBackClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/aboutDataAnalyst.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="progressInfo_" alignment="CENTER" graphicTextGap="0.0" text="Loading workspace paths...&#10;(task 0 of 5)" textAlignment="CENTER" textFill="STEELBLUE" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+  </children>
+</VBox>

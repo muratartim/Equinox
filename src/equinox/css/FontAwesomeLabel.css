@@ -1,0 +1,10 @@
+
+@font-face {
+   font-family: FontAwesome;
+   src: url("../font/fontawesome-webfont.ttf");
+}
+
+.label {
+  -fx-font-family: FontAwesome;
+  -fx-font-size: 14;
+}

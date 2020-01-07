@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root_" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.DownloadPilotPointInfoEditPage">
+   <children>
+      <GridPane maxWidth="1.7976931348623157E308" vgap="2.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="134.0" minWidth="134.0" prefWidth="134.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="spectrumNameLabel_" layoutX="10.0" layoutY="17.0" text="Spectrum name:" textFill="SLATEGRAY" />
+            <Label fx:id="programLabel_" layoutX="10.0" layoutY="47.0" text="A/C program:" textFill="SLATEGRAY" GridPane.rowIndex="1" />
+            <Label fx:id="sectionLabel_" layoutX="10.0" layoutY="77.0" text="A/C section:" textFill="SLATEGRAY" GridPane.rowIndex="2" />
+            <Label fx:id="missionLabel_" layoutX="10.0" layoutY="107.0" text="Fatigue mission:" textFill="SLATEGRAY" GridPane.rowIndex="3" />
+            <Label fx:id="descriptionLabel_" layoutX="10.0" layoutY="137.0" text="Description:" textFill="SLATEGRAY" GridPane.rowIndex="4" />
+            <Label fx:id="elementTypeLabel_" layoutX="10.0" layoutY="167.0" text="Element type:" textFill="SLATEGRAY" GridPane.rowIndex="6" />
+            <Label fx:id="framePosLabel_" layoutX="10.0" layoutY="197.0" text="Frame/rib position:" textFill="SLATEGRAY" GridPane.rowIndex="7" />
+            <Label fx:id="stringerPosLabel_" layoutX="10.0" layoutY="227.0" text="Stringer position:" textFill="SLATEGRAY" GridPane.rowIndex="8" />
+            <Label fx:id="dataSourceLabel_" layoutX="10.0" layoutY="197.0" text="Data source:" textFill="SLATEGRAY" GridPane.rowIndex="9" />
+            <Label fx:id="genSourceLabel_" layoutX="10.0" layoutY="223.0" text="Generation source:" textFill="SLATEGRAY" GridPane.rowIndex="10" />
+            <Label fx:id="deliveryRefLabel_" layoutX="10.0" layoutY="249.0" text="Delivery reference:" textFill="SLATEGRAY" GridPane.rowIndex="11" />
+            <Label fx:id="issueLabel_" layoutX="10.0" layoutY="275.0" text="Pilot point issue:" textFill="SLATEGRAY" GridPane.rowIndex="12" />
+            <Label fx:id="fatigueMaterialLabel_" layoutX="10.0" layoutY="301.0" text="Fatigue material:" textFill="SLATEGRAY" GridPane.rowIndex="13" />
+            <TextField fx:id="spectrumName_" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" />
+            <TextField fx:id="program_" focusTraversable="false" layoutX="144.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="section_" focusTraversable="false" layoutX="144.0" layoutY="37.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="mission_" focusTraversable="false" layoutX="144.0" layoutY="63.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="description_" focusTraversable="false" layoutX="144.0" layoutY="89.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="elementType_" focusTraversable="false" layoutX="144.0" layoutY="115.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="framePos_" focusTraversable="false" layoutX="144.0" layoutY="141.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="stringerPos_" focusTraversable="false" layoutX="144.0" layoutY="167.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="dataSource_" focusTraversable="false" layoutX="144.0" layoutY="193.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="genSource_" focusTraversable="false" layoutX="144.0" layoutY="219.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="deliveryRef_" focusTraversable="false" layoutX="144.0" layoutY="245.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField fx:id="issue_" focusTraversable="false" layoutX="144.0" layoutY="271.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="13">
+               <children>
+                  <TextField fx:id="fatigueMaterial_" editable="false" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="27.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" />
+                  <Button id="infoButton_" fx:id="fatigueLibrary_" contentDisplay="GRAPHIC_ONLY" disable="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onFatigueMaterialLibraryClicked" prefHeight="20.0" prefWidth="20.0" StackPane.alignment="CENTER_RIGHT">
+                     <graphic>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/searchWhite.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="Material library" />
+                     </tooltip>
+                     <StackPane.margin>
+                        <Insets right="4.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+            <Label fx:id="eidLabel_" layoutX="10.0" layoutY="187.0" text="EID/LIQ/SG:" textFill="SLATEGRAY" GridPane.rowIndex="5" />
+            <TextField fx:id="eid_" focusTraversable="false" layoutX="144.0" layoutY="123.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="preffasMaterialLabel_" layoutX="10.0" layoutY="383.0" text="Preffas material:" textFill="SLATEGRAY" GridPane.rowIndex="14" />
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="14">
+               <children>
+                  <TextField fx:id="preffasMaterial_" editable="false" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="27.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" />
+                  <Button id="infoButton_" fx:id="preffasLibrary_" contentDisplay="GRAPHIC_ONLY" disable="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onPreffasMaterialLibraryClicked" prefHeight="20.0" prefWidth="20.0" StackPane.alignment="CENTER_RIGHT">
+                     <graphic>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/searchWhite.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="Material library" />
+                     </tooltip>
+                     <StackPane.margin>
+                        <Insets right="4.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+            <Label fx:id="linearMaterialLabel_" layoutX="10.0" layoutY="413.0" text="Linear prop. material:" textFill="SLATEGRAY" GridPane.rowIndex="15" />
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="15">
+               <children>
+                  <TextField fx:id="linearMaterial_" editable="false" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="27.0" style="-fx-text-box-border: transparent; -fx-border-color: lightgray; -fx-background-color: white;" />
+                  <Button id="infoButton_" fx:id="linearLibrary_" contentDisplay="GRAPHIC_ONLY" disable="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLinearMaterialLibraryClicked" prefHeight="20.0" prefWidth="20.0" StackPane.alignment="CENTER_RIGHT">
+                     <graphic>
+                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/searchWhite.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="Material library" />
+                     </tooltip>
+                     <StackPane.margin>
+                        <Insets right="4.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+         </children>
+      </GridPane>
+   </children>
+</VBox>

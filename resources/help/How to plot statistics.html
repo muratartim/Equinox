@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to plot statistics</title>
+<link rel="stylesheet" href="css/Help.css">
+<!-- This help page has a video associated with it. -->
+</head>
+<body>
+<h1>How to plot statistics</h1>
+<par>
+Flight-by-flight stress sequence statistics can be generated and displayed for various statistic types. Following video demonstrates how to do this.
+<p>
+<button type="button" class="hoverButton" onclick="app.helpVideoLink('How to plot statistics')" style="vertical-align:middle"><span>Play Demo</span></button>
+<br>
+For this, right-click on any stress sequence item 
+in the file tree and select <item>Plot Statistics</item> from the menu as shown in the following figure.
+<p><img class="centre" alt="help12" src="image/help12.png"><p>You can also show statistics by right-clicking on typical flights in the file 
+tree.<sup>(1, 2)</sup>
+<h2><a name="Select statistics">Select statistics</a></h2>
+This panel provides the statistic types to generate. Event occurrences can be multiplied by the flight occurrences.
+<p><img class="centre" alt="help62" src="image/help62.png">
+<h2><a name="Select events">Select events</a></h2>
+Select a 1g or incremental event to generate the statistics. You can search for the event by its name, load case number or conversion 
+table comment. For instance, selecting <item>Maximum total stress</item> statistic for the event <item>Cruise</item><sup>(3)</sup> 
+will generate comparison of maximum total stresses of all typical flights for the cruise event.<p><img class="centre" alt="help13" src="image/help13.png">
+<h2><a name="Options">Options</a></h2>
+Following optional inputs can be given;
+<UL>
+<LI><item>Max. flights/events:</item> Maximum number of results to be generated. This is the number of flights to compare when showing 
+statistics for multiple flight selections, or it is the maximum number of events to compare for single flight selection.
+<LI><item>Results order:</item> Order of results. For a flight comparison, <item>Descending</item> means the comparison will 
+include the top 10 (max. flights) flight values.
+<LI><item>Show data labels:</item> Select this if you want to see the data labels on the chart.
+</UL>
+<h2><a name="Generated statistics">Generated statistics</a></h2>
+The generated statistics are displayed on a column chart as shown in the following figure. The chart plot can be saved to 
+disk by clicking <item>Save view</item> button (see figure).
+<p><img class="centre" alt="help14" src="image/help14.png">
+<p><notes>Notes:</notes>
+<br><sup>(1)</sup> Statistic types <item>Validity</item> and <item>Number of peaks</item> are available only for multiple 
+flight selections (or entire spectrum selection).
+<br><sup>(2)</sup> Generated statistics are based on event comparison for single flight selection. Whereas they are based on 
+flight comparison for multiple flight selections.
+<br><sup>(3)</sup> Event names and comments may differ from spectrum to spectrum.
+</par>
+</body>
+</html>

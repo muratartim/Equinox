@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to search and download spectra from AFM database</title>
+<link rel="stylesheet" href="css/Help.css">
+<!-- This help page has a video associated with it. -->
+</head>
+<body>
+<h1>How to search and download spectra from AFM database</h1>
+<par>
+This section describes how to search and download spectra from AFT (Airframe Fatigue Twin) database.<sup>(1)</sup> Following video demonstrates how to do this.
+<p>
+<button type="button" class="hoverButton" onclick="app.helpVideoLink('How to search and download spectra from AFM database')" style="vertical-align:middle"><span>Play Demo</span></button>
+<br>
+To start searching, click on <item>File --> Search AFM Database... --> Search Spectra</item> as shown below.
+<p><img class="centre" alt="help4" src="image/help4.png"><p>
+This opens the <item>Search for Spectra</item> panel.
+<h2><a name="Basic search">Basic search</a></h2>
+Basic search requires only comma separated keywords as inputs. This search will match all/any<sup>(2)</sup> keywords against 
+spectrum name, A/C program, A/C section, fatigue mission or ANA file comments. Matching spectra will be listed in 
+the <item>Downloads View</item> which is explained later in this section.<p><img class="centre" alt="help5" src="image/help5.png"><p>
+Click on <item>Advanced search</item> in case you require more detailed search criteria.
+<h2><a name="Advanced search">Advanced search</a></h2>
+Advanced search panel provides entries for more specific search criterion such as spectrum name, A/C program, 
+A/C section, fatigue mission, fatigue mission issue, FLP issue, IFLP issue, CDF issue, ANA file comments and spectrum generation
+date. None of these are obligatory, but at least one should be supplied. Match-operator shall also be selected for each given 
+criteria (see following figure).<p><img class="centre" alt="help6" src="image/help6.png">
+<h2><a name="Search Engine Settings">Search Engine Settings</a></h2>
+By default, a search can produce maximum 100 results (i.e. spectrum entries). This can be increased on demand. Logical operator 
+determines how different criterion will be combined to create a search query. For instance, say "A310" is entered as A/C program and "MR" 
+is given as fatigue mission criteria. Using AND operator would return spectra satisfying both A310 A/C program and MR mission. Whereas, OR 
+would return all spectra having at least one of them. Finally, ignore case option determines whether the character based search criteria 
+shall be matched with or without taking word-cases into consideration.
+<h2><a name="Downloading search results">Downloading search results</a></h2>
+Search results are listed from within the <item>Downloads View</item> as seen in the following figure. Each item is shown with its spectrum name (as header), 
+A/C program, A/C section, fatigue mission and delivery reference. Click on the info button (shown with "i" icon) to see detailed information about the spectrum.
+<p><img class="centre" alt="help7" src="image/help7.png"><p>
+Click on <item>Download</item> (shown with the cloud-down-arrow icon) to download a full copy of the spectrum to your disk. This copy will include spectrum files such as ANA, 
+TXT, CVT, FLS and Conversion Table files.<p>
+To download multiple spectra, first select the spectra from their toggle-switches and click <item>Download</item> at the top of the downloads view. 
+Selected files will be downloaded one by one into the selected directory.<p>
+Click on <item>Add</item> (shown with "+" icon) to add the spectrum into your local Equinox database. You can also add multiple spectra, via selecting the spectra from their 
+toggle-switches and clicking on the add button at the top of the downloads view.<p>
+Click on <item>Pilot Points</item> (shown with "P" icon) to search the database for connected pilot points. You can then see detailed information about each connected pilot point, 
+and download or add them to your database.<p>
+Click on <item>Loadcase Factors Files</item> (shown with a table icon) to search the database for connected loadcase factor files. You can then see detailed information about each 
+connected loadcase factor file, and download or add them to your database.<p>
+<p><notes>Notes:</notes>
+<br><sup>(1)</sup> You must be connected to the database server in order to perform these operations. 
+In case you experience connection problems, please refer to <button type="button" onclick="app.helpLink('Settings', 'Database server settings')" id="buttonlink">Database server settings</button>.
+<br><sup>(2)</sup> Logical operator (AND/OR) can be selected from within the <item>Options</item> panel. By 
+default it is AND operator.
+</par>
+</body>
+</html>

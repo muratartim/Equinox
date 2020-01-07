@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="584.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.SettingsPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="NEVER">
+                     <panes>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="46.0" minWidth="-Infinity" prefWidth="20.0" text="Analysis Engine">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="Analysis engine performs fatigue &amp; propagation equivalent stress analyses." textFill="SLATEGRAY" wrapText="true">
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/engine.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" minHeight="-Infinity" pannable="true" prefHeight="155.0">
+                                       <content>
+                                          <VBox spacing="10.0">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="4.0">
+                                                   <children>
+                                                      <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="52.0" text="Engine:" />
+                                                      <ComboBox fx:id="analysisEngine_" maxWidth="1.7976931348623157E308" onAction="#onAnalysisEngineSelected" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="57.0" maxWidth="1.7976931348623157E308" spacing="4.0">
+                                                   <children>
+                                                      <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="52.0" text="Version:" />
+                                                      <ComboBox fx:id="analysisEngineVersion_" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="4.0">
+                                                   <children>
+                                                      <Label maxWidth="-Infinity" minWidth="-Infinity" text="Sub-version:" />
+                                                      <ComboBox fx:id="analysisEngineSubVersion_" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="keepOutputs_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Keep analysis output file&#10;" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="2.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="4.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="detailedAnalysis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Perform detailed analysis&#10;" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="2.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="compression_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Apply compression for&#10;propagation analysis" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="2.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="fallback_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Fallback to inbuilt engine&#10;if server unavailable" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="2.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Microservices">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="Connection settings to all microservices in the AF-Twin cloud." textFill="SLATEGRAY" wrapText="true">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/microservices.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" minHeight="-Infinity" pannable="true" prefHeight="145.0">
+                                       <content>
+                                          <VBox spacing="10.0">
+                                             <children>
+                                                <StackPane maxWidth="1.7976931348623157E308">
+                                                   <children>
+                                                      <Separator maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER" />
+                                                      <Label styleClass="borderTitle" text="Data Service" StackPane.alignment="CENTER_LEFT">
+                                                         <padding>
+                                                            <Insets right="3.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="3.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="-5.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </StackPane>
+                                                <GridPane hgap="5.0" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                                   <children>
+                                                      <Label layoutX="10.0" layoutY="87.0" text="Hostname:" />
+                                                      <Label layoutX="10.0" layoutY="17.0" text="Port number:" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="dataHostname_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="dataPort_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                                <StackPane maxWidth="1.7976931348623157E308">
+                                                   <children>
+                                                      <Separator maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER" />
+                                                      <Label styleClass="borderTitle" text="Analysis Service" StackPane.alignment="CENTER_LEFT">
+                                                         <padding>
+                                                            <Insets right="3.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="3.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="-5.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </StackPane>
+                                                <GridPane hgap="5.0" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                                   <children>
+                                                      <Label layoutX="10.0" layoutY="87.0" text="Hostname:" />
+                                                      <Label layoutX="10.0" layoutY="17.0" text="Port number:" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="analysisHostname_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="analysisPort_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                                <StackPane maxWidth="1.7976931348623157E308">
+                                                   <children>
+                                                      <Separator maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER" />
+                                                      <Label styleClass="borderTitle" text="Collaboration Service" StackPane.alignment="CENTER_LEFT">
+                                                         <padding>
+                                                            <Insets right="3.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="3.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="-5.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </StackPane>
+                                                <GridPane hgap="5.0" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                                   <children>
+                                                      <Label layoutX="10.0" layoutY="87.0" text="Hostname:" />
+                                                      <Label layoutX="10.0" layoutY="17.0" text="Port number:" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="exchangeHostname_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                      <TextField fx:id="exchangePort_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+      <TitledPane minWidth="-Infinity" prefWidth="20.0" text="File Server">
+      <content>
+      <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="SFTP file server enables you to access airframe fatigue twin binary data." textFill="SLATEGRAY" wrapText="true">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/databaseBig.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="153.0">
+                                       <content>
+                                          <VBox spacing="10.0">
+                                             <children>
+                                                <GridPane hgap="5.0" layoutX="20.0" layoutY="45.0" vgap="5.0">
+                                                   <children>
+                                                      <Label text="Hostname:" GridPane.rowIndex="1" HBox.hgrow="NEVER" />
+                                                      <TextField fx:id="filerHostname_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" HBox.hgrow="ALWAYS" />
+                                                      <Label text="Port:" GridPane.rowIndex="2" HBox.hgrow="NEVER" />
+                                                      <TextField fx:id="filerPort_" layoutX="115.0" layoutY="12.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <Label layoutX="10.0" layoutY="52.0" text="Root path:" />
+                                                      <TextField fx:id="filerRootPath_" layoutX="115.0" layoutY="47.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                      <Label layoutX="10.0" layoutY="87.0" text="Username:" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="filerUsername_" layoutX="115.0" layoutY="82.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <Label layoutX="10.0" layoutY="122.0" text="Password:" GridPane.rowIndex="4" />
+                                                      <PasswordField fx:id="filerPassword_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="155.0" minWidth="-Infinity" prefWidth="70.0" />
+                                                      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="112.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+      </children>
+      </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Web Server">
+                           <content>
+                              <VBox spacing="8.0">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="Web server serves installation packages for new Equinox versions." textFill="SLATEGRAY" wrapText="true">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/webServer.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <GridPane hgap="5.0" vgap="5.0" VBox.vgrow="NEVER">
+                                       <children>
+                                          <Label text="Server hostname:" HBox.hgrow="NEVER" />
+                                          <TextField fx:id="webHostname_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" HBox.hgrow="ALWAYS" />
+                                          <Label text="Server port:" GridPane.rowIndex="1" HBox.hgrow="NEVER" />
+                                          <TextField fx:id="webPort_" layoutX="115.0" layoutY="12.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label layoutX="10.0" layoutY="52.0" text="Upload path:" GridPane.rowIndex="2" />
+                                          <TextField fx:id="webPath_" layoutX="125.0" layoutY="47.0" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="155.0" minWidth="-Infinity" prefWidth="110.0" />
+                                          <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="112.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+      <TitledPane expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Updates">
+      <content>
+      <VBox spacing="10.0">
+      <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="Choose application components to be checked for updates at application startup." textFill="SLATEGRAY" wrapText="true">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/exchange.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Separator prefWidth="200.0">
+                                       <VBox.margin>
+                                          <Insets bottom="-2.0" top="-1.0" />
+                                       </VBox.margin>
+                                    </Separator>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="notifyEquinoxUpdates_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Equinox container updates" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="88.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="notifyPluginUpdates_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Plugin updates" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="118.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="notifyMaterialUpdates_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Material updates" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+      </children>
+      </VBox>
+      </content>
+      </TitledPane>
+                        <TitledPane minWidth="-Infinity" prefWidth="20.0" text="Notifications">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="You can fine tune what exactly you want to be notified of by Equinox." textFill="SLATEGRAY" wrapText="true">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/notifications.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <ScrollPane fitToHeight="true" maxWidth="1.7976931348623157E308" prefHeight="100.0" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <VBox spacing="10.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="showNewsfeed_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Show newsfeed at start" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="showFromBottom_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Show from bottom" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="useSystemTray_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Use system tray" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifyMessages_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Text messages" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifyFiles_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Shared files" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="110.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifyErrors_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Errors" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="140.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifyWarnings_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Warnings" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="170.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifyInfo_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Information" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="200.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifyQueued_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Queued tasks" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="230.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifySubmitted_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Submitted tasks" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="260.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifySucceeded_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Succeeded tasks" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="290.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifySaved_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Saved tasks" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="320.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <children>
+                                                      <ToggleSwitch fx:id="notifyScheduled_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                                      <Label maxWidth="1.7976931348623157E308" text="Scheduled tasks" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSuppressNotificationsClicked" text="Suppress all current notifications">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/stopSmall.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="158.0" minWidth="-Infinity" prefWidth="20.0" text="Memory &amp; Performance">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="You can fine-tune Equinox for your specific needs. Restart of Data Analyst is required." textFill="SLATEGRAY" wrapText="true">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/performance.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" minHeight="-Infinity" pannable="true" prefHeight="145.0">
+                                       <content>
+                                          <VBox spacing="10.0">
+                                             <children>
+                                                <StackPane maxWidth="1.7976931348623157E308">
+                                                   <children>
+                                                      <Separator maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER" />
+                                                      <Label styleClass="borderTitle" text="Memory Space" StackPane.alignment="CENTER_LEFT">
+                                                         <padding>
+                                                            <Insets right="3.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="3.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="-5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </StackPane>
+                                                <GridPane hgap="5.0" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                                   <children>
+                                                      <Label layoutX="10.0" layoutY="87.0" text="Min. heap size:" />
+                                                      <Label layoutX="10.0" layoutY="17.0" text="Max. heap size:" GridPane.rowIndex="1" />
+                                                      <StackPane layoutX="122.0" layoutY="80.0" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <Spinner fx:id="minHeap_" maxWidth="1.7976931348623157E308" />
+                                                            <Label mouseTransparent="true" text="MB" textFill="LIGHTGRAY" StackPane.alignment="CENTER_RIGHT">
+                                                               <StackPane.margin>
+                                                                  <Insets right="32.0" />
+                                                               </StackPane.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </StackPane>
+                                                      <StackPane layoutX="122.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <Spinner fx:id="maxHeap_" maxWidth="1.7976931348623157E308" />
+                                                            <Label mouseTransparent="true" text="MB" textFill="LIGHTGRAY" StackPane.alignment="CENTER_RIGHT">
+                                                               <StackPane.margin>
+                                                                  <Insets right="32.0" />
+                                                               </StackPane.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                                <StackPane maxWidth="1.7976931348623157E308">
+                                                   <children>
+                                                      <Separator maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER" />
+                                                      <Label styleClass="borderTitle" text="Multi-threading" StackPane.alignment="CENTER_LEFT">
+                                                         <padding>
+                                                            <Insets right="3.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="3.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="-5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </StackPane>
+                                                <GridPane hgap="5.0" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                                   <children>
+                                                      <Label layoutX="10.0" layoutY="87.0" text="Max. parallel tasks:" />
+                                                      <Label layoutX="10.0" layoutY="17.0" text="Max. parallel sub-tasks:" GridPane.rowIndex="1" />
+                                                      <Spinner fx:id="maxTasks_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                      <Spinner fx:id="maxSubTasks_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                                <StackPane maxWidth="1.7976931348623157E308">
+                                                   <children>
+                                                      <Separator maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER" />
+                                                      <Label styleClass="borderTitle" text="Database" StackPane.alignment="CENTER_LEFT">
+                                                         <padding>
+                                                            <Insets right="3.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="3.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="-5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </StackPane>
+                                                <GridPane hgap="5.0" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                                   <children>
+                                                      <Label layoutX="10.0" layoutY="87.0" text="Page size (bytes):" />
+                                                      <Label layoutX="10.0" layoutY="17.0" text="Page cache size:" GridPane.rowIndex="1" />
+                                                      <ComboBox fx:id="pageSize_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                      <Spinner fx:id="cacheSize_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                                <StackPane maxWidth="1.7976931348623157E308">
+                                                   <children>
+                                                      <Separator maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER" />
+                                                      <Label styleClass="borderTitle" text="User Interface" StackPane.alignment="CENTER_LEFT">
+                                                         <padding>
+                                                            <Insets right="3.0" />
+                                                         </padding>
+                                                         <StackPane.margin>
+                                                            <Insets bottom="3.0" />
+                                                         </StackPane.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="-5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </StackPane>
+                                                <GridPane hgap="5.0" maxWidth="1.7976931348623157E308" vgap="5.0">
+                                                   <children>
+                                                      <Label layoutX="10.0" layoutY="17.0" text="Max. visible STFs&#10;per spectrum:" textAlignment="RIGHT" />
+                                                      <Spinner fx:id="visibleSTFs_" editable="true" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" layoutX="10.0" layoutY="158.0" minWidth="-Infinity" prefWidth="20.0" text="UI Theme">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label alignment="TOP_LEFT" graphicTextGap="8.0" text="Choose a color theme for the user interface. Note that, this requires restart of Equinox." textFill="SLATEGRAY" wrapText="true">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/theme.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Separator prefWidth="200.0">
+                                       <VBox.margin>
+                                          <Insets bottom="-2.0" top="-1.0" />
+                                       </VBox.margin>
+                                    </Separator>
+                                    <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="10.0">
+                                       <children>
+                                          <ToggleButton fx:id="steelblue_" mnemonicParsing="false" onAction="#onThemeClicked" selected="true" style="-fx-base: steelblue; -fx-text-fill: white;" text="steelblue">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="theme_" />
+                                             </toggleGroup>
+                                             <graphic>
+                                                <Label fx:id="steelblueLabel_" stylesheets="@../css/FontAwesomeLabelWhite.css" text="%fa.check-circle" />
+                                             </graphic>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="slategray_" layoutX="98.0" layoutY="10.0" mnemonicParsing="false" onAction="#onThemeClicked" style="-fx-base: slategray; -fx-text-fill: white;" text="slategray" toggleGroup="$theme_">
+                                             <graphic>
+                                                <Label fx:id="slategrayLabel_" stylesheets="@../css/FontAwesomeLabelWhite.css" text="%fa.circle" />
+                                             </graphic>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="20.0" layoutY="86.0" maxWidth="1.7976931348623157E308" spacing="10.0">
+                                       <children>
+                                          <ToggleButton fx:id="midnightblue_" mnemonicParsing="false" onAction="#onThemeClicked" style="-fx-base: #2c3e50; -fx-text-fill: white;" text="midnightblue" toggleGroup="$theme_">
+                                             <graphic>
+                                                <Label fx:id="midnightblueLabel_" stylesheets="@../css/FontAwesomeLabelWhite.css" text="%fa.circle" />
+                                             </graphic>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                <Button mnemonicParsing="false" onAction="#onOkClicked" styleClass="menuButton" text="Ok" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

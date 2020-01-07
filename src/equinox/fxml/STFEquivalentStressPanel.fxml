@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import control.validationField.DoubleValidationField?>
+<?import control.validationField.IntegerValidationField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="318.0" prefWidth="352.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.STFEquivalentStressPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox maxWidth="1.7976931348623157E308" prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="masterAccordion_" stylesheets="@../css/MasterAccordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+                        <TitledPane text="Analysis Type">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="fatigueAnalysis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Fatigue eq. stress analysis" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="preffasAnalysis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Preffas prop. eq. stress analysis" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="linearAnalysis_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Linear prop. eq. stress analysis" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="-10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Material">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Accordion fx:id="materialAccordion_" stylesheets="@../css/EmbeddedAccordion.css">
+                                       <panes>
+                                          <TitledPane fx:id="fatigueMaterialsPane_" text="Fatigue Materials">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <ListView fx:id="fatigueMaterials_" prefHeight="100.0" stylesheets="@../css/ListView.css" />
+                                                      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Button fx:id="resetFatigueMaterials_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResetFatigueMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../image/reset2.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Reset list" />
+                                                                     </tooltip>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                            <Button fx:id="removeFatigueMaterials_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveFatigueMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/remove.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Remove selected materials" />
+                                                               </tooltip>
+                                                            </Button>
+                                                            <Button fx:id="addFatigueMaterials_" contentDisplay="GRAPHIC_ONLY" layoutX="272.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddFatigueMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/add.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Add materials" />
+                                                               </tooltip>
+                                                            </Button>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane fx:id="preffasMaterialsPane_" disable="true" text="Preffas Prop. Materials">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <ListView fx:id="preffasMaterials_" prefHeight="100.0" stylesheets="@../css/ListView.css" />
+                                                      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Button fx:id="resetPreffasMaterials_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResetPreffasMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../image/reset2.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Reset list" />
+                                                                     </tooltip>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                            <Button fx:id="removePreffasMaterials_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemovePreffasMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/remove.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Remove selected materials" />
+                                                               </tooltip>
+                                                            </Button>
+                                                            <Button fx:id="addPreffasMaterials_" contentDisplay="GRAPHIC_ONLY" layoutX="272.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddPreffasMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/add.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Add materials" />
+                                                               </tooltip>
+                                                            </Button>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane fx:id="linearMaterialsPane_" disable="true" layoutX="10.0" layoutY="47.0" text="Linear Prop. Materials">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <ListView fx:id="linearMaterials_" prefHeight="100.0" stylesheets="@../css/ListView.css" />
+                                                      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Button fx:id="resetLinearMaterials_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResetLinearMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../image/reset2.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Reset list" />
+                                                                     </tooltip>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                            <Button fx:id="removeLinearMaterials_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveLinearMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/remove.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Remove selected materials" />
+                                                               </tooltip>
+                                                            </Button>
+                                                            <Button fx:id="addLinearMaterials_" contentDisplay="GRAPHIC_ONLY" layoutX="272.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddLinearMaterialsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/add.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Add materials" />
+                                                               </tooltip>
+                                                            </Button>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="10.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                       </panes>
+                                    </Accordion>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Stress Sequence Generation">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Accordion fx:id="sequenceAccordion_" stylesheets="@../css/EmbeddedAccordion.css" VBox.vgrow="ALWAYS">
+                                       <panes>
+                                          <TitledPane expanded="false" text="Overall Factors">
+                                             <content>
+                                                <VBox>
+                                                   <children>
+                                                      <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0" VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Label text="1G steady:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <Label text="Increment:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <Label text="Delta-P:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <DoubleValidationField fx:id="oneG_" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <MenuButton fx:id="onegMethod_" mnemonicParsing="false" text="Multiply" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <items>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                                                     <toggleGroup>
+                                                                        <ToggleGroup fx:id="onegMethod" />
+                                                                     </toggleGroup>
+                                                                  </RadioMenuItem>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$onegMethod" />
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$onegMethod" />
+                                                               </items>
+                                                            </MenuButton>
+                                                            <DoubleValidationField fx:id="increment_" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <MenuButton fx:id="incMethod_" mnemonicParsing="false" text="Multiply" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <items>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                                                     <toggleGroup>
+                                                                        <ToggleGroup fx:id="incMethod" />
+                                                                     </toggleGroup>
+                                                                  </RadioMenuItem>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$incMethod" />
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$incMethod" />
+                                                               </items>
+                                                            </MenuButton>
+                                                            <DoubleValidationField fx:id="deltaP_" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <MenuButton fx:id="dpMethod_" mnemonicParsing="false" text="Multiply" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <items>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                                                     <toggleGroup>
+                                                                        <ToggleGroup fx:id="dpMethod" />
+                                                                     </toggleGroup>
+                                                                  </RadioMenuItem>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$dpMethod" />
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$dpMethod" />
+                                                               </items>
+                                                            </MenuButton>
+                                                            <Label text="Delta-T:" GridPane.rowIndex="3" />
+                                                            <DoubleValidationField fx:id="deltaT_" maxWidth="1.7976931348623157E308" text="1.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <MenuButton fx:id="dtMethod_" mnemonicParsing="false" text="Multiply" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                               <items>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" selected="true" text="Multiply">
+                                                                     <toggleGroup>
+                                                                        <ToggleGroup fx:id="dtMethod" />
+                                                                     </toggleGroup>
+                                                                  </RadioMenuItem>
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Add" toggleGroup="$dtMethod" />
+                                                                  <RadioMenuItem mnemonicParsing="false" onAction="#onMethodSelected" text="Set" toggleGroup="$dtMethod" />
+                                                               </items>
+                                                            </MenuButton>
+                                                         </children>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="NEVER" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                                            <ColumnConstraints hgrow="ALWAYS" />
+                                                            <ColumnConstraints hgrow="NEVER" maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </GridPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane fx:id="loadcasesPane_" expanded="false" text="Loadcase Factors">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <ListView fx:id="loadcaseFactors_" prefHeight="100.0" stylesheets="@../css/ListView.css" />
+                                                      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Button fx:id="resetLoadcaseFactors_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResetLoadcaseFactorsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../image/reset2.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Reset list" />
+                                                                     </tooltip>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                            <Button fx:id="removeLoadcaseFactors_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveLoadcaseFactorsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/remove.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Remove selected" />
+                                                               </tooltip>
+                                                            </Button>
+                                                            <Button fx:id="addLoadcaseFactors_" contentDisplay="GRAPHIC_ONLY" layoutX="272.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddLoadcaseFactorsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/add.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Add new..." />
+                                                               </tooltip>
+                                                            </Button>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane fx:id="segmentsPane_" expanded="false" text="Segment Factors">
+                                             <content>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <ListView fx:id="segmentFactors_" prefHeight="100.0" stylesheets="@../css/ListView.css" />
+                                                      <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Button fx:id="resetSegmentFactors_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onResetSegmentFactorsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                                     <font>
+                                                                        <Font size="11.0" />
+                                                                     </font>
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../image/reset2.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Reset list" />
+                                                                     </tooltip>
+                                                                  </Button>
+                                                               </children>
+                                                            </HBox>
+                                                            <Button fx:id="removeSegmentFactors_" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveSegmentFactorsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/remove.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Remove selected" />
+                                                               </tooltip>
+                                                            </Button>
+                                                            <Button fx:id="addSegmentFactors_" contentDisplay="GRAPHIC_ONLY" layoutX="272.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddSegmentFactorsClicked" prefHeight="24.0" prefWidth="24.0">
+                                                               <font>
+                                                                  <Font size="11.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../image/add.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <tooltip>
+                                                                  <Tooltip text="Add new..." />
+                                                               </tooltip>
+                                                            </Button>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane text="Pressure">
+                                             <content>
+                                                <VBox>
+                                                   <children>
+                                                      <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0" VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Label text="DP load case:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <Label text="Reference DP:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <IntegerValidationField fx:id="dpLoadcase_" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" promptText="Automatic" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <DoubleValidationField fx:id="refDPVal_" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" promptText="Automatic" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                         </children>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="NEVER" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+                                                            <ColumnConstraints hgrow="ALWAYS" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </GridPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane text="Temperature">
+                                             <content>
+                                                <VBox>
+                                                   <children>
+                                                      <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0" VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Label fx:id="dtLoadcaseSupLabel_" disable="true" text="DT load case:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <Label fx:id="refDTValSupLabel_" disable="true" text="Reference DT:" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <Label layoutX="10.0" layoutY="52.0" text="DT interpolation:" />
+                                                            <ChoiceBox fx:id="dtInterpolation_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+                                                            <Label fx:id="refDTValInfLabel_" disable="true" layoutX="10.0" layoutY="87.0" text="Reference DT (Inf.):" GridPane.rowIndex="4" />
+                                                            <Label fx:id="dtLoadcaseInfLabel_" disable="true" layoutX="10.0" layoutY="52.0" text="DT load case (Inf.):" GridPane.rowIndex="3" />
+                                                            <IntegerValidationField fx:id="dtLoadcaseSup_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <DoubleValidationField fx:id="refDTValSup_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <IntegerValidationField fx:id="dtLoadcaseInf_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <DoubleValidationField fx:id="refDTValInf_" disable="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                         </children>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="NEVER" maxWidth="130.0" minWidth="130.0" prefWidth="130.0" />
+                                                            <ColumnConstraints hgrow="ALWAYS" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </GridPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane expanded="false" text="Stress Rotation">
+                                             <content>
+                                                <VBox spacing="10.0">
+                                                   <children>
+                                                      <GridPane hgap="5.0" prefWidth="192.0" vgap="5.0" VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Label layoutX="31.0" layoutY="87.0" text="Component:" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <ChoiceBox fx:id="stressComponent_" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <Label layoutX="35.0" layoutY="122.0" text="Rotation angle:" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                                            <StackPane maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <DoubleValidationField fx:id="rotation_" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="27.0" text="0.0" />
+                                                                  <Label mouseTransparent="true" text="degrees" textFill="LIGHTGRAY" StackPane.alignment="CENTER_RIGHT">
+                                                                     <StackPane.margin>
+                                                                        <Insets right="4.0" />
+                                                                     </StackPane.margin>
+                                                                  </Label>
+                                                               </children>
+                                                            </StackPane>
+                                                         </children>
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="NEVER" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" />
+                                                            <ColumnConstraints hgrow="ALWAYS" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </GridPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane expanded="false" layoutX="10.0" layoutY="190.0" text="Sequence Name">
+                                             <content>
+                                                <VBox spacing="10.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <TextField id="overall_" fx:id="fileName_" maxWidth="1.7976931348623157E308" prefWidth="-1.0" promptText="Leave empty to use STF file name" text="" />
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </TitledPane>
+                                       </panes>
+                                    </Accordion>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane text="Omission">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="removeNegative_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Remove negative stresses" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="omission_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Apply omission" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0" VBox.vgrow="NEVER">
+                                       <children>
+                                          <Label minWidth="85.0" text="Stress range:" HBox.hgrow="NEVER" />
+                                          <StackPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <DoubleValidationField fx:id="omissionLevel_" text="0.0" />
+                                                <Label mouseTransparent="true" text="MPa" textFill="LIGHTGRAY" StackPane.alignment="CENTER_RIGHT">
+                                                   <StackPane.margin>
+                                                      <Insets right="4.0" />
+                                                   </StackPane.margin>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox maxWidth="1.7976931348623157E308" spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="242.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" HBox.hgrow="NEVER" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

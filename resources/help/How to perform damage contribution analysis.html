@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to perform damage contribution analysis</title>
+<link rel="stylesheet" href="css/Help.css">
+</head>
+<body>
+<h1>How to perform damage contribution analysis</h1>
+<par>
+Damage contribution analysis is performed in order to have a better insight to pilot points by means of individual damage
+contributions of fatigue events in the spectrum. For given pilot points, damage contribution analysis basically computes 
+the damage ratios (i.e. contributions) of individual selected fatigue events (eg. vertical gusts, lateral gusts, delta-p etc.).
+With the outputs of the analysis, one is able to;
+<UL>
+<LI>See the effect of separate fatigue events and flight segments on a pilot point,
+<LI>Determine which fatigue events are significant or insignificant on a pilot point,
+<LI>Determine whether a pilot point is mainly driven by delta-p stresses.
+</UL>
+In order to perform a damage contribution analysis, select and right-click on a STF file in the file tree.
+Select <item>Damage Contribution Analysis</item> from the popup menu as shown below.
+<p><img class="centre" alt="help65" src="image/help65.png"><p>
+This will open the damage contribution analysis input panel. Input panel contains all necessary input fields in order to perform the analysis. 
+These are; damage contribution definition, material data, stress sequence generation parameters and rainflow omission parameters. 
+You can find detailed information on the last 3 input panels from the following links;
+<UL>
+<LI><button type="button" onclick="app.helpLink('How to generate stress sequence', '')" id="buttonlink">Generating stress sequence,</button>
+<LI><button type="button" onclick="app.helpLink('How to calculate equivalent stress', '')" id="buttonlink">Calculating equivalent stress</button>.
+</UL>
+<h2><a name="Define Damage Contributions">Define Damage Contributions</a></h2>
+Here, you will need to specify the damage contributions to be computed. You can select Delta-P, Delta-T and incremental event contributions. 
+For incremental events, first enter the name of event you are interested in (this will filter the events list below). Then select the filtered events 
+from the list, and select the flight segment to compute the contribution for (by default all flight segements are selected). And finally click 'Add' to 
+add the contribution to the defined contributions list.
+</par>
+</body>
+</html>

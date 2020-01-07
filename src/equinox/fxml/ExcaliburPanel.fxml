@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import control.validationField.DoubleValidationField?>
+<?import control.validationField.IntegerValidationField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<VBox fx:id="root_" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="543.0" prefWidth="293.0" spacing="10.0" stylesheets="@../css/Commons.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equinox.controller.ExcaliburPanel">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" pannable="true" prefHeight="-1.0" prefWidth="-1.0" styleClass="scrollPane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+      <content>
+        <VBox prefWidth="-1.0" spacing="10.0">
+          <children>
+                  <Accordion fx:id="accordion_" stylesheets="@../css/Accordion.css" VBox.vgrow="ALWAYS">
+                     <panes>
+      <TitledPane fx:id="correlationPane_" expanded="false" minWidth="-Infinity" prefWidth="20.0" text="Loadcase Correlation" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <BorderPane fx:id="correlationZone_" maxWidth="1.7976931348623157E308" onDragDropped="#onDragDroppedCorrelation" onDragEntered="#onDragEnteredCorrelation" onDragExited="#onDragExitedCorrelation" onDragOver="#onDragOverCorrelation" styleClass="roundPanel2">
+                                       <bottom>
+                                          <StackPane>
+                                             <children>
+                                                <VBox spacing="10.0" styleClass="roundPanel3">
+                                                   <children>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Attributes table (*.xls)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" fx:id="xls_">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Loadcase keys file (*.lck)" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="lck_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDownloadSampleCorrelationClicked" prefHeight="28.0" prefWidth="28.0" styleClass="roundButton2" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/sample.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                   <tooltip>
+                                                      <Tooltip text="Download sample inputs" />
+                                                   </tooltip>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="-1.0" right="-1.0" />
+                                                   </StackPane.margin>
+                                                </Button>
+                                             </children>
+                                          </StackPane>
+                                       </bottom>
+                                       <center>
+                                          <StackPane maxWidth="1.7976931348623157E308">
+                                             <children>
+                                                <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="dropCorrelationImage_" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/dropZone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Drop correlation files here&#10;" textAlignment="CENTER" textFill="GREY">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="60.0" top="60.0" />
+                                                   </BorderPane.margin>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="30.0" top="15.0" />
+                                                   </StackPane.margin>
+                                                </VBox>
+                                                <Hyperlink fx:id="browseCorrelation_" onAction="#onBrowseCorrelationClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </StackPane>
+                                       </center>
+                                    </BorderPane>
+                                    <ComboBox fx:id="correlationSheet_" maxWidth="1.7976931348623157E308" promptText="Select attributes table sheet..." />
+                                 </children>
+                              </VBox>
+                           </content>
+      </TitledPane>
+                        <TitledPane fx:id="stressPane_" layoutX="10.0" layoutY="84.0" minWidth="-Infinity" prefWidth="20.0" text="Element Stresses" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <ComboBox fx:id="stressType_" maxWidth="1.7976931348623157E308" onAction="#onStressTypeSelected" promptText="Select stress type" />
+                                    <BorderPane fx:id="stressZone_" maxWidth="1.7976931348623157E308" onDragDropped="#onDragDroppedStress" onDragEntered="#onDragEnteredStress" onDragExited="#onDragExitedStress" onDragOver="#onDragOverStress" styleClass="roundPanel2">
+                                       <bottom>
+                                          <StackPane>
+                                             <children>
+                                                <VBox spacing="10.0" styleClass="roundPanel3">
+                                                   <children>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Input directory" textAlignment="CENTER" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fx:id="stressDir_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/empty.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <Button contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDownloadSampleStressFileClicked" prefHeight="28.0" prefWidth="28.0" styleClass="roundButton2" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/sample.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                   <tooltip>
+                                                      <Tooltip text="Download sample inputs" />
+                                                   </tooltip>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="-1.0" right="-1.0" />
+                                                   </StackPane.margin>
+                                                </Button>
+                                             </children>
+                                          </StackPane>
+                                       </bottom>
+                                       <center>
+                                          <StackPane>
+                                             <children>
+                                                <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="dropStressImage_" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/dropZone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Drop input directory here" textAlignment="CENTER" textFill="GREY">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="20.0" top="20.0" />
+                                                   </BorderPane.margin>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="30.0" top="30.0" />
+                                                   </StackPane.margin>
+                                                </VBox>
+                                                <Hyperlink fx:id="browseStressDir_" onAction="#onBrowseStressDirectoryClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </StackPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="pressurePane_" layoutX="10.0" layoutY="158.0" minWidth="-Infinity" prefWidth="20.0" text="Pressure" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="includeDP_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Include delta-p stress" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <IntegerValidationField fx:id="dpLoadcaseNumber_" maxWidth="1.7976931348623157E308" promptText="Enter delta-p loadcase number" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="criteriaPane_" layoutX="10.0" layoutY="46.0" minWidth="-Infinity" prefWidth="20.0" text="Stress Sorting Criteria" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <ComboBox fx:id="sortingCriteria_" maxWidth="1.7976931348623157E308" onAction="#onSortingCriteriaSelected" promptText="Select stress sorting criteria" />
+                                    <DoubleValidationField fx:id="rotationAngle_" disable="true" maxWidth="1.7976931348623157E308" promptText="Enter rotation angle in degrees" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="outputPane_" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" prefWidth="20.0" text="Output Directory" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <BorderPane fx:id="outputZone_" maxWidth="1.7976931348623157E308" onDragDropped="#onDragDroppedOutput" onDragEntered="#onDragEnteredOutput" onDragExited="#onDragExitedOutput" onDragOver="#onDragOverOutput" styleClass="roundPanel2">
+                                       <bottom>
+                                          <VBox spacing="10.0" styleClass="roundPanel3">
+                                             <children>
+                                                <Label focusTraversable="false" mouseTransparent="true" text="Output directory" textAlignment="CENTER" textFill="WHITE">
+                                                   <graphic>
+                                                      <ImageView fx:id="outputDir_" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/empty.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </bottom>
+                                       <center>
+                                          <StackPane>
+                                             <children>
+                                                <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER" StackPane.alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="dropOutputImage_" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/dropZone.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label focusTraversable="false" mouseTransparent="true" text="Drop output directory here" textAlignment="CENTER" textFill="GREY">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="20.0" top="20.0" />
+                                                   </BorderPane.margin>
+                                                   <StackPane.margin>
+                                                      <Insets bottom="30.0" top="30.0" />
+                                                   </StackPane.margin>
+                                                </VBox>
+                                                <Hyperlink fx:id="browseOutputDir_" onAction="#onBrowseOutputDirectoryClicked" text="...or click to browse" StackPane.alignment="BOTTOM_RIGHT">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </StackPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="optionsPane_" layoutX="10.0" layoutY="84.0" minWidth="-Infinity" prefWidth="20.0" text="Options" textFill="WHITE">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="60.0" text="Log level:" HBox.hgrow="NEVER" />
+                                          <ComboBox fx:id="logLevel_" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                       <children>
+                                          <ToggleSwitch fx:id="runParallel_" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" selected="true" HBox.hgrow="NEVER" />
+                                          <Label maxWidth="1.7976931348623157E308" text="Run tasks in parallel" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+            <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+<HBox spacing="5.0" HBox.hgrow="ALWAYS">
+<children><Button layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpClicked" prefWidth="26.0" styleClass="menuButton">
+<graphic>
+<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@../image/helpWhite.png" />
+</image>
+</ImageView>
+</graphic>
+</Button>
+                <Button mnemonicParsing="false" onAction="#onResetClicked" styleClass="menuButton" text="Reset" HBox.hgrow="NEVER" />
+</children>
+</HBox>
+<Button layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCancelClicked" styleClass="menuButton" text="Cancel" />
+                        <SplitMenuButton fx:id="ok_" mnemonicParsing="false" onAction="#onOKClicked" text="Ok">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onOKClicked" text="Run now">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.rocket" />
+                                 </graphic>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveTaskClicked" text="Save task to run later">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.save" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onScheduleTaskClicked" text="Schedule task...">
+                                 <graphic>
+                                    <Label stylesheets="@../css/FontAwesomeLabel.css" text="%fa.clock-o" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <stylesheets>
+                              <URL value="@../css/SplitMenuButton1.css" />
+                              <URL value="@../css/ContextMenu.css" />
+                           </stylesheets>
+                        </SplitMenuButton>
+              </children>
+            </HBox>
+          </children>
+<padding>
+<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+</padding>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+</VBox>

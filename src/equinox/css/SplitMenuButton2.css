@@ -1,0 +1,20 @@
+
+
+.split-menu-button {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+
+.split-menu-button > .label {
+	-fx-text-fill:white;
+	-fx-background-color: transparent;
+}
+
+.split-menu-button > .arrow-button .arrow {
+	-fx-background-color: white;
+}
+
+.split-menu-button > .arrow-button {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}

@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:  
+  equinox_analysis_server:
+    image: muratartim/equinox_analysis_server
+    ports:
+      - '1236:1236'
+    environment:
+      - sftp.hostname=equinox_sftp_server
+      - sftp.password=17891917
+      - sftp.port=22
+      - sftp.rootPath=filerRoot/
+      - sftp.username=aurora
+  
+  ouroboros:
+    image: circa10a/ouroboros
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60 --cleanup
+    depends_on:
+      - "equinox_analysis_server"
