@@ -27,7 +27,7 @@ services:
       - equinox_sftp_data:/home/aurora/filerRoot
   
   ouroboros:
-    image: circa10a/ouroboros
+    image: muratartim/ouroboros
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 60 --cleanup

@@ -14,7 +14,7 @@ services:
       - equinox_mysql_data:/var/lib/mysql
   
   ouroboros:
-    image: circa10a/ouroboros
+    image: muratartim/ouroboros
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 60 --cleanup
