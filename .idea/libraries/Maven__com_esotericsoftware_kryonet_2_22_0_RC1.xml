@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.esotericsoftware:kryonet:2.22.0-RC1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/esotericsoftware/kryonet/2.22.0-RC1/kryonet-2.22.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/esotericsoftware/kryonet/2.22.0-RC1/kryonet-2.22.0-RC1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/esotericsoftware/kryonet/2.22.0-RC1/kryonet-2.22.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
